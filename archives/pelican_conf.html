@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="zh"
+>
+<head>
+    <title>pelican配置文件 - xzap's 缓存区</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+<link rel="canonical" href="http://xzap.github.io/archives/pelican_conf.html">
+
+        <meta name="author" content="xzap" />
+        <meta name="keywords" content="Pelican" />
+        <meta name="description" content="随着博客浪潮的过去,现在写博客也变得不怎么流行了,我的博客也是几度更替.总是被停止服务.github却逆向开通了github page.不过虽然早就想试试这个服务,但是好像很难的样子,因为只支持静态啊.现在有了pelican用起来还是很爽的." />
+
+        <meta property="og:site_name" content="xzap's 缓存区" />
+        <meta property="og:type" content="article"/>
+        <meta property="og:title" content="pelican配置文件"/>
+        <meta property="og:url" content="http://xzap.github.io/archives/pelican_conf.html"/>
+        <meta property="og:description" content="随着博客浪潮的过去,现在写博客也变得不怎么流行了,我的博客也是几度更替.总是被停止服务.github却逆向开通了github page.不过虽然早就想试试这个服务,但是好像很难的样子,因为只支持静态啊.现在有了pelican用起来还是很爽的."/>
+        <meta property="article:published_time" content="2015-05-26" />
+            <meta property="article:section" content="Pelican" />
+            <meta property="article:tag" content="Pelican" />
+            <meta property="article:author" content="xzap" />
+
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="http://xzap.github.io/theme/css/bootstrap.min.css" type="text/css"/>
+    <link href="http://xzap.github.io/theme/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="http://xzap.github.io/theme/css/pygments/native.css" rel="stylesheet">
+    <link rel="stylesheet" href="http://xzap.github.io/theme/css/style.css" type="text/css"/>
+
+        <link href="http://xzap.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
+              title="xzap's 缓存区 ATOM Feed"/>
+
+</head>
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+	<div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="http://xzap.github.io/" class="navbar-brand">
+xzap's 缓存区            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+                        <li class="active">
+                            <a href="http://xzap.github.io/category/pelican.html">Pelican</a>
+                        </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="http://xzap.github.io/archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</div> <!-- /.navbar -->
+<!-- Banner -->
+<!-- End Banner -->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9">
+
+    <section id="content">
+        <article>
+            <header class="page-header">
+                <h1>
+                    <a href="http://xzap.github.io/archives/pelican_conf.html"
+                       rel="bookmark"
+                       title="Permalink to pelican配置文件">
+                        pelican配置文件
+                    </a>
+                </h1>
+            </header>
+            <div class="entry-content">
+                <div class="panel">
+                    <div class="panel-body">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2015-05-26T16:11:00+08:00"> 2015-05-26 16:11 (星期二)</time>
+    </span>
+
+
+
+<span class="label label-default">Tags</span>
+	<a href="http://xzap.github.io/tag/pelican.html">Pelican</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                </div>
+                <p>随着博客浪潮的过去,现在写博客也变得不怎么流行了,我的博客也是几度更替.总是被停止服务.github却逆向开通了github page.不过虽然早就想试试这个服务,但是好像很难的样子,因为只支持静态啊.现在有了pelican用起来还是很爽的.
+
+1. 支持语法高亮,
+2. 支持markdown
+3. 很方便的可以用github管理
+4. 很爽的disqus的评论系统接入,只要打个disqus用户名就可以
+5. ……</p>
+<p>下面是我七拼八凑的配置文件:</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86</pre></div></td><td class="code"><div class="highlight"><pre><span class="c">#!/usr/bin/env python</span>
+<span class="c"># -*- coding: utf-8 -*- #</span>
+<span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">unicode_literals</span>
+
+<span class="n">AUTHOR</span> <span class="o">=</span> <span class="s">&#39;xzap&#39;</span>
+<span class="n">SITENAME</span> <span class="o">=</span> <span class="s">&quot;xzap&#39;s 缓存区&quot;</span>
+<span class="n">SITEURL</span> <span class="o">=</span> <span class="s">&#39;http://xzap.github.io&#39;</span>
+<span class="c"># SITEURL = &#39;&#39;</span>
+<span class="n">PATH</span> <span class="o">=</span> <span class="s">&#39;content&#39;</span>
+<span class="n">PAGE_PATHS</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;pages&#39;</span><span class="p">]</span>
+<span class="n">ARTICLE_PATHS</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;articles&#39;</span><span class="p">]</span>
+<span class="n">STATIC_PATHS</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;images&#39;</span><span class="p">,</span> <span class="s">&#39;files&#39;</span><span class="p">]</span>
+<span class="n">DEFAULT_DATE_FORMAT</span> <span class="o">=</span> <span class="p">(</span><span class="s">&#39;%Y-%m-</span><span class="si">%d</span><span class="s"> %H:%M:%S (%A)&#39;</span><span class="p">)</span>
+<span class="n">DATE_FORMAT</span><span class="o">=</span><span class="p">{</span><span class="s">&quot;zh&quot;</span><span class="p">:(</span><span class="s">&quot;zh_CN&quot;</span><span class="p">,</span><span class="s">&quot;%Y-%m-</span><span class="si">%d</span><span class="s">,</span><span class="si">%X</span><span class="s">,%A&quot;</span><span class="p">),}</span><span class="c">#日期格式设置，可按自己喜好设定</span>
+
+<span class="n">EXTRA_PATH_METADATA</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s">&#39;files/robots.txt&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s">&#39;path&#39;</span><span class="p">:</span> <span class="s">&#39;robots.txt&#39;</span><span class="p">},</span>
+  <span class="s">&#39;images/favicon.ico&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s">&#39;path&#39;</span><span class="p">:</span> <span class="s">&#39;favicon.ico&#39;</span><span class="p">},</span>
+<span class="p">}</span>
+<span class="n">TIMEZONE</span> <span class="o">=</span> <span class="s">&#39;Asia/Shanghai&#39;</span>
+
+<span class="n">DEFAULT_LANG</span> <span class="o">=</span> <span class="s">&#39;zh&#39;</span>
+
+<span class="c"># Feed generation is usually not desired when developing</span>
+<span class="c"># FEED_ALL_ATOM = None</span>
+<span class="c"># CATEGORY_FEED_ATOM = None</span>
+<span class="c"># TRANSLATION_FEED_ATOM = None</span>
+<span class="c"># AUTHOR_FEED_ATOM = None</span>
+<span class="c"># AUTHOR_FEED_RSS = None</span>
+
+<span class="c"># Blogroll</span>
+<span class="n">LINKS</span> <span class="o">=</span> <span class="p">((</span><span class="s">&#39;Pelican&#39;</span><span class="p">,</span> <span class="s">&#39;http://getpelican.com/&#39;</span><span class="p">),</span>
+         <span class="p">(</span><span class="s">&#39;Python.org&#39;</span><span class="p">,</span> <span class="s">&#39;http://python.org/&#39;</span><span class="p">),</span>
+         <span class="p">(</span><span class="s">&#39;Jinja2&#39;</span><span class="p">,</span> <span class="s">&#39;http://jinja.pocoo.org/&#39;</span><span class="p">),</span>
+         <span class="p">)</span>
+
+<span class="c"># Social widget</span>
+<span class="n">SOCIAL</span> <span class="o">=</span> <span class="p">((</span><span class="s">&#39;You can add links in your config file&#39;</span><span class="p">,</span> <span class="s">&#39;#&#39;</span><span class="p">),</span>
+          <span class="p">(</span><span class="s">&#39;Another social link&#39;</span><span class="p">,</span> <span class="s">&#39;#&#39;</span><span class="p">),)</span>
+
+<span class="n">DEFAULT_PAGINATION</span> <span class="o">=</span> <span class="mi">10</span>
+
+
+<span class="c"># Theme</span>
+<span class="n">THEME</span> <span class="o">=</span> <span class="s">&#39;pelican-themes/pelican-bootstrap3&#39;</span>
+<span class="n">COVER_BG_COLOR</span> <span class="o">=</span> <span class="s">&#39;#375152&#39;</span>
+<span class="n">DEFAULT_PAGINATION</span> <span class="o">=</span> <span class="mi">10</span>
+
+<span class="c"># Plugin</span>
+<span class="n">PLUGIN_PATHS</span> <span class="o">=</span> <span class="p">[</span><span class="s">&quot;pelican-plugins&quot;</span><span class="p">]</span>
+<span class="n">PLUGINS</span> <span class="o">=</span> <span class="p">[</span> <span class="s">&#39;sitemap&#39;</span><span class="p">,</span> <span class="s">&#39;gravatar&#39;</span><span class="p">,</span> <span class="s">&#39;summary&#39;</span><span class="p">,</span> <span class="s">&#39;neighbors&#39;</span><span class="p">,</span> <span class="s">&#39;related_posts&#39;</span><span class="p">,</span>  <span class="p">]</span>
+
+<span class="c"># Sitemap</span>
+<span class="n">SITEMAP</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s">&#39;format&#39;</span><span class="p">:</span> <span class="s">&#39;xml&#39;</span><span class="p">,</span>
+  <span class="s">&#39;priorities&#39;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s">&#39;articles&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="s">&#39;pages&#39;</span><span class="p">:</span> <span class="mf">0.9</span><span class="p">,</span>
+    <span class="s">&#39;indexes&#39;</span><span class="p">:</span> <span class="mf">0.8</span><span class="p">,</span>
+  <span class="p">},</span>
+  <span class="s">&#39;changefreqs&#39;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s">&#39;indexes&#39;</span><span class="p">:</span> <span class="s">&#39;daily&#39;</span><span class="p">,</span>
+    <span class="s">&#39;articles&#39;</span><span class="p">:</span> <span class="s">&#39;daily&#39;</span><span class="p">,</span>
+    <span class="s">&#39;pages&#39;</span><span class="p">:</span> <span class="s">&#39;weekly&#39;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+<span class="n">GITHUB_URL</span> <span class="o">=</span> <span class="s">&quot;http://xzap.github.io&quot;</span>
+
+<span class="n">DISQUS_SITENAME</span> <span class="o">=</span> <span class="s">&quot;xzap&quot;</span>
+
+<span class="n">FEED_ALL_ATOM</span> <span class="o">=</span> <span class="s">&#39;feeds/all.atom.xml&#39;</span>
+<span class="n">CATEGORY_FEED_ATOM</span> <span class="o">=</span> <span class="s">&#39;feeds/</span><span class="si">%s</span><span class="s">.atom.xml&#39;</span>
+
+<span class="c"># Uncomment following line if you want document-relative URLs when developing</span>
+<span class="c">#RELATIVE_URLS = True</span>
+<span class="n">ARTICLE_URL</span> <span class="o">=</span> <span class="s">&#39;archives/{slug}.html&#39;</span>
+<span class="n">ARTICLE_SAVE_AS</span> <span class="o">=</span> <span class="s">&#39;archives/{slug}.html&#39;</span>
+
+<span class="n">YEAR_ARCHIVE_SAVE_AS</span> <span class="o">=</span> <span class="s">&#39;archives/{date:%Y}/index.html&#39;</span>
+<span class="n">MONTH_ARCHIVE_SAVE_AS</span> <span class="o">=</span> <span class="s">&#39;archives/{date:%Y}/{date:%m}/index.html&#39;</span>
+<span class="n">MENUITEMS_AFTER</span> <span class="o">=</span> <span class="p">((</span><span class="s">&#39;RSS&#39;</span><span class="p">,</span> <span class="s">&#39;/feeds/all.atom.xml&#39;</span><span class="p">),)</span>
+<span class="c"># MENUITEMS = ((&#39;RSS&#39;, &#39;/feeds/all.atom.xml&#39;),)</span>
+
+<span class="n">CACHE_CONTENT</span> <span class="o">=</span> <span class="bp">True</span>
+<span class="n">LOAD_CONTENT_CACHE</span> <span class="o">=</span> <span class="bp">True</span>
+<span class="n">CHECK_MODIFIED_METHOD</span> <span class="o">=</span> <span class="s">&#39;mtime&#39;</span>
+</pre></div>
+</td></tr></table>
+            </div>
+            <!-- /.entry-content -->
+    <hr/>
+    <section class="comments" id="comments">
+        <h2>Comments</h2>
+
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'xzap'; // required: replace example with your forum shortname
+
+                    var disqus_identifier = 'pelican_conf';
+                var disqus_url = 'http://xzap.github.io/archives/pelican_conf.html';
+
+            var disqus_config = function () {
+                this.language = "zh";
+            };
+
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function () {
+                var dsq = document.createElement('script');
+                dsq.type = 'text/javascript';
+                dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by
+            Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    </section>
+        </article>
+    </section>
+
+        </div>
+        <div class="col-sm-3" id="sidebar">
+            <aside>
+
+<section class="well well-sm">
+    <ul class="list-group list-group-flush">
+            <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Social</span></h4>
+              <ul class="list-group" id="social">
+                <li class="list-group-item"><a href="#"><i class="fa fa-you-can-add-links-in-your-config-file-square fa-lg"></i> You can add links in your config file</a></li>
+                <li class="list-group-item"><a href="#"><i class="fa fa-another-social-link-square fa-lg"></i> Another social link</a></li>
+              </ul>
+            </li>
+
+
+
+            <li class="list-group-item"><a href="http://xzap.github.io/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
+                <ul class="list-group " id="tags">
+                    <li class="list-group-item tag-4">
+                        <a href="http://xzap.github.io/tag/pelican.html">
+                            Pelican
+                        </a>
+                    </li>
+                </ul>
+            </li>
+    <li class="list-group-item"><h4><i class="fa fa-external-link-square fa-lg"></i><span class="icon-label">Links</span></h4>
+      <ul class="list-group" id="links">
+        <li class="list-group-item">
+            <a href="http://getpelican.com/" target="_blank">
+                Pelican
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="http://python.org/" target="_blank">
+                Python.org
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="http://jinja.pocoo.org/" target="_blank">
+                Jinja2
+            </a>
+        </li>
+      </ul>
+    </li>
+    </ul>
+</section>
+            </aside>
+        </div>
+    </div>
+</div>
+<footer>
+   <div class="container">
+      <hr>
+      <div class="row">
+         <div class="col-xs-10">&copy; 2015 xzap
+            &middot; Powered by <a href="https://github.com/DandyDev/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
+            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
+            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
+         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
+      </div>
+   </div>
+</footer>
+<script src="http://xzap.github.io/theme/js/jquery.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="http://xzap.github.io/theme/js/bootstrap.min.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="http://xzap.github.io/theme/js/respond.min.js"></script>
+
+    <!-- Disqus -->
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'xzap'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function () {
+            var s = document.createElement('script');
+            s.async = true;
+            s.type = 'text/javascript';
+            s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+        }());
+    </script>
+    <!-- End Disqus Code -->
+
+</body>
+</html>
