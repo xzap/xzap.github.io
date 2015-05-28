@@ -108,7 +108,7 @@ xzap's 缓存区            </a>
 <p>下面是我七拼八凑的配置文件:</p>
 <div class="highlight"><pre><span class="c">#!/usr/bin/env python</span>
 <span class="c"># -*- coding: utf-8 -*- #</span>
-<span class="kn">from</span> <span class="nn">__future__</span> <span class="k">import</span> <span class="n">unicode_literals</span>
+<span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">unicode_literals</span>
 
 <span class="n">AUTHOR</span> <span class="o">=</span> <span class="s">&#39;xzap&#39;</span>
 <span class="n">SITENAME</span> <span class="o">=</span> <span class="s">&quot;xzap&#39;s 缓存区&quot;</span>
@@ -118,8 +118,8 @@ xzap's 缓存区            </a>
 <span class="n">PAGE_PATHS</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;pages&#39;</span><span class="p">]</span>
 <span class="n">ARTICLE_PATHS</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;articles&#39;</span><span class="p">]</span>
 <span class="n">STATIC_PATHS</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;images&#39;</span><span class="p">,</span> <span class="s">&#39;files&#39;</span><span class="p">]</span>
-<span class="n">DEFAULT_DATE_FORMAT</span> <span class="o">=</span> <span class="p">(</span><span class="s">&#39;%Y-%m-%d %H:%M:%S (%A)&#39;</span><span class="p">)</span>
-<span class="n">DATE_FORMAT</span><span class="o">=</span><span class="p">{</span><span class="s">&quot;zh&quot;</span><span class="p">:(</span><span class="s">&quot;zh_CN&quot;</span><span class="p">,</span><span class="s">&quot;%Y-%m-%d,%X,%A&quot;</span><span class="p">),}</span><span class="c">#日期格式设置，可按自己喜好设定</span>
+<span class="n">DEFAULT_DATE_FORMAT</span> <span class="o">=</span> <span class="p">(</span><span class="s">&#39;%Y-%m-</span><span class="si">%d</span><span class="s"> %H:%M:%S (%A)&#39;</span><span class="p">)</span>
+<span class="n">DATE_FORMAT</span><span class="o">=</span><span class="p">{</span><span class="s">&quot;zh&quot;</span><span class="p">:(</span><span class="s">&quot;zh_CN&quot;</span><span class="p">,</span><span class="s">&quot;%Y-%m-</span><span class="si">%d</span><span class="s">,</span><span class="si">%X</span><span class="s">,%A&quot;</span><span class="p">),}</span><span class="c">#日期格式设置，可按自己喜好设定</span>
 
 <span class="n">EXTRA_PATH_METADATA</span> <span class="o">=</span> <span class="p">{</span>
   <span class="s">&#39;files/robots.txt&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s">&#39;path&#39;</span><span class="p">:</span> <span class="s">&#39;robots.txt&#39;</span><span class="p">},</span>
@@ -177,7 +177,7 @@ xzap's 缓存区            </a>
 <span class="n">DISQUS_SITENAME</span> <span class="o">=</span> <span class="s">&quot;xzap&quot;</span>
 
 <span class="n">FEED_ALL_ATOM</span> <span class="o">=</span> <span class="s">&#39;feeds/all.atom.xml&#39;</span>
-<span class="n">CATEGORY_FEED_ATOM</span> <span class="o">=</span> <span class="s">&#39;feeds/%s.atom.xml&#39;</span>
+<span class="n">CATEGORY_FEED_ATOM</span> <span class="o">=</span> <span class="s">&#39;feeds/</span><span class="si">%s</span><span class="s">.atom.xml&#39;</span>
 
 <span class="c"># Uncomment following line if you want document-relative URLs when developing</span>
 <span class="c">#RELATIVE_URLS = True</span>
@@ -189,8 +189,8 @@ xzap's 缓存区            </a>
 <span class="n">MENUITEMS_AFTER</span> <span class="o">=</span> <span class="p">((</span><span class="s">&#39;RSS&#39;</span><span class="p">,</span> <span class="s">&#39;/feeds/all.atom.xml&#39;</span><span class="p">),)</span>
 <span class="c"># MENUITEMS = ((&#39;RSS&#39;, &#39;/feeds/all.atom.xml&#39;),)</span>
 
-<span class="n">CACHE_CONTENT</span> <span class="o">=</span> <span class="k">True</span>
-<span class="n">LOAD_CONTENT_CACHE</span> <span class="o">=</span> <span class="k">True</span>
+<span class="n">CACHE_CONTENT</span> <span class="o">=</span> <span class="bp">True</span>
+<span class="n">LOAD_CONTENT_CACHE</span> <span class="o">=</span> <span class="bp">True</span>
 <span class="n">CHECK_MODIFIED_METHOD</span> <span class="o">=</span> <span class="s">&#39;mtime&#39;</span>
 </pre></div>
             </div>
