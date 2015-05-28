@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom"><title>xzap's 缓存区</title><link href="http://xzap.github.io/" rel="alternate"></link><link href="http://xzap.github.io/feeds/xzap.atom.xml" rel="self"></link><id>http://xzap.github.io/</id><updated>2015-05-26T16:11:00+08:00</updated><entry><title>pelican配置文件</title><link href="http://xzap.github.io/archives/pelican_conf.html" rel="alternate"></link><updated>2015-05-26T16:11:00+08:00</updated><author><name>xzap</name></author><id>tag:xzap.github.io,2015-05-26:archives/pelican_conf.html</id><summary type="html">&lt;p&gt;随着博客浪潮的过去,现在写博客也变得不怎么流行了,我的博客也是几度更替.总是被停止服务.github却逆向开通了github page.不过虽然早就想试试这个服务,但是好像很难的样子,因为只支持静态啊.现在有了pelican用起来还是很爽的.
-
-1. 支持语法高亮,
-2. 支持markdown
-3. 很方便的可以用github管理
-4. 很爽的disqus的评论系统接入,只要打个disqus用户名就可以
-5. ……&lt;/p&gt;
+&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;支持语法高亮,&lt;/li&gt;
+&lt;li&gt;支持markdown&lt;/li&gt;
+&lt;li&gt;很方便的可以用github管理&lt;/li&gt;
+&lt;li&gt;很爽的disqus的评论系统接入,只要打个disqus用户名就可以&lt;/li&gt;
+&lt;li&gt;……&lt;/li&gt;
+&lt;/ol&gt;
 &lt;p&gt;下面是我七拼八凑的配置文件:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="c"&gt;#!/usr/bin/env python&lt;/span&gt;
 &lt;span class="c"&gt;# -*- coding: utf-8 -*- #&lt;/span&gt;
