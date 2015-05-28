@@ -9,7 +9,7 @@
 &lt;p&gt;下面是我七拼八凑的配置文件:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="c"&gt;#!/usr/bin/env python&lt;/span&gt;
 &lt;span class="c"&gt;# -*- coding: utf-8 -*- #&lt;/span&gt;
-&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;__future__&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;unicode_literals&lt;/span&gt;
+&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;__future__&lt;/span&gt; &lt;span class="k"&gt;import&lt;/span&gt; &lt;span class="n"&gt;unicode_literals&lt;/span&gt;
 
 &lt;span class="n"&gt;AUTHOR&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;xzap&amp;#39;&lt;/span&gt;
 &lt;span class="n"&gt;SITENAME&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;xzap&amp;#39;s 缓存区&amp;quot;&lt;/span&gt;
@@ -19,8 +19,8 @@
 &lt;span class="n"&gt;PAGE_PATHS&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;pages&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
 &lt;span class="n"&gt;ARTICLE_PATHS&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;articles&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
 &lt;span class="n"&gt;STATIC_PATHS&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;images&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;files&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
-&lt;span class="n"&gt;DEFAULT_DATE_FORMAT&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;%Y-%m-&lt;/span&gt;&lt;span class="si"&gt;%d&lt;/span&gt;&lt;span class="s"&gt; %H:%M:%S (%A)&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="n"&gt;DATE_FORMAT&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;zh&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;zh_CN&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;%Y-%m-&lt;/span&gt;&lt;span class="si"&gt;%d&lt;/span&gt;&lt;span class="s"&gt;,&lt;/span&gt;&lt;span class="si"&gt;%X&lt;/span&gt;&lt;span class="s"&gt;,%A&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;),}&lt;/span&gt;&lt;span class="c"&gt;#日期格式设置，可按自己喜好设定&lt;/span&gt;
+&lt;span class="n"&gt;DEFAULT_DATE_FORMAT&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;%Y-%m-%d %H:%M:%S (%A)&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;DATE_FORMAT&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;zh&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;zh_CN&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;%Y-%m-%d,%X,%A&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;),}&lt;/span&gt;&lt;span class="c"&gt;#日期格式设置，可按自己喜好设定&lt;/span&gt;
 
 &lt;span class="n"&gt;EXTRA_PATH_METADATA&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
   &lt;span class="s"&gt;&amp;#39;files/robots.txt&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;path&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;robots.txt&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;},&lt;/span&gt;
@@ -78,7 +78,7 @@
 &lt;span class="n"&gt;DISQUS_SITENAME&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;xzap&amp;quot;&lt;/span&gt;
 
 &lt;span class="n"&gt;FEED_ALL_ATOM&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;feeds/all.atom.xml&amp;#39;&lt;/span&gt;
-&lt;span class="n"&gt;CATEGORY_FEED_ATOM&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;feeds/&lt;/span&gt;&lt;span class="si"&gt;%s&lt;/span&gt;&lt;span class="s"&gt;.atom.xml&amp;#39;&lt;/span&gt;
+&lt;span class="n"&gt;CATEGORY_FEED_ATOM&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;feeds/%s.atom.xml&amp;#39;&lt;/span&gt;
 
 &lt;span class="c"&gt;# Uncomment following line if you want document-relative URLs when developing&lt;/span&gt;
 &lt;span class="c"&gt;#RELATIVE_URLS = True&lt;/span&gt;
@@ -90,7 +90,7 @@
 &lt;span class="n"&gt;MENUITEMS_AFTER&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;((&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;RSS&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;/feeds/all.atom.xml&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;),)&lt;/span&gt;
 &lt;span class="c"&gt;# MENUITEMS = ((&amp;#39;RSS&amp;#39;, &amp;#39;/feeds/all.atom.xml&amp;#39;),)&lt;/span&gt;
 
-&lt;span class="n"&gt;CACHE_CONTENT&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="bp"&gt;True&lt;/span&gt;
-&lt;span class="n"&gt;LOAD_CONTENT_CACHE&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="bp"&gt;True&lt;/span&gt;
+&lt;span class="n"&gt;CACHE_CONTENT&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="k"&gt;True&lt;/span&gt;
+&lt;span class="n"&gt;LOAD_CONTENT_CACHE&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="k"&gt;True&lt;/span&gt;
 &lt;span class="n"&gt;CHECK_MODIFIED_METHOD&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;mtime&amp;#39;&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">xzap</dc:creator><pubDate>Tue, 26 May 2015 16:11:00 +0800</pubDate><guid>tag:xzap.github.io,2015-05-26:archives/pelican_conf.html</guid><category>Pelican</category></item></channel></rss>
