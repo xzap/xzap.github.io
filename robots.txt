@@ -1,2 +1,0 @@
-User-agent: *
-Sitemap: http://xzap.github.io/sitemap.xml
