@@ -105,180 +105,94 @@ xzap's 缓存区            </a>
 3. 很方便的可以用github管理
 4. 很爽的disqus的评论系统接入,只要打个disqus用户名就可以
 5. ……</p>
-<p>下面是我七拼八凑的配置文件:</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-28
-29
-30
-31
-32
-33
-34
-35
-36
-37
-38
-39
-40
-41
-42
-43
-44
-45
-46
-47
-48
-49
-50
-51
-52
-53
-54
-55
-56
-57
-58
-59
-60
-61
-62
-63
-64
-65
-66
-67
-68
-69
-70
-71
-72
-73
-74
-75
-76
-77
-78
-79
-80
-81
-82
-83
-84
-85
-86</pre></div></td><td class="code"><div class="highlight"><pre><span class="c">#!/usr/bin/env python</span>
-<span class="c"># -*- coding: utf-8 -*- #</span>
-<span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">unicode_literals</span>
+<p>下面是我七拼八凑的配置文件:
+    :::python3
+    #!/usr/bin/env python
+    # -<em>- coding: utf-8 -</em>- #
+    from <strong>future</strong> import unicode_literals    </p>
+<div class="highlight"><pre>AUTHOR = &#39;xzap&#39;
+SITENAME = &quot;xzap&#39;s 缓存区&quot;
+SITEURL = &#39;http://xzap.github.io&#39;
+# SITEURL = &#39;&#39;
+PATH = &#39;content&#39;
+PAGE_PATHS = [&#39;pages&#39;]
+ARTICLE_PATHS = [&#39;articles&#39;]
+STATIC_PATHS = [&#39;images&#39;, &#39;files&#39;]
+DEFAULT_DATE_FORMAT = (&#39;%Y-%m-%d %H:%M:%S (%A)&#39;)
+DATE_FORMAT={&quot;zh&quot;:(&quot;zh_CN&quot;,&quot;%Y-%m-%d,%X,%A&quot;),}#日期格式设置，可按自己喜好设定
 
-<span class="n">AUTHOR</span> <span class="o">=</span> <span class="s">&#39;xzap&#39;</span>
-<span class="n">SITENAME</span> <span class="o">=</span> <span class="s">&quot;xzap&#39;s 缓存区&quot;</span>
-<span class="n">SITEURL</span> <span class="o">=</span> <span class="s">&#39;http://xzap.github.io&#39;</span>
-<span class="c"># SITEURL = &#39;&#39;</span>
-<span class="n">PATH</span> <span class="o">=</span> <span class="s">&#39;content&#39;</span>
-<span class="n">PAGE_PATHS</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;pages&#39;</span><span class="p">]</span>
-<span class="n">ARTICLE_PATHS</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;articles&#39;</span><span class="p">]</span>
-<span class="n">STATIC_PATHS</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;images&#39;</span><span class="p">,</span> <span class="s">&#39;files&#39;</span><span class="p">]</span>
-<span class="n">DEFAULT_DATE_FORMAT</span> <span class="o">=</span> <span class="p">(</span><span class="s">&#39;%Y-%m-</span><span class="si">%d</span><span class="s"> %H:%M:%S (%A)&#39;</span><span class="p">)</span>
-<span class="n">DATE_FORMAT</span><span class="o">=</span><span class="p">{</span><span class="s">&quot;zh&quot;</span><span class="p">:(</span><span class="s">&quot;zh_CN&quot;</span><span class="p">,</span><span class="s">&quot;%Y-%m-</span><span class="si">%d</span><span class="s">,</span><span class="si">%X</span><span class="s">,%A&quot;</span><span class="p">),}</span><span class="c">#日期格式设置，可按自己喜好设定</span>
+EXTRA_PATH_METADATA = {
+  &#39;files/robots.txt&#39;: {&#39;path&#39;: &#39;robots.txt&#39;},
+  &#39;images/favicon.ico&#39;: {&#39;path&#39;: &#39;favicon.ico&#39;},
+}
+TIMEZONE = &#39;Asia/Shanghai&#39;
 
-<span class="n">EXTRA_PATH_METADATA</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="s">&#39;files/robots.txt&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s">&#39;path&#39;</span><span class="p">:</span> <span class="s">&#39;robots.txt&#39;</span><span class="p">},</span>
-  <span class="s">&#39;images/favicon.ico&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s">&#39;path&#39;</span><span class="p">:</span> <span class="s">&#39;favicon.ico&#39;</span><span class="p">},</span>
-<span class="p">}</span>
-<span class="n">TIMEZONE</span> <span class="o">=</span> <span class="s">&#39;Asia/Shanghai&#39;</span>
+DEFAULT_LANG = &#39;zh&#39;
 
-<span class="n">DEFAULT_LANG</span> <span class="o">=</span> <span class="s">&#39;zh&#39;</span>
+# Feed generation is usually not desired when developing
+# FEED_ALL_ATOM = None
+# CATEGORY_FEED_ATOM = None
+# TRANSLATION_FEED_ATOM = None
+# AUTHOR_FEED_ATOM = None
+# AUTHOR_FEED_RSS = None
 
-<span class="c"># Feed generation is usually not desired when developing</span>
-<span class="c"># FEED_ALL_ATOM = None</span>
-<span class="c"># CATEGORY_FEED_ATOM = None</span>
-<span class="c"># TRANSLATION_FEED_ATOM = None</span>
-<span class="c"># AUTHOR_FEED_ATOM = None</span>
-<span class="c"># AUTHOR_FEED_RSS = None</span>
+# Blogroll
+LINKS = ((&#39;Pelican&#39;, &#39;http://getpelican.com/&#39;),
+         (&#39;Python.org&#39;, &#39;http://python.org/&#39;),
+         (&#39;Jinja2&#39;, &#39;http://jinja.pocoo.org/&#39;),
+         )
 
-<span class="c"># Blogroll</span>
-<span class="n">LINKS</span> <span class="o">=</span> <span class="p">((</span><span class="s">&#39;Pelican&#39;</span><span class="p">,</span> <span class="s">&#39;http://getpelican.com/&#39;</span><span class="p">),</span>
-         <span class="p">(</span><span class="s">&#39;Python.org&#39;</span><span class="p">,</span> <span class="s">&#39;http://python.org/&#39;</span><span class="p">),</span>
-         <span class="p">(</span><span class="s">&#39;Jinja2&#39;</span><span class="p">,</span> <span class="s">&#39;http://jinja.pocoo.org/&#39;</span><span class="p">),</span>
-         <span class="p">)</span>
+# Social widget
+SOCIAL = ((&#39;You can add links in your config file&#39;, &#39;#&#39;),
+          (&#39;Another social link&#39;, &#39;#&#39;),)
 
-<span class="c"># Social widget</span>
-<span class="n">SOCIAL</span> <span class="o">=</span> <span class="p">((</span><span class="s">&#39;You can add links in your config file&#39;</span><span class="p">,</span> <span class="s">&#39;#&#39;</span><span class="p">),</span>
-          <span class="p">(</span><span class="s">&#39;Another social link&#39;</span><span class="p">,</span> <span class="s">&#39;#&#39;</span><span class="p">),)</span>
-
-<span class="n">DEFAULT_PAGINATION</span> <span class="o">=</span> <span class="mi">10</span>
+DEFAULT_PAGINATION = 10
 
 
-<span class="c"># Theme</span>
-<span class="n">THEME</span> <span class="o">=</span> <span class="s">&#39;pelican-themes/pelican-bootstrap3&#39;</span>
-<span class="n">COVER_BG_COLOR</span> <span class="o">=</span> <span class="s">&#39;#375152&#39;</span>
-<span class="n">DEFAULT_PAGINATION</span> <span class="o">=</span> <span class="mi">10</span>
+# Theme
+THEME = &#39;pelican-themes/pelican-bootstrap3&#39;
+COVER_BG_COLOR = &#39;#375152&#39;
+DEFAULT_PAGINATION = 10
 
-<span class="c"># Plugin</span>
-<span class="n">PLUGIN_PATHS</span> <span class="o">=</span> <span class="p">[</span><span class="s">&quot;pelican-plugins&quot;</span><span class="p">]</span>
-<span class="n">PLUGINS</span> <span class="o">=</span> <span class="p">[</span> <span class="s">&#39;sitemap&#39;</span><span class="p">,</span> <span class="s">&#39;gravatar&#39;</span><span class="p">,</span> <span class="s">&#39;summary&#39;</span><span class="p">,</span> <span class="s">&#39;neighbors&#39;</span><span class="p">,</span> <span class="s">&#39;related_posts&#39;</span><span class="p">,</span>  <span class="p">]</span>
+# Plugin
+PLUGIN_PATHS = [&quot;pelican-plugins&quot;]
+PLUGINS = [ &#39;sitemap&#39;, &#39;gravatar&#39;, &#39;summary&#39;, &#39;neighbors&#39;, &#39;related_posts&#39;,  ]
 
-<span class="c"># Sitemap</span>
-<span class="n">SITEMAP</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="s">&#39;format&#39;</span><span class="p">:</span> <span class="s">&#39;xml&#39;</span><span class="p">,</span>
-  <span class="s">&#39;priorities&#39;</span><span class="p">:</span> <span class="p">{</span>
-    <span class="s">&#39;articles&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-    <span class="s">&#39;pages&#39;</span><span class="p">:</span> <span class="mf">0.9</span><span class="p">,</span>
-    <span class="s">&#39;indexes&#39;</span><span class="p">:</span> <span class="mf">0.8</span><span class="p">,</span>
-  <span class="p">},</span>
-  <span class="s">&#39;changefreqs&#39;</span><span class="p">:</span> <span class="p">{</span>
-    <span class="s">&#39;indexes&#39;</span><span class="p">:</span> <span class="s">&#39;daily&#39;</span><span class="p">,</span>
-    <span class="s">&#39;articles&#39;</span><span class="p">:</span> <span class="s">&#39;daily&#39;</span><span class="p">,</span>
-    <span class="s">&#39;pages&#39;</span><span class="p">:</span> <span class="s">&#39;weekly&#39;</span>
-  <span class="p">}</span>
-<span class="p">}</span>
-<span class="n">GITHUB_URL</span> <span class="o">=</span> <span class="s">&quot;http://xzap.github.io&quot;</span>
+# Sitemap
+SITEMAP = {
+  &#39;format&#39;: &#39;xml&#39;,
+  &#39;priorities&#39;: {
+    &#39;articles&#39;: 1,
+    &#39;pages&#39;: 0.9,
+    &#39;indexes&#39;: 0.8,
+  },
+  &#39;changefreqs&#39;: {
+    &#39;indexes&#39;: &#39;daily&#39;,
+    &#39;articles&#39;: &#39;daily&#39;,
+    &#39;pages&#39;: &#39;weekly&#39;
+  }
+}
+GITHUB_URL = &quot;http://xzap.github.io&quot;
 
-<span class="n">DISQUS_SITENAME</span> <span class="o">=</span> <span class="s">&quot;xzap&quot;</span>
+DISQUS_SITENAME = &quot;xzap&quot;
 
-<span class="n">FEED_ALL_ATOM</span> <span class="o">=</span> <span class="s">&#39;feeds/all.atom.xml&#39;</span>
-<span class="n">CATEGORY_FEED_ATOM</span> <span class="o">=</span> <span class="s">&#39;feeds/</span><span class="si">%s</span><span class="s">.atom.xml&#39;</span>
+FEED_ALL_ATOM = &#39;feeds/all.atom.xml&#39;
+CATEGORY_FEED_ATOM = &#39;feeds/%s.atom.xml&#39;
 
-<span class="c"># Uncomment following line if you want document-relative URLs when developing</span>
-<span class="c">#RELATIVE_URLS = True</span>
-<span class="n">ARTICLE_URL</span> <span class="o">=</span> <span class="s">&#39;archives/{slug}.html&#39;</span>
-<span class="n">ARTICLE_SAVE_AS</span> <span class="o">=</span> <span class="s">&#39;archives/{slug}.html&#39;</span>
+# Uncomment following line if you want document-relative URLs when developing
+#RELATIVE_URLS = True
+ARTICLE_URL = &#39;archives/{slug}.html&#39;
+ARTICLE_SAVE_AS = &#39;archives/{slug}.html&#39;
 
-<span class="n">YEAR_ARCHIVE_SAVE_AS</span> <span class="o">=</span> <span class="s">&#39;archives/{date:%Y}/index.html&#39;</span>
-<span class="n">MONTH_ARCHIVE_SAVE_AS</span> <span class="o">=</span> <span class="s">&#39;archives/{date:%Y}/{date:%m}/index.html&#39;</span>
-<span class="n">MENUITEMS_AFTER</span> <span class="o">=</span> <span class="p">((</span><span class="s">&#39;RSS&#39;</span><span class="p">,</span> <span class="s">&#39;/feeds/all.atom.xml&#39;</span><span class="p">),)</span>
-<span class="c"># MENUITEMS = ((&#39;RSS&#39;, &#39;/feeds/all.atom.xml&#39;),)</span>
+YEAR_ARCHIVE_SAVE_AS = &#39;archives/{date:%Y}/index.html&#39;
+MONTH_ARCHIVE_SAVE_AS = &#39;archives/{date:%Y}/{date:%m}/index.html&#39;
+MENUITEMS_AFTER = ((&#39;RSS&#39;, &#39;/feeds/all.atom.xml&#39;),)
+# MENUITEMS = ((&#39;RSS&#39;, &#39;/feeds/all.atom.xml&#39;),)
 
-<span class="n">CACHE_CONTENT</span> <span class="o">=</span> <span class="bp">True</span>
-<span class="n">LOAD_CONTENT_CACHE</span> <span class="o">=</span> <span class="bp">True</span>
-<span class="n">CHECK_MODIFIED_METHOD</span> <span class="o">=</span> <span class="s">&#39;mtime&#39;</span>
+CACHE_CONTENT = True
+LOAD_CONTENT_CACHE = True
+CHECK_MODIFIED_METHOD = &#39;mtime&#39;
 </pre></div>
-</td></tr></table>
             </div>
             <!-- /.entry-content -->
     <hr/>
