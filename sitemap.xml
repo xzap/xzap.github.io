@@ -5,30 +5,44 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>http://xzap.github.io/</loc>
-<lastmod>2015-05-28T16:55:26-00:00</lastmod>
+<lastmod>2015-05-29T11:31:28-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.8</priority>
 </url>
 
 <url>
 <loc>http://xzap.github.io/archives.html</loc>
-<lastmod>2015-05-28T16:55:26-00:00</lastmod>
+<lastmod>2015-05-29T11:31:28-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.8</priority>
 </url>
 
 <url>
 <loc>http://xzap.github.io/tags.html</loc>
-<lastmod>2015-05-28T16:55:26-00:00</lastmod>
+<lastmod>2015-05-29T11:31:28-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.8</priority>
 </url>
 
 <url>
 <loc>http://xzap.github.io/categories.html</loc>
-<lastmod>2015-05-28T16:55:26-00:00</lastmod>
+<lastmod>2015-05-29T11:31:28-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.8</priority>
+</url>
+
+<url>
+<loc>http://xzap.github.io/archives/markdown_basics.html</loc>
+<lastmod>2015-05-29T09:58:00+08:00</lastmod>
+<changefreq>daily</changefreq>
+<priority>1</priority>
+</url>
+
+<url>
+<loc>http://xzap.github.io/archives/markdown_syntax.html</loc>
+<lastmod>2015-05-29T09:54:00+08:00</lastmod>
+<changefreq>daily</changefreq>
+<priority>1</priority>
 </url>
 
 <url>
@@ -36,6 +50,13 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <lastmod>2015-05-26T16:11:00+08:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>1</priority>
+</url>
+
+<url>
+<loc>http://xzap.github.io/category/markdown.html</loc>
+<lastmod>2015-05-29T09:58:00+08:06</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.8</priority>
 </url>
 
 <url>
@@ -53,8 +74,15 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
+<loc>http://xzap.github.io/tag/markdown.html</loc>
+<lastmod>2015-05-29T09:58:00+08:06</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.8</priority>
+</url>
+
+<url>
 <loc>http://xzap.github.io/author/xzap.html</loc>
-<lastmod>2015-05-26T16:11:00+08:06</lastmod>
+<lastmod>2015-05-29T09:58:00+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.8</priority>
 </url>
