@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="zh"
+>
+<head>
+    <title>Pelican 中使用多说评论系统 - xzap's 缓存区</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <link href="http://xzap.github.io/favicon.ico" rel="icon">
+
+<link rel="canonical" href="http://xzap.github.io/archives/pelican_duoshuo.html">
+
+        <meta name="author" content="xzap" />
+        <meta name="keywords" content="Pelican， 多说" />
+        <meta name="description" content="折腾 Pelican 两天了，感觉很好用，很容易上手。照着教程使用了 disqus 的评论系统， 超简单的在配置文件 pelicanconf.py 中加入 DISQUS_SITENAME = shortname 就可以了。看起来也不错， 因为刚开始用没人给我评论过。但是问题也有。" />
+
+        <meta property="og:site_name" content="xzap's 缓存区" />
+        <meta property="og:type" content="article"/>
+        <meta property="og:title" content="Pelican 中使用多说评论系统"/>
+        <meta property="og:url" content="http://xzap.github.io/archives/pelican_duoshuo.html"/>
+        <meta property="og:description" content="折腾 Pelican 两天了，感觉很好用，很容易上手。照着教程使用了 disqus 的评论系统， 超简单的在配置文件 pelicanconf.py 中加入 DISQUS_SITENAME = shortname 就可以了。看起来也不错， 因为刚开始用没人给我评论过。但是问题也有。"/>
+        <meta property="article:published_time" content="2015-05-30" />
+            <meta property="article:section" content="Pelican" />
+            <meta property="article:tag" content="Pelican， 多说" />
+            <meta property="article:author" content="xzap" />
+
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="http://xzap.github.io/theme/css/bootstrap.min.css" type="text/css"/>
+    <link href="http://xzap.github.io/theme/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="http://xzap.github.io/theme/css/pygments/github.css" rel="stylesheet">
+    <link rel="stylesheet" href="http://xzap.github.io/theme/css/style.css" type="text/css"/>
+
+        <link href="http://xzap.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
+              title="xzap's 缓存区 ATOM Feed"/>
+
+</head>
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+	<div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="http://xzap.github.io/" class="navbar-brand">
+xzap's 缓存区            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+                        <li >
+                            <a href="http://xzap.github.io/category/markdown.html">Markdown</a>
+                        </li>
+                        <li class="active">
+                            <a href="http://xzap.github.io/category/pelican.html">Pelican</a>
+                        </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="http://xzap.github.io/archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</div> <!-- /.navbar -->
+<!-- Banner -->
+<!-- End Banner -->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9">
+
+    <section id="content">
+        <article>
+            <header class="page-header">
+                <h1>
+                    <a href="http://xzap.github.io/archives/pelican_duoshuo.html"
+                       rel="bookmark"
+                       title="Permalink to Pelican 中使用多说评论系统">
+                        Pelican 中使用多说评论系统
+                    </a>
+                </h1>
+            </header>
+            <div class="entry-content">
+                <div class="panel">
+                    <div class="panel-body">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2015-05-30T15:54:00+08:00"> 2015-05-30 15:54 (星期六)</time>
+    </span>
+
+
+
+<span class="label label-default">Tags</span>
+	<a href="http://xzap.github.io/tag/pelican-duo-shuo.html">Pelican， 多说</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                </div>
+                
+
+<p>折腾 <a href="http://getpelican.com" title="Pelican">Pelican</a> 两天了，感觉很好用，很容易上手。照着教程使用了 <a href="https://disqus.com" title="Disqus">disqus</a> 的评论系统，
+超简单的在配置文件 <em>pelicanconf.py</em> 中加入 <code>DISQUS_SITENAME = shortname</code> 就可以了。看起来也不错，
+因为刚开始用没人给我评论过。但是问题也有。</p>
+
+
+<ol>
+<li>用的是国外的社交账号。伟大的墙的关系，那些网站在中国是不存在的啊</li>
+<li>首页打开的时候,加载了一个 <em>disqus_scripts.html</em> 的页面，那个页面会加载一个统计的count.js。然后
+   大家都知道的伟大的墙的存在，其中使用到了<em>google</em>的统计代码，所以会导致完全打开页面会很慢很慢。
+   当然也可以在模板的 <em>base.html</em> 中将 include 这个页面这句的代码删除已解决这个问题。</li>
+<li>打开页面加载评论系统的速度也不稳定，甚至加载失败的问题也有。</li>
+</ol>
+<p>所以果断弃之改用国内的<a href="http://duoshuo.com" title="多说">多说</a>来替换掉这个系统。步骤也很简单两分钟搞定。</p>
+<ol>
+<li>
+<p>上<a href="http://duoshuo.com" title="多说">多说</a>点击<strong>我要安装</strong>随便用个国内的社交账号登陆上去。然后再填点信息，最后会得到一段通用的代码</p>
+<div class="highlight"><pre><span class="c">&lt;!-- 多说评论框 start --&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;ds-thread&quot;</span> <span class="na">data-thread-key=</span><span class="s">&quot;请将此处替换成文章在你的站点中的ID&quot;</span> <span class="na">data-title=</span><span class="s">&quot;请替换成文章的标题&quot;</span> <span class="na">data-url=</span><span class="s">&quot;请替换成文章的网址&quot;</span><span class="nt">&gt;&lt;/div&gt;</span>
+<span class="c">&lt;!-- 多说评论框 end --&gt;</span>
+<span class="c">&lt;!-- 多说公共JS代码 start (一个网页只需插入一次) --&gt;</span>
+<span class="nt">&lt;script </span><span class="na">type=</span><span class="s">&quot;text/javascript&quot;</span><span class="nt">&gt;</span>
+<span class="kd">var</span> <span class="nx">duoshuoQuery</span> <span class="o">=</span> <span class="p">{</span><span class="nx">short_name</span><span class="o">:</span><span class="s2">&quot;多说用户名&quot;</span><span class="p">};</span>
+    <span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+        <span class="kd">var</span> <span class="nx">ds</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s1">&#39;script&#39;</span><span class="p">);</span>
+        <span class="nx">ds</span><span class="p">.</span><span class="nx">type</span> <span class="o">=</span> <span class="s1">&#39;text/javascript&#39;</span><span class="p">;</span><span class="nx">ds</span><span class="p">.</span><span class="nx">async</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+        <span class="nx">ds</span><span class="p">.</span><span class="nx">src</span> <span class="o">=</span> <span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">protocol</span> <span class="o">==</span> <span class="s1">&#39;https:&#39;</span> <span class="o">?</span> <span class="s1">&#39;https:&#39;</span> <span class="o">:</span> <span class="s1">&#39;http:&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;//static.duoshuo.com/embed.js&#39;</span><span class="p">;</span>
+        <span class="nx">ds</span><span class="p">.</span><span class="nx">charset</span> <span class="o">=</span> <span class="s1">&#39;UTF-8&#39;</span><span class="p">;</span>
+        <span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementsByTagName</span><span class="p">(</span><span class="s1">&#39;head&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> 
+         <span class="o">||</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementsByTagName</span><span class="p">(</span><span class="s1">&#39;body&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]).</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">ds</span><span class="p">);</span>
+    <span class="p">})();</span>
+    <span class="nt">&lt;/script&gt;</span>
+<span class="c">&lt;!-- 多说公共JS代码 end --&gt;</span>
+</pre></div>
+
+
+</li>
+<li>
+<p>配置文件中如 <em>disqus</em> 一样加入一句 <code>DUOSHUO_SITENAME = "多说用户名"</code> （必须全部大写，否则pelican不认。） </p>
+</li>
+<li>进入模板的 <strong>includes</strong> 文件夹，新建一个文件，如：“duoshuo.html”。把上面的内容复制进去。<ol>
+<li>将替换里的那几句分别替为 <code>{{ article.slug }}</code>  <code>data-title="{{ article.title }}</code> <code>data-url="{{ SITEURL }}/{{ article.url }}"</code></li>
+<li>首尾分别加入 <code>{% if DUOSHUO_SITENAME %}</code> 和 <code>{% endif %}</code></li>
+<li>将多说的用户名改成 <code>{short_name: '{{ DUOSHUO_SITENAME }}'};</code> （可选）</li>
+</ol>
+</li>
+<li>回到模板文件夹找到 <em>article.html</em> 文件，在很多 <em>include</em> 的地方加入 <code>{% include 'includes/duoshuo.html' %}</code> 这句。</li>
+<li>完工。</li>
+</ol>
+<p>最后的 <em>duoshuo.html</em> 文件里面像这样：</p>
+<div class="highlight"><pre>{% if DUOSHUO_SITENAME %}
+<span class="c">&lt;!-- 多说评论框 start --&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;ds-thread&quot;</span> <span class="na">data-thread-key=</span><span class="s">&quot;{{ article.slug }}&quot;</span> <span class="na">data-title=</span><span class="s">&quot;{{ article.title }}&quot;</span> <span class="na">data-url=</span><span class="s">&quot;{{ SITEURL }}/{{ article.url }}&quot;</span><span class="nt">&gt;&lt;/div&gt;</span>
+<span class="c">&lt;!-- 多说评论框 end --&gt;</span>
+<span class="c">&lt;!-- 多说公共JS代码 start (一个网页只需插入一次) --&gt;</span>
+    <span class="nt">&lt;script </span><span class="na">type=</span><span class="s">&quot;text/javascript&quot;</span><span class="nt">&gt;</span>
+    <span class="kd">var</span> <span class="nx">duoshuoQuery</span> <span class="o">=</span> <span class="p">{</span><span class="nx">short_name</span><span class="o">:</span> <span class="s1">&#39;{{ DUOSHUO_SITENAME }}&#39;</span><span class="p">};</span>
+    <span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+        <span class="kd">var</span> <span class="nx">ds</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s1">&#39;script&#39;</span><span class="p">);</span>
+        <span class="nx">ds</span><span class="p">.</span><span class="nx">type</span> <span class="o">=</span> <span class="s1">&#39;text/javascript&#39;</span><span class="p">;</span>
+        <span class="nx">ds</span><span class="p">.</span><span class="nx">async</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+        <span class="nx">ds</span><span class="p">.</span><span class="nx">src</span> <span class="o">=</span> <span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">protocol</span> <span class="o">==</span> <span class="s1">&#39;https:&#39;</span> <span class="o">?</span> <span class="s1">&#39;https:&#39;</span> <span class="o">:</span> <span class="s1">&#39;http:&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;//static.duoshuo.com/embed.js&#39;</span><span class="p">;</span>
+        <span class="nx">ds</span><span class="p">.</span><span class="nx">charset</span> <span class="o">=</span> <span class="s1">&#39;UTF-8&#39;</span><span class="p">;</span>
+        <span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementsByTagName</span><span class="p">(</span><span class="s1">&#39;head&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> 
+         <span class="o">||</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementsByTagName</span><span class="p">(</span><span class="s1">&#39;body&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]).</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">ds</span><span class="p">);</span>
+    <span class="p">})();</span>
+    <span class="nt">&lt;/script&gt;</span>
+<span class="c">&lt;!-- 多说公共JS代码 end --&gt;</span>
+{% endif %}
+</pre></div>
+            </div>
+            <!-- /.entry-content -->
+<!-- 多说评论框 start -->
+    <div class="ds-thread" data-thread-key="pelican_duoshuo" data-title="Pelican 中使用多说评论系统" data-url="http://xzap.github.io/archives/pelican_duoshuo.html"></div>
+<!-- 多说评论框 end -->
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+    <script type="text/javascript">
+    var duoshuoQuery = {short_name: 'xzap'};
+    (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';
+        ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] 
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+    </script>
+<!-- 多说公共JS代码 end -->
+
+        </article>
+    </section>
+
+        </div>
+        <div class="col-sm-3" id="sidebar">
+            <aside>
+
+<section class="well well-sm">
+    <ul class="list-group list-group-flush">
+            <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Social</span></h4>
+              <ul class="list-group" id="social">
+                <li class="list-group-item"><a href="https://github.com/xzap"><i class="fa fa-github-square fa-lg"></i> Github</a></li>
+                <li class="list-group-item"><a href="http://weibo.com/xzap"><i class="fa fa-weibo fa-lg"></i> Sina Weibo</a></li>
+                <li class="list-group-item"><a href="http://jixinyan2008.blog.163.com"><i class="fa fa-heart fa-lg"></i> My Baby</a></li>
+                <li class="list-group-item"><a href="/feeds/all.atom.xml"><i class="fa fa-rss-square fa-lg"></i> Atom Feed</a></li>
+              </ul>
+            </li>
+
+
+
+            <li class="list-group-item"><a href="http://xzap.github.io/tags.html"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
+                <ul class="list-group " id="tags">
+                    <li class="list-group-item tag-1">
+                        <a href="http://xzap.github.io/tag/markdown.html">
+                            Markdown
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="http://xzap.github.io/tag/pelican-duo-shuo.html">
+                            Pelican， 多说
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="http://xzap.github.io/tag/pelican.html">
+                            Pelican
+                        </a>
+                    </li>
+                </ul>
+            </li>
+    <li class="list-group-item"><h4><i class="fa fa-external-link-square fa-lg"></i><span class="icon-label">Links</span></h4>
+      <ul class="list-group" id="links">
+        <li class="list-group-item">
+            <a href="http://getpelican.com/" target="_blank">
+                Pelican
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="http://python.org/" target="_blank">
+                Python.org
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="http://jinja.pocoo.org/" target="_blank">
+                Jinja2
+            </a>
+        </li>
+      </ul>
+    </li>
+    </ul>
+</section>
+            </aside>
+        </div>
+    </div>
+</div>
+<footer>
+   <div class="container">
+      <hr>
+      <div class="row">
+         <div class="col-xs-10">&copy; 2015 xzap
+            &middot; Powered by <a href="https://github.com/DandyDev/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
+            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
+            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
+         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
+      </div>
+   </div>
+</footer>
+<script src="http://xzap.github.io/theme/js/jquery.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="http://xzap.github.io/theme/js/bootstrap.min.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="http://xzap.github.io/theme/js/respond.min.js"></script>
+
+<!--  -->
+
+
+</body>
+</html>
