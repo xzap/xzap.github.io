@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>xzap's 缓存区</title><link>http://xzap.github.io/</link><description></description><atom:link href="http://xzap.github.io/feeds%5Cxzap.rss.xml" rel="self"></atom:link><lastBuildDate>Sat, 30 May 2015 15:54:00 +0800</lastBuildDate><item><title>Pelican 中使用多说评论系统</title><link>http://xzap.github.io/archives/pelican_duoshuo.html</link><description>
-
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>xzap's 缓存区</title><link>http://xzap.github.io/</link><description></description><atom:link href="http://xzap.github.io/feeds%5Cxzap.rss.xml" rel="self"></atom:link><lastBuildDate>Sat, 30 May 2015 15:54:00 +0800</lastBuildDate><item><title>Pelican 中使用多说评论系统</title><link>http://xzap.github.io/archives/pelican_duoshuo.html</link><description>&lt;p&gt;环境使然。很多国外的服务都无法使用，利用国外社交账号登陆的disqus自然就也不是那么好用了。&lt;/p&gt;
 &lt;p&gt;折腾 &lt;a href="http://getpelican.com" title="Pelican"&gt;Pelican&lt;/a&gt; 两天了，感觉很好用，很容易上手。照着教程使用了 &lt;a href="https://disqus.com" title="Disqus"&gt;disqus&lt;/a&gt; 的评论系统，
 超简单的在配置文件 &lt;em&gt;pelicanconf.py&lt;/em&gt; 中加入 &lt;code&gt;DISQUS_SITENAME = shortname&lt;/code&gt; 就可以了。看起来也不错，
 因为刚开始用没人给我评论过。但是问题也有。&lt;/p&gt;
-
-
 &lt;ol&gt;
 &lt;li&gt;用的是国外的社交账号。伟大的墙的关系，那些网站在中国是不存在的啊&lt;/li&gt;
 &lt;li&gt;首页打开的时候,加载了一个 &lt;em&gt;disqus_scripts.html&lt;/em&gt; 的页面，那个页面会加载一个统计的count.js。然后
