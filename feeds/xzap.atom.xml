@@ -1,5 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>xzap's 缓存区</title><link href="http://xzap.github.io/" rel="alternate"></link><link href="http://xzap.github.io/feeds%5Cxzap.atom.xml" rel="self"></link><id>http://xzap.github.io/</id><updated>2015-05-30T15:54:00+08:00</updated><entry><title>Pelican 中使用多说评论系统</title><link href="http://xzap.github.io/archives/pelican_duoshuo.html" rel="alternate"></link><updated>2015-05-30T15:54:00+08:00</updated><author><name>xzap</name></author><id>tag:xzap.github.io,2015-05-30:archives/pelican_duoshuo.html</id><summary type="html">&lt;p&gt;折腾 &lt;a href="http://getpelican.com" title="Pelican"&gt;Pelican&lt;/a&gt; 两天了，感觉很好用，很容易上手。照着教程使用了 &lt;a href="https://disqus.com" title="Disqus"&gt;disqus&lt;/a&gt; 的评论系统，
+<feed xmlns="http://www.w3.org/2005/Atom"><title>xzap's 缓存区</title><link href="http://xzap.github.io/" rel="alternate"></link><link href="http://xzap.github.io/feeds%5Cxzap.atom.xml" rel="self"></link><id>http://xzap.github.io/</id><updated>2015-06-07T15:54:00+08:00</updated><entry><title>在Win系统下右键启动ConEmu和Msys2</title><link href="http://xzap.github.io/archives/conemu_msys.html" rel="alternate"></link><updated>2015-06-07T15:54:00+08:00</updated><author><name>xzap</name></author><id>tag:xzap.github.io,2015-06-07:archives/conemu_msys.html</id><summary type="html">&lt;p&gt;在win系统下使用好点的命令行，虚拟终端用 ConEmu 很好用。至于 Linux 的命令行移植选来选取选了个 Msys2。比Cygwin
+轻量得多，而又不像 Gitbash 那样过于简单。特别是还有非常好用的移植自 Archlinux 的 Pacman 的包管理系统。特别是更换了
+国内源后速度快了很多。&lt;/p&gt;
+
+
+&lt;p&gt;然后当然是要右键打开才爽的，折腾了好久，才搞出来。首先是注册表：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;Windows Registry Editor Version 5.00
+
+&lt;span class="k"&gt;[&lt;/span&gt;&lt;span class="nb"&gt;HKEY_CLASSES_ROOT&lt;/span&gt;&lt;span class="k"&gt;\Directory\Background\shell\ConEmu Here]&lt;/span&gt;
+&lt;span class="na"&gt;&amp;quot;Icon&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;F:\\ConEmuPack\\ConEmu64.exe,0&amp;quot;&lt;/span&gt;
+
+&lt;span class="k"&gt;[&lt;/span&gt;&lt;span class="nb"&gt;HKEY_CLASSES_ROOT&lt;/span&gt;&lt;span class="k"&gt;\Directory\Background\shell\ConEmu Here\command]&lt;/span&gt;
+&lt;span class="na"&gt;@&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;\&amp;quot;F:\\ConEmuPack\\ConEmu64.exe\&amp;quot; \&amp;quot;/here\&amp;quot; /cmd -cur_console:n {msys2} &amp;quot;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;然后就是在 ConEmu 里增加个名叫 msys2 的 Task。内容如下：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;set CHERE_INVOKING=1 &amp;amp;e:\msys64\usr\bin\sh.exe -c &amp;quot;MSYSTEM=MINGW64 exec /bin/bash --login -i -new_console:C:&amp;quot;E:\msys64\msys2.ico&amp;quot;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;大功告成&lt;/p&gt;</summary><category term="ConEmu"></category><category term="Msys2"></category></entry><entry><title>Pelican 中使用多说评论系统</title><link href="http://xzap.github.io/archives/pelican_duoshuo.html" rel="alternate"></link><updated>2015-05-30T15:54:00+08:00</updated><author><name>xzap</name></author><id>tag:xzap.github.io,2015-05-30:archives/pelican_duoshuo.html</id><summary type="html">&lt;p&gt;折腾 &lt;a href="http://getpelican.com" title="Pelican"&gt;Pelican&lt;/a&gt; 两天了，感觉很好用，很容易上手。照着教程使用了 &lt;a href="https://disqus.com" title="Disqus"&gt;disqus&lt;/a&gt; 的评论系统，
 超简单的在配置文件 &lt;em&gt;pelicanconf.py&lt;/em&gt; 中加入 &lt;code&gt;DISQUS_SITENAME = shortname&lt;/code&gt; 就可以了。看起来也不错，
 因为刚开始用没人给我评论过。但是问题也有。&lt;/p&gt;
 &lt;ol&gt;
