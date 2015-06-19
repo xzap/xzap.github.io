@@ -123,6 +123,7 @@ xzap's 缓存区            </a>
 <p>3.99刀的只有64M内存，1.5g空间，每月100g流量。做vps其实是很不称职的，但是拿来翻个墙那是绝对够了。反正放网站
 就在这里就可以了，免费还够Geek。而9.9美刀的就可以放空间可以耍耍了。 不过其实意义也不大，反正就是翻个墙而已。
 而且上面翻墙跑流量的太多，也不稳定。</p>
+<p>下面简单讲下怎么架设Shadowsocks和VPN：</p>
 <ol>
 <li>
 <p>进入后台kiwivm，先把服务停止，然后右侧Install new OS。选centos6就可以。小服务器加就翻墙装minimal就足够了。</p>
@@ -133,11 +134,14 @@ xzap's 缓存区            </a>
 的goagent的配置的代理协议改成socksv5就可以，省心省力。而且速度也还可以。</p>
 </li>
 <li>
-<p>架设vpn就更简单了。虽然后台也有自带安装的openvpn，但是默认是证书链接的。麻烦！弃之。还是习惯用账号密码。ssh连上去。
-        wget --no-check-certificate https://github.com/lknife/openvz_pptp_centos-debian-ubuntu/raw/master/openvps_vpn_centos-5-6.sh
-　      chmod a+x openvps_vpn_centos-5-6.sh 
-　      bash openvps_vpn_centos-5-6.sh
-选第二项<code>2. my system is centos6 32bit or 64bit(they are support)</code>，然后就好了。呵呵！要添加新的账号只需要重新运行脚本选
+<p>架设vpn就更简单了。虽然后台也有自带安装的openvpn，但是默认是证书链接的。麻烦！弃之。还是习惯用账号密码。ssh连上去。</p>
+<div class="highlight"><pre>wget --no-check-certificate https://github.com/lknife/openvz_pptp_centos-debian-ubuntu/raw/master/openvps_vpn_centos-5-6.sh
+chmod a+x openvps_vpn_centos-5-6.sh
+bash openvps_vpn_centos-5-6.sh
+</pre></div>
+
+
+<p>选第二项<code>2. my system is centos6 32bit or 64bit(they are support)</code>，然后就好了。呵呵！要添加新的账号只需要重新运行脚本选
 第四项就好了。也可以直接去修改 /etc/ppp/chap-secrets 这个文件。总之是很简单。</p>
 </li>
 </ol>
@@ -185,23 +189,13 @@ xzap's 缓存区            </a>
             <li class="list-group-item"><a href="http://xzap.github.io/tags.html"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
                 <ul class="list-group " id="tags">
                     <li class="list-group-item tag-1">
-                        <a href="http://xzap.github.io/tag/pelican.html">
-                            Pelican
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-1">
                         <a href="http://xzap.github.io/tag/markdown.html">
                             Markdown
                         </a>
                     </li>
-                    <li class="list-group-item tag-4">
-                        <a href="http://xzap.github.io/tag/duo-shuo.html">
-                            多说
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-4">
-                        <a href="http://xzap.github.io/tag/conemu.html">
-                            ConEmu
+                    <li class="list-group-item tag-1">
+                        <a href="http://xzap.github.io/tag/pelican.html">
+                            Pelican
                         </a>
                     </li>
                     <li class="list-group-item tag-4">
@@ -210,8 +204,8 @@ xzap's 缓存区            </a>
                         </a>
                     </li>
                     <li class="list-group-item tag-4">
-                        <a href="http://xzap.github.io/tag/vpn.html">
-                            Vpn
+                        <a href="http://xzap.github.io/tag/shadowsocks.html">
+                            Shadowsocks
                         </a>
                     </li>
                     <li class="list-group-item tag-4">
@@ -220,8 +214,18 @@ xzap's 缓存区            </a>
                         </a>
                     </li>
                     <li class="list-group-item tag-4">
-                        <a href="http://xzap.github.io/tag/shadowsocks.html">
-                            Shadowsocks
+                        <a href="http://xzap.github.io/tag/duo-shuo.html">
+                            多说
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="http://xzap.github.io/tag/vpn.html">
+                            Vpn
+                        </a>
+                    </li>
+                    <li class="list-group-item tag-4">
+                        <a href="http://xzap.github.io/tag/conemu.html">
+                            ConEmu
                         </a>
                     </li>
                 </ul>
