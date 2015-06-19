@@ -1,5 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>xzap's 缓存区</title><link href="http://xzap.github.io/" rel="alternate"></link><link href="http://xzap.github.io/feeds/all.atom.xml" rel="self"></link><id>http://xzap.github.io/</id><updated>2015-06-07T15:54:00+08:00</updated><entry><title>在Win系统下右键启动ConEmu和Msys2</title><link href="http://xzap.github.io/archives/conemu_msys.html" rel="alternate"></link><updated>2015-06-07T15:54:00+08:00</updated><author><name>xzap</name></author><id>tag:xzap.github.io,2015-06-07:archives/conemu_msys.html</id><summary type="html">&lt;p&gt;在win系统下使用好点的命令行，虚拟终端用 ConEmu 很好用。至于 Linux 的命令行移植选来选取选了个 Msys2。比Cygwin
+<feed xmlns="http://www.w3.org/2005/Atom"><title>xzap's 缓存区</title><link href="http://xzap.github.io/" rel="alternate"></link><link href="http://xzap.github.io/feeds/all.atom.xml" rel="self"></link><id>http://xzap.github.io/</id><updated>2015-06-19T23:54:00+08:00</updated><entry><title>利用用搬瓦工(bandwagonhost)的廉价vps翻墙</title><link href="http://xzap.github.io/archives/bandwagonhost.html" rel="alternate"></link><updated>2015-06-19T23:54:00+08:00</updated><author><name>xzap</name></author><id>tag:xzap.github.io,2015-06-19:archives/bandwagonhost.html</id><summary type="html">&lt;p&gt;随着伟大的墙越来越高，Goagent基本上算是完蛋了。基本上要靠运气才能用了。所以前面一直在用改hosts的办法
+翻墙，但是可用ip也越来越少，而且使用时间基本上没有过一个月的。虽然早就听说过搬瓦工，但是上它的首页去
+看看，高昂的价格还是蛮吓人的。今天无意间看到竟然有独立的购买页面一年只需要3.99美金就可以。&lt;a href="https://bandwagonhost.com/cart.php?a=confproduct&amp;amp;i=0"&gt;这里&lt;/a&gt;。
+用PayPal支付，用掉我24.81人民币。当然了，有钱可以上更好的。&lt;a href="https://bandwagonhost.com/cart.php?a=confproduct&amp;amp;i=2"&gt;这里&lt;/a&gt;。更具体的看&lt;a href="http://www.banwagong.com/35.html"&gt;这里&lt;/a&gt;吧！&lt;/p&gt;
+
+
+&lt;p&gt;3.99刀的只有64M内存，1.5g空间，每月100g流量。做vps其实是很不称职的，但是拿来翻个墙那是绝对够了。反正放网站
+就在这里就可以了，免费还够Geek。而9.9美刀的就可以放空间可以耍耍了。 不过其实意义也不大，反正就是翻个墙而已。
+而且上面翻墙跑流量的太多，也不稳定。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;进入后台kiwivm，先把服务停止，然后右侧Install new OS。选centos6就可以。小服务器加就翻墙装minimal就足够了。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;架设Shadowsocks，后台自带，So Easy！点到左侧最下面安装就可以了，不仅自动架设好，
+本地客户端的下载链接也有，还有设置图解。真是贴心啊。按网页操作下。然后只需要把原来Chrome里的SwitchySharp中
+的goagent的配置的代理协议改成socksv5就可以，省心省力。而且速度也还可以。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;架设vpn就更简单了。虽然后台也有自带安装的openvpn，但是默认是证书链接的。麻烦！弃之。还是习惯用账号密码。ssh连上去。
+    &lt;code&gt;wget --no-check-certificate https://github.com/lknife/openvz_pptp_centos-debian-ubuntu/raw/master/openvps_vpn_centos-5-6.sh
+　  chmod a+x openvps_vpn_centos-5-6.sh 
+　  bash openvps_vpn_centos-5-6.sh&lt;/code&gt;
+选第二项&lt;code&gt;2. my system is centos6 32bit or 64bit(they are support)&lt;/code&gt;，然后就好了。呵呵！要添加新的账号只需要重新运行脚本选
+第四项就好了。也可以直接去修改 /etc/ppp/chap-secrets 这个文件。总之是很简单。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;从来没有这么轻松的翻过墙，真是惬意啊！25元不到翻一年墙怎么都值啊。&lt;/p&gt;</summary><category term="Bandwagonhost"></category><category term="Vpn"></category><category term="Shadowsocks"></category></entry><entry><title>在Win系统下右键启动ConEmu和Msys2</title><link href="http://xzap.github.io/archives/conemu_msys.html" rel="alternate"></link><updated>2015-06-07T15:54:00+08:00</updated><author><name>xzap</name></author><id>tag:xzap.github.io,2015-06-07:archives/conemu_msys.html</id><summary type="html">&lt;p&gt;在win系统下使用好点的命令行，虚拟终端用 ConEmu 很好用。至于 Linux 的命令行移植选来选取选了个 Msys2。比Cygwin
 轻量得多，而又不像 Gitbash 那样过于简单。特别是还有非常好用的移植自 Archlinux 的 Pacman 的包管理系统。特别是更换了
 国内源后速度快了很多。&lt;/p&gt;
 
