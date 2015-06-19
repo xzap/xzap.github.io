@@ -19,9 +19,9 @@
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;架设vpn就更简单了。虽然后台也有自带安装的openvpn，但是默认是证书链接的。麻烦！弃之。还是习惯用账号密码。ssh连上去。
-    &lt;code&gt;wget --no-check-certificate https://github.com/lknife/openvz_pptp_centos-debian-ubuntu/raw/master/openvps_vpn_centos-5-6.sh
-　  chmod a+x openvps_vpn_centos-5-6.sh 
-　  bash openvps_vpn_centos-5-6.sh&lt;/code&gt;
+        wget --no-check-certificate https://github.com/lknife/openvz_pptp_centos-debian-ubuntu/raw/master/openvps_vpn_centos-5-6.sh
+　      chmod a+x openvps_vpn_centos-5-6.sh 
+　      bash openvps_vpn_centos-5-6.sh
 选第二项&lt;code&gt;2. my system is centos6 32bit or 64bit(they are support)&lt;/code&gt;，然后就好了。呵呵！要添加新的账号只需要重新运行脚本选
 第四项就好了。也可以直接去修改 /etc/ppp/chap-secrets 这个文件。总之是很简单。&lt;/p&gt;
 &lt;/li&gt;
