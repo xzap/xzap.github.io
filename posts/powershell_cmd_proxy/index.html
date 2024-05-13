@@ -7,7 +7,7 @@
         <title>Powershell或cmd设置代理 - Xzap&#39;s 缓存区</title><meta name="Description" content=""><meta property="og:title" content="Powershell或cmd设置代理" />
 <meta property="og:description" content="Powershell或cmd设置代理 设置代理 netsh winhttp set proxy 127.0.0.1:10808 取消代理 netsh winhttp reset proxy 查看代理 netsh winhttp show proxy 临时设置代理 $Env:http_proxy=&#34;http://127.0.0.1:10809&#34;; $Env:https_proxy=&#34;http://127.0.0.1:10809&#34;; 还是这句比较好用 $PSDefaultParameterValues = @{ &#34;*:Proxy&#34;=&#34;http://127.0.0.1:10809&#34; } Scoop代" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://xzap.gitee.io/posts/powershell_cmd_proxy/" /><meta property="article:section" content="posts" />
+<meta property="og:url" content="http://xzap.github.io/posts/powershell_cmd_proxy/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2021-03-12T05:54:00+08:00" />
 <meta property="article:modified_time" content="2021-03-12T05:54:00+08:00" /><meta property="og:site_name" content="Xzap&#39;s 缓存区" />
 
@@ -17,7 +17,7 @@
 <meta name="application-name" content="Xzap&#39;s 缓存区">
 <meta name="apple-mobile-web-app-title" content="Xzap&#39;s 缓存区"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://xzap.gitee.io/posts/powershell_cmd_proxy/" /><link rel="prev" href="http://xzap.gitee.io/posts/switch-wsl2/" /><link rel="next" href="http://xzap.gitee.io/posts/yanzhengma/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"><script type="application/ld+json">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://xzap.github.io/posts/powershell_cmd_proxy/" /><link rel="prev" href="http://xzap.github.io/posts/switch-wsl2/" /><link rel="next" href="http://xzap.github.io/posts/yanzhengma/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"><script type="application/ld+json">
     {
         "@context": "http://schema.org",
         "@type": "BlogPosting",
@@ -25,9 +25,9 @@
         "inLanguage": "zh-CN",
         "mainEntityOfPage": {
             "@type": "WebPage",
-            "@id": "http:\/\/xzap.gitee.io\/posts\/powershell_cmd_proxy\/"
+            "@id": "http:\/\/xzap.github.io\/posts\/powershell_cmd_proxy\/"
         },"genre": "posts","keywords": "Powershell, proxy","wordcount":  84 ,
-        "url": "http:\/\/xzap.gitee.io\/posts\/powershell_cmd_proxy\/","datePublished": "2021-03-12T05:54:00+08:00","dateModified": "2021-03-12T05:54:00+08:00","publisher": {
+        "url": "http:\/\/xzap.github.io\/posts\/powershell_cmd_proxy\/","datePublished": "2021-03-12T05:54:00+08:00","dateModified": "2021-03-12T05:54:00+08:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
                 "@type": "Person",
@@ -97,7 +97,7 @@
         <div id="search-dropdown-mobile"></div>
     </div><main class="main">
                 <div class="container"><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Powershell或cmd设置代理</h1><div class="post-meta">
-            <div class="post-meta-line"><span class="post-author"><a href="https://xzap.gitee.io" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>xzap</a>
+            <div class="post-meta-line"><span class="post-author"><a href="https://xzap.github.io" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>xzap</a>
 </span>&nbsp;<span class="post-category">收录于 <a href="/categories/powershell/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Powershell</a></span></div>
             <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2021-03-12">2021-03-12</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 84 字&nbsp;
                 <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 1 分钟&nbsp;</div>
@@ -144,7 +144,7 @@ $Env:https_proxy=&#34;http://127.0.0.1:10809&#34;;
 </article></div>
             </main><footer class="footer">
         <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.120.4">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
-                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2024</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://xzap.gitee.io" target="_blank">xzap</a></span></div>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2024</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://xzap.github.io" target="_blank">xzap</a></span></div>
         </div>
     </footer></div>
 

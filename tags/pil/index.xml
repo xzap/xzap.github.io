@@ -1,15 +1,15 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>PIL - 标签 - Xzap&#39;s 缓存区</title>
-        <link>http://xzap.gitee.io/tags/pil/</link>
+        <link>http://xzap.github.io/tags/pil/</link>
         <description>PIL - 标签 - Xzap&#39;s 缓存区</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>xzap@163.com (xzap)</managingEditor>
-            <webMaster>xzap@163.com (xzap)</webMaster><lastBuildDate>Sat, 04 Dec 2021 15:54:00 &#43;0800</lastBuildDate><atom:link href="http://xzap.gitee.io/tags/pil/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>xzap@163.com (xzap)</webMaster><lastBuildDate>Sat, 04 Dec 2021 15:54:00 &#43;0800</lastBuildDate><atom:link href="http://xzap.github.io/tags/pil/" rel="self" type="application/rss+xml" /><item>
     <title>破解之江汇验证码实现自动赚分</title>
-    <link>http://xzap.gitee.io/posts/yanzhengma/</link>
+    <link>http://xzap.github.io/posts/yanzhengma/</link>
     <pubDate>Sat, 04 Dec 2021 15:54:00 &#43;0800</pubDate>
     <author>xzap</author>
-    <guid>http://xzap.gitee.io/posts/yanzhengma/</guid>
+    <guid>http://xzap.github.io/posts/yanzhengma/</guid>
     <description><![CDATA[<p>之江汇的验证码是很简单的2位数加法。一开始用的是猜答案的办法登录，就是把可能的答案做成一个列表。然后循环登录。直到登录成功。这个效率很低。后来发现它的子网站可以不用验证码登录在用。登录子网站再用token同步登录主网站这个方法用了很长的时间。现在也不能用了。最后是用百度的ocr库AIP很好用。但是现在要收费了。然后就在网上找各种ocr方法。像easyocr和Google的Tesseract-OCR好像都要安装底层软件。好像很麻烦。而且大炮打蚊子。浪费资源，只是0-9的验证码识别。没那个必要了。于是就有了这个用Pil图片处理库直接破解验证码的代码。</p>]]></description>
 </item>
 </channel>

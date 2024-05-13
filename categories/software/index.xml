@@ -1,15 +1,15 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>Software - 分类 - Xzap&#39;s 缓存区</title>
-        <link>http://xzap.gitee.io/categories/software/</link>
+        <link>http://xzap.github.io/categories/software/</link>
         <description>Software - 分类 - Xzap&#39;s 缓存区</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>xzap@163.com (xzap)</managingEditor>
-            <webMaster>xzap@163.com (xzap)</webMaster><lastBuildDate>Sun, 14 Apr 2024 16:27:53 &#43;0800</lastBuildDate><atom:link href="http://xzap.gitee.io/categories/software/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>xzap@163.com (xzap)</webMaster><lastBuildDate>Sun, 14 Apr 2024 16:27:53 &#43;0800</lastBuildDate><atom:link href="http://xzap.github.io/categories/software/" rel="self" type="application/rss+xml" /><item>
     <title>破解Sublime Text这个软件</title>
-    <link>http://xzap.gitee.io/posts/crack_sublime/</link>
+    <link>http://xzap.github.io/posts/crack_sublime/</link>
     <pubDate>Sun, 14 Apr 2024 16:27:53 &#43;0800</pubDate>
     <author>xzap</author>
-    <guid>http://xzap.gitee.io/posts/crack_sublime/</guid>
+    <guid>http://xzap.github.io/posts/crack_sublime/</guid>
     <description><![CDATA[<p>破解Sublime Text的方法，记录下以备不时之需。</p>]]></description>
 </item>
 </channel>

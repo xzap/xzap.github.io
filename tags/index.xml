@@ -1,87 +1,87 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>Tags - 标签 - Xzap&#39;s 缓存区</title>
-        <link>http://xzap.gitee.io/tags/</link>
+        <link>http://xzap.github.io/tags/</link>
         <description>Tags - 标签 - Xzap&#39;s 缓存区</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>xzap@163.com (xzap)</managingEditor>
-            <webMaster>xzap@163.com (xzap)</webMaster><lastBuildDate>Sun, 14 Apr 2024 16:27:53 &#43;0800</lastBuildDate><atom:link href="http://xzap.gitee.io/tags/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>xzap@163.com (xzap)</webMaster><lastBuildDate>Sun, 14 Apr 2024 16:27:53 &#43;0800</lastBuildDate><atom:link href="http://xzap.github.io/tags/" rel="self" type="application/rss+xml" /><item>
     <title>Software</title>
-    <link>http://xzap.gitee.io/tags/software/</link>
+    <link>http://xzap.github.io/tags/software/</link>
     <pubDate>Sun, 14 Apr 2024 16:27:53 &#43;0800</pubDate>
     <author>xzap</author>
-    <guid>http://xzap.gitee.io/tags/software/</guid>
+    <guid>http://xzap.github.io/tags/software/</guid>
     <description><![CDATA[]]></description>
 </item>
 <item>
     <title>Sublime</title>
-    <link>http://xzap.gitee.io/tags/sublime/</link>
+    <link>http://xzap.github.io/tags/sublime/</link>
     <pubDate>Sun, 14 Apr 2024 16:27:53 &#43;0800</pubDate>
     <author>xzap</author>
-    <guid>http://xzap.gitee.io/tags/sublime/</guid>
+    <guid>http://xzap.github.io/tags/sublime/</guid>
     <description><![CDATA[]]></description>
 </item>
 <item>
     <title>Playwright</title>
-    <link>http://xzap.gitee.io/tags/playwright/</link>
+    <link>http://xzap.github.io/tags/playwright/</link>
     <pubDate>Wed, 15 Nov 2023 20:52:53 &#43;0800</pubDate>
     <author>xzap</author>
-    <guid>http://xzap.gitee.io/tags/playwright/</guid>
+    <guid>http://xzap.github.io/tags/playwright/</guid>
     <description><![CDATA[]]></description>
 </item>
 <item>
     <title>Python</title>
-    <link>http://xzap.gitee.io/tags/python/</link>
+    <link>http://xzap.github.io/tags/python/</link>
     <pubDate>Wed, 15 Nov 2023 20:52:53 &#43;0800</pubDate>
     <author>xzap</author>
-    <guid>http://xzap.gitee.io/tags/python/</guid>
+    <guid>http://xzap.github.io/tags/python/</guid>
     <description><![CDATA[]]></description>
 </item>
 <item>
     <title>ReportLab</title>
-    <link>http://xzap.gitee.io/tags/reportlab/</link>
+    <link>http://xzap.github.io/tags/reportlab/</link>
     <pubDate>Sat, 28 Oct 2023 23:30:10 &#43;0800</pubDate>
     <author>xzap</author>
-    <guid>http://xzap.gitee.io/tags/reportlab/</guid>
+    <guid>http://xzap.github.io/tags/reportlab/</guid>
     <description><![CDATA[]]></description>
 </item>
 <item>
     <title>ddddocr</title>
-    <link>http://xzap.gitee.io/tags/ddddocr/</link>
+    <link>http://xzap.github.io/tags/ddddocr/</link>
     <pubDate>Sat, 21 Oct 2023 10:02:53 &#43;0800</pubDate>
     <author>xzap</author>
-    <guid>http://xzap.gitee.io/tags/ddddocr/</guid>
+    <guid>http://xzap.github.io/tags/ddddocr/</guid>
     <description><![CDATA[]]></description>
 </item>
 <item>
     <title>PIL</title>
-    <link>http://xzap.gitee.io/tags/pil/</link>
+    <link>http://xzap.github.io/tags/pil/</link>
     <pubDate>Sat, 04 Dec 2021 15:54:00 &#43;0800</pubDate>
     <author>xzap</author>
-    <guid>http://xzap.gitee.io/tags/pil/</guid>
+    <guid>http://xzap.github.io/tags/pil/</guid>
     <description><![CDATA[]]></description>
 </item>
 <item>
     <title>Powershell</title>
-    <link>http://xzap.gitee.io/tags/powershell/</link>
+    <link>http://xzap.github.io/tags/powershell/</link>
     <pubDate>Fri, 12 Mar 2021 05:54:00 &#43;0800</pubDate>
     <author>xzap</author>
-    <guid>http://xzap.gitee.io/tags/powershell/</guid>
+    <guid>http://xzap.github.io/tags/powershell/</guid>
     <description><![CDATA[]]></description>
 </item>
 <item>
     <title>proxy</title>
-    <link>http://xzap.gitee.io/tags/proxy/</link>
+    <link>http://xzap.github.io/tags/proxy/</link>
     <pubDate>Fri, 12 Mar 2021 05:54:00 &#43;0800</pubDate>
     <author>xzap</author>
-    <guid>http://xzap.gitee.io/tags/proxy/</guid>
+    <guid>http://xzap.github.io/tags/proxy/</guid>
     <description><![CDATA[]]></description>
 </item>
 <item>
     <title>wsl2</title>
-    <link>http://xzap.gitee.io/tags/wsl2/</link>
+    <link>http://xzap.github.io/tags/wsl2/</link>
     <pubDate>Sun, 07 Mar 2021 15:54:00 &#43;0000</pubDate>
     <author>xzap</author>
-    <guid>http://xzap.gitee.io/tags/wsl2/</guid>
+    <guid>http://xzap.github.io/tags/wsl2/</guid>
     <description><![CDATA[]]></description>
 </item>
 </channel>

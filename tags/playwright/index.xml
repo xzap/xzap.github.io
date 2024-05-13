@@ -1,23 +1,23 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>Playwright - 标签 - Xzap&#39;s 缓存区</title>
-        <link>http://xzap.gitee.io/tags/playwright/</link>
+        <link>http://xzap.github.io/tags/playwright/</link>
         <description>Playwright - 标签 - Xzap&#39;s 缓存区</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>xzap@163.com (xzap)</managingEditor>
-            <webMaster>xzap@163.com (xzap)</webMaster><lastBuildDate>Wed, 15 Nov 2023 20:52:53 &#43;0800</lastBuildDate><atom:link href="http://xzap.gitee.io/tags/playwright/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>xzap@163.com (xzap)</webMaster><lastBuildDate>Wed, 15 Nov 2023 20:52:53 &#43;0800</lastBuildDate><atom:link href="http://xzap.github.io/tags/playwright/" rel="self" type="application/rss+xml" /><item>
     <title>青骄第二课堂禁毒知识辅助脚本</title>
-    <link>http://xzap.gitee.io/posts/2class/</link>
+    <link>http://xzap.github.io/posts/2class/</link>
     <pubDate>Wed, 15 Nov 2023 20:52:53 &#43;0800</pubDate>
     <author>xzap</author>
-    <guid>http://xzap.gitee.io/posts/2class/</guid>
+    <guid>http://xzap.github.io/posts/2class/</guid>
     <description><![CDATA[<p>又是让学生学禁毒。城里学校都是发给家长让家长做。我们学校就安排给电脑老师。没辙，就带学生在信息课上做呗。但总有漏网之鱼，只好写个脚本来完善一下。人不多那就随便写写算了，能跑就行。</p>]]></description>
 </item>
 <item>
     <title>刷青少年普法网的Python脚本</title>
-    <link>http://xzap.gitee.io/posts/qsnpfw/</link>
+    <link>http://xzap.github.io/posts/qsnpfw/</link>
     <pubDate>Sat, 21 Oct 2023 10:02:53 &#43;0800</pubDate>
     <author>xzap</author>
-    <guid>http://xzap.gitee.io/posts/qsnpfw/</guid>
+    <guid>http://xzap.github.io/posts/qsnpfw/</guid>
     <description><![CDATA[<p>青少年普法网的要求真是麻烦。乡下学校要求家长去做其实还是很有难度的。利用信息课让学生刷教个半节课还有网址都打不开的，完成率很低。那就用Python技术解决吧。</p>]]></description>
 </item>
 </channel>

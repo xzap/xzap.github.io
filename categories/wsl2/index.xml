@@ -1,15 +1,15 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>wsl2 - 分类 - Xzap&#39;s 缓存区</title>
-        <link>http://xzap.gitee.io/categories/wsl2/</link>
+        <link>http://xzap.github.io/categories/wsl2/</link>
         <description>wsl2 - 分类 - Xzap&#39;s 缓存区</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>xzap@163.com (xzap)</managingEditor>
-            <webMaster>xzap@163.com (xzap)</webMaster><lastBuildDate>Sun, 07 Mar 2021 15:54:00 &#43;0000</lastBuildDate><atom:link href="http://xzap.gitee.io/categories/wsl2/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>xzap@163.com (xzap)</webMaster><lastBuildDate>Sun, 07 Mar 2021 15:54:00 &#43;0000</lastBuildDate><atom:link href="http://xzap.github.io/categories/wsl2/" rel="self" type="application/rss+xml" /><item>
     <title>开关 wsl2</title>
-    <link>http://xzap.gitee.io/posts/switch-wsl2/</link>
+    <link>http://xzap.github.io/posts/switch-wsl2/</link>
     <pubDate>Sun, 07 Mar 2021 15:54:00 &#43;0000</pubDate>
     <author>xzap</author>
-    <guid>http://xzap.gitee.io/posts/switch-wsl2/</guid>
+    <guid>http://xzap.github.io/posts/switch-wsl2/</guid>
     <description><![CDATA[<p>使用了wsl2下载安装了ubuntu，并不是很好用，速度太慢。而且gui使用存在问题。最重要的是安卓虚拟机不能启动。卸载又怕下次要用，于是临时开关下吧。</p>]]></description>
 </item>
 </channel>

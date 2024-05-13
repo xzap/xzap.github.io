@@ -7,7 +7,7 @@
         <title>破解之江汇验证码实现自动赚分 - Xzap&#39;s 缓存区</title><meta name="Description" content=""><meta property="og:title" content="破解之江汇验证码实现自动赚分" />
 <meta property="og:description" content="之江汇的验证码是很简单的2位数加法。一开始用的是猜答案的办法登录，就是把可能的答案做成一个列表。然后循环登录。直到登录成功。这个效率很低。后来发现它的子网站可以不用验证码登录在用。登录子网站再用token同步登录主网站这个方法用了很长的时间。现在也不能用了。最后是用百度的ocr库AIP很好用。但是现在要收费了。然后就在网上找各种ocr方法。像easyocr和Google的Tesseract-OCR好像都要安装底层软件。好像很麻烦。而且大炮打蚊子。浪费资源，只是0-9的验证码识别。没那个必要了。于是就有了这个用Pil图片处理库直接破解验证码的代码。" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://xzap.gitee.io/posts/yanzhengma/" /><meta property="article:section" content="posts" />
+<meta property="og:url" content="http://xzap.github.io/posts/yanzhengma/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2021-12-04T15:54:00+08:00" />
 <meta property="article:modified_time" content="2021-12-04T15:54:00+08:00" /><meta property="og:site_name" content="Xzap&#39;s 缓存区" />
 
@@ -17,7 +17,7 @@
 <meta name="application-name" content="Xzap&#39;s 缓存区">
 <meta name="apple-mobile-web-app-title" content="Xzap&#39;s 缓存区"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://xzap.gitee.io/posts/yanzhengma/" /><link rel="prev" href="http://xzap.gitee.io/posts/powershell_cmd_proxy/" /><link rel="next" href="http://xzap.gitee.io/posts/zuoyeshenbao/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"><script type="application/ld+json">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://xzap.github.io/posts/yanzhengma/" /><link rel="prev" href="http://xzap.github.io/posts/powershell_cmd_proxy/" /><link rel="next" href="http://xzap.github.io/posts/zuoyeshenbao/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"><script type="application/ld+json">
     {
         "@context": "http://schema.org",
         "@type": "BlogPosting",
@@ -25,9 +25,9 @@
         "inLanguage": "zh-CN",
         "mainEntityOfPage": {
             "@type": "WebPage",
-            "@id": "http:\/\/xzap.gitee.io\/posts\/yanzhengma\/"
+            "@id": "http:\/\/xzap.github.io\/posts\/yanzhengma\/"
         },"genre": "posts","keywords": "Python, PIL","wordcount":  2117 ,
-        "url": "http:\/\/xzap.gitee.io\/posts\/yanzhengma\/","datePublished": "2021-12-04T15:54:00+08:00","dateModified": "2021-12-04T15:54:00+08:00","publisher": {
+        "url": "http:\/\/xzap.github.io\/posts\/yanzhengma\/","datePublished": "2021-12-04T15:54:00+08:00","dateModified": "2021-12-04T15:54:00+08:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
                 "@type": "Person",
@@ -100,7 +100,7 @@
             <h2 class="toc-title">目录</h2>
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">破解之江汇验证码实现自动赚分</h1><div class="post-meta">
-            <div class="post-meta-line"><span class="post-author"><a href="https://xzap.gitee.io" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>xzap</a>
+            <div class="post-meta-line"><span class="post-author"><a href="https://xzap.github.io" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>xzap</a>
 </span>&nbsp;<span class="post-category">收录于 <a href="/categories/python/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Python</a></span></div>
             <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2021-12-04">2021-12-04</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 2117 字&nbsp;
                 <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 5 分钟&nbsp;</div>
@@ -893,7 +893,7 @@
 </article></div>
             </main><footer class="footer">
         <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.120.4">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
-                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2024</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://xzap.gitee.io" target="_blank">xzap</a></span></div>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2024</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://xzap.github.io" target="_blank">xzap</a></span></div>
         </div>
     </footer></div>
 

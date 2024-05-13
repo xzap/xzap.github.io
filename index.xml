@@ -1,89 +1,89 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>Xzap&#39;s 缓存区</title>
-        <link>http://xzap.gitee.io/</link>
+        <link>http://xzap.github.io/</link>
         <description>Xzap&#39;s 缓存区</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>xzap@163.com (xzap)</managingEditor>
             <webMaster>xzap@163.com (xzap)</webMaster><lastBuildDate>Sun, 14 Apr 2024 16:27:53 &#43;0800</lastBuildDate>
-            <atom:link href="http://xzap.gitee.io/index.xml" rel="self" type="application/rss+xml" />
+            <atom:link href="http://xzap.github.io/index.xml" rel="self" type="application/rss+xml" />
         <item>
     <title>破解Sublime Text这个软件</title>
-    <link>http://xzap.gitee.io/posts/crack_sublime/</link>
+    <link>http://xzap.github.io/posts/crack_sublime/</link>
     <pubDate>Sun, 14 Apr 2024 16:27:53 &#43;0800</pubDate>
     <author>xzap</author>
-    <guid>http://xzap.gitee.io/posts/crack_sublime/</guid>
+    <guid>http://xzap.github.io/posts/crack_sublime/</guid>
     <description><![CDATA[<p>破解Sublime Text的方法，记录下以备不时之需。</p>]]></description>
 </item>
 <item>
     <title>青骄第二课堂禁毒知识辅助脚本</title>
-    <link>http://xzap.gitee.io/posts/2class/</link>
+    <link>http://xzap.github.io/posts/2class/</link>
     <pubDate>Wed, 15 Nov 2023 20:52:53 &#43;0800</pubDate>
     <author>xzap</author>
-    <guid>http://xzap.gitee.io/posts/2class/</guid>
+    <guid>http://xzap.github.io/posts/2class/</guid>
     <description><![CDATA[<p>又是让学生学禁毒。城里学校都是发给家长让家长做。我们学校就安排给电脑老师。没辙，就带学生在信息课上做呗。但总有漏网之鱼，只好写个脚本来完善一下。人不多那就随便写写算了，能跑就行。</p>]]></description>
 </item>
 <item>
     <title>Python脚本将多张图片转成pdf文件</title>
-    <link>http://xzap.gitee.io/posts/img2pdf/</link>
+    <link>http://xzap.github.io/posts/img2pdf/</link>
     <pubDate>Sat, 28 Oct 2023 23:30:10 &#43;0800</pubDate>
     <author>xzap</author>
-    <guid>http://xzap.gitee.io/posts/img2pdf/</guid>
+    <guid>http://xzap.github.io/posts/img2pdf/</guid>
     <description><![CDATA[<p>写个脚本把电脑上的下载的漫画合成一个Pdf文件方便在手机上看。</p>]]></description>
 </item>
 <item>
     <title>刷青少年普法网的Python脚本</title>
-    <link>http://xzap.gitee.io/posts/qsnpfw/</link>
+    <link>http://xzap.github.io/posts/qsnpfw/</link>
     <pubDate>Sat, 21 Oct 2023 10:02:53 &#43;0800</pubDate>
     <author>xzap</author>
-    <guid>http://xzap.gitee.io/posts/qsnpfw/</guid>
+    <guid>http://xzap.github.io/posts/qsnpfw/</guid>
     <description><![CDATA[<p>青少年普法网的要求真是麻烦。乡下学校要求家长去做其实还是很有难度的。利用信息课让学生刷教个半节课还有网址都打不开的，完成率很低。那就用Python技术解决吧。</p>]]></description>
 </item>
 <item>
     <title>用Python每天进行作业申报</title>
-    <link>http://xzap.gitee.io/posts/zuoyeshenbao/</link>
+    <link>http://xzap.github.io/posts/zuoyeshenbao/</link>
     <pubDate>Wed, 08 Dec 2021 19:02:53 &#43;0800</pubDate>
     <author>xzap</author>
-    <guid>http://xzap.gitee.io/posts/zuoyeshenbao/</guid>
+    <guid>http://xzap.github.io/posts/zuoyeshenbao/</guid>
     <description><![CDATA[<p>双减之后每天要作业申报。那就写个脚本每天申报吧。挂在腾讯云函数就简单了。</p>]]></description>
 </item>
 <item>
     <title>破解之江汇验证码实现自动赚分</title>
-    <link>http://xzap.gitee.io/posts/yanzhengma/</link>
+    <link>http://xzap.github.io/posts/yanzhengma/</link>
     <pubDate>Sat, 04 Dec 2021 15:54:00 &#43;0800</pubDate>
     <author>xzap</author>
-    <guid>http://xzap.gitee.io/posts/yanzhengma/</guid>
+    <guid>http://xzap.github.io/posts/yanzhengma/</guid>
     <description><![CDATA[<p>之江汇的验证码是很简单的2位数加法。一开始用的是猜答案的办法登录，就是把可能的答案做成一个列表。然后循环登录。直到登录成功。这个效率很低。后来发现它的子网站可以不用验证码登录在用。登录子网站再用token同步登录主网站这个方法用了很长的时间。现在也不能用了。最后是用百度的ocr库AIP很好用。但是现在要收费了。然后就在网上找各种ocr方法。像easyocr和Google的Tesseract-OCR好像都要安装底层软件。好像很麻烦。而且大炮打蚊子。浪费资源，只是0-9的验证码识别。没那个必要了。于是就有了这个用Pil图片处理库直接破解验证码的代码。</p>]]></description>
 </item>
 <item>
     <title>Powershell或cmd设置代理</title>
-    <link>http://xzap.gitee.io/posts/powershell_cmd_proxy/</link>
+    <link>http://xzap.github.io/posts/powershell_cmd_proxy/</link>
     <pubDate>Fri, 12 Mar 2021 05:54:00 &#43;0800</pubDate>
     <author>xzap</author>
-    <guid>http://xzap.gitee.io/posts/powershell_cmd_proxy/</guid>
+    <guid>http://xzap.github.io/posts/powershell_cmd_proxy/</guid>
     <description><![CDATA[Powershell或cmd设置代理 设置代理 netsh winhttp set proxy 127.0.0.1:10808 取消代理 netsh winhttp reset proxy 查看代理 netsh winhttp show proxy 临时设置代理 $Env:http_proxy=&#34;http://127.0.0.1:10809&#34;; $Env:https_proxy=&#34;http://127.0.0.1:10809&#34;; 还是这句比较好用 $PSDefaultParameterValues = @{ &#34;*:Proxy&#34;=&#34;http://127.0.0.1:10809&#34; } Scoop代]]></description>
 </item>
 <item>
     <title>开关 wsl2</title>
-    <link>http://xzap.gitee.io/posts/switch-wsl2/</link>
+    <link>http://xzap.github.io/posts/switch-wsl2/</link>
     <pubDate>Sun, 07 Mar 2021 15:54:00 &#43;0000</pubDate>
     <author>xzap</author>
-    <guid>http://xzap.gitee.io/posts/switch-wsl2/</guid>
+    <guid>http://xzap.github.io/posts/switch-wsl2/</guid>
     <description><![CDATA[<p>使用了wsl2下载安装了ubuntu，并不是很好用，速度太慢。而且gui使用存在问题。最重要的是安卓虚拟机不能启动。卸载又怕下次要用，于是临时开关下吧。</p>]]></description>
 </item>
 <item>
     <title>微信里嘉兴健康自动打卡并部署到腾讯云函数</title>
-    <link>http://xzap.gitee.io/posts/weixindaka/</link>
+    <link>http://xzap.github.io/posts/weixindaka/</link>
     <pubDate>Sun, 14 Feb 2021 13:14:00 &#43;0800</pubDate>
     <author>xzap</author>
-    <guid>http://xzap.gitee.io/posts/weixindaka/</guid>
+    <guid>http://xzap.github.io/posts/weixindaka/</guid>
     <description><![CDATA[<p>好不容易放假了，还是要每天一大早健康打卡。对于爱睡懒觉的人来说完全不能忍，于是就考虑着自动健康打卡。用Fiddler Web Debugger 抓包微信的桌面版本。一个登录一个打卡。两个post搞定，还是比较简单的。</p>]]></description>
 </item>
 <item>
     <title>在Win系统下右键启动ConEmu和Msys2</title>
-    <link>http://xzap.gitee.io/posts/conemu_msys/</link>
+    <link>http://xzap.github.io/posts/conemu_msys/</link>
     <pubDate>Sun, 07 Jun 2015 15:54:00 &#43;0800</pubDate>
     <author>xzap</author>
-    <guid>http://xzap.gitee.io/posts/conemu_msys/</guid>
+    <guid>http://xzap.github.io/posts/conemu_msys/</guid>
     <description><![CDATA[在win系统下使用好点的命令行，虚拟终端用 ConEmu 很好用。至于 Linux 的命令行移植选来选取选了个 Msys2。比Cygwin 轻量得多，而又不像 Gitbash 那样过于简]]></description>
 </item>
 </channel>

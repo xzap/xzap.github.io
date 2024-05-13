@@ -1,15 +1,15 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>Powershell - 分类 - Xzap&#39;s 缓存区</title>
-        <link>http://xzap.gitee.io/categories/powershell/</link>
+        <link>http://xzap.github.io/categories/powershell/</link>
         <description>Powershell - 分类 - Xzap&#39;s 缓存区</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>xzap@163.com (xzap)</managingEditor>
-            <webMaster>xzap@163.com (xzap)</webMaster><lastBuildDate>Fri, 12 Mar 2021 05:54:00 &#43;0800</lastBuildDate><atom:link href="http://xzap.gitee.io/categories/powershell/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>xzap@163.com (xzap)</webMaster><lastBuildDate>Fri, 12 Mar 2021 05:54:00 &#43;0800</lastBuildDate><atom:link href="http://xzap.github.io/categories/powershell/" rel="self" type="application/rss+xml" /><item>
     <title>Powershell或cmd设置代理</title>
-    <link>http://xzap.gitee.io/posts/powershell_cmd_proxy/</link>
+    <link>http://xzap.github.io/posts/powershell_cmd_proxy/</link>
     <pubDate>Fri, 12 Mar 2021 05:54:00 &#43;0800</pubDate>
     <author>xzap</author>
-    <guid>http://xzap.gitee.io/posts/powershell_cmd_proxy/</guid>
+    <guid>http://xzap.github.io/posts/powershell_cmd_proxy/</guid>
     <description><![CDATA[Powershell或cmd设置代理 设置代理 netsh winhttp set proxy 127.0.0.1:10808 取消代理 netsh winhttp reset proxy 查看代理 netsh winhttp show proxy 临时设置代理 $Env:http_proxy=&#34;http://127.0.0.1:10809&#34;; $Env:https_proxy=&#34;http://127.0.0.1:10809&#34;; 还是这句比较好用 $PSDefaultParameterValues = @{ &#34;*:Proxy&#34;=&#34;http://127.0.0.1:10809&#34; } Scoop代]]></description>
 </item>
 </channel>
