@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Markdown语法介绍 on Xzap&#39;s 缓存区</title>
+    <link>http://xzap.gitee.io/docs/markdown/</link>
+    <description>Recent content in Markdown语法介绍 on Xzap&#39;s 缓存区</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <managingEditor>xzap@163.com (xzap)</managingEditor>
+    <webMaster>xzap@163.com (xzap)</webMaster>
+    <lastBuildDate>Fri, 16 Oct 2020 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://xzap.gitee.io/docs/markdown/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Markdown 语法说明 (简体中文版)</title>
+      <link>http://xzap.gitee.io/docs/markdown/markdown_syntax/</link>
+      <pubDate>Fri, 29 May 2015 09:54:00 +0000</pubDate><author>xzap@163.com (xzap)</author>
+      <guid>http://xzap.gitee.io/docs/markdown/markdown_syntax/</guid>
+      <description>&lt;p&gt;这个是 Markdown 的一份语法文档，因为老是会忘所以，直接在这里放一份吧。省得老是忘记啊什么的。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Markdown Basics（快速入门）</title>
+      <link>http://xzap.gitee.io/docs/markdown/markdown_basics/</link>
+      <pubDate>Fri, 29 May 2015 00:00:00 +0000</pubDate><author>xzap@163.com (xzap)</author>
+      <guid>http://xzap.gitee.io/docs/markdown/markdown_basics/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;Markdown 的一份快速入门文档。此页提供了 Markdown 的简单概念， &lt;a href=&#34;http://gitcafe.com/riku/Markdown-Syntax-CN/blob/master/syntax.md&#34; title=&#34;Markdown Syntax&#34; target=&#34;_blank&#34; rel=&#34;noopener noreffer&#34;&gt;语法说明&lt;/a&gt;
+ 页提供了完整详细的文档，说明了每项功能。但是 Markdown 其实很简单就可以上手，此页文档提供了一些范例，并且每个范例都会提供输出的 HTML 结果。&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+  </channel>
+</rss>

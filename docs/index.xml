@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>文档 on Xzap&#39;s 缓存区</title>
+    <link>http://xzap.gitee.io/docs/</link>
+    <description>Recent content in 文档 on Xzap&#39;s 缓存区</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <managingEditor>xzap@163.com (xzap)</managingEditor>
+    <webMaster>xzap@163.com (xzap)</webMaster>
+    <lastBuildDate>Fri, 16 Oct 2020 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://xzap.gitee.io/docs/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>

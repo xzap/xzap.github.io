@@ -1,239 +1,164 @@
 <!DOCTYPE html>
-<html lang="zh"
->
-<head>
-    <title>xzap's 缓存区</title>
-    <!-- Using the latest rendering mode for IE -->
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html lang="zh-CN">
+    <head>
+	<meta name="generator" content="Hugo 0.120.4">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>Xzap&#39;s 缓存区</title><meta name="Description" content=""><meta property="og:title" content="Xzap&#39;s 缓存区" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="http://xzap.gitee.io/" /><meta property="og:site_name" content="Xzap&#39;s 缓存区" />
 
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Xzap&#39;s 缓存区"/>
+<meta name="twitter:description" content=""/>
+<meta name="application-name" content="Xzap&#39;s 缓存区">
+<meta name="apple-mobile-web-app-title" content="Xzap&#39;s 缓存区"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://xzap.gitee.io/" /><link rel="alternate" href="/index.xml" type="application/rss+xml" title="Xzap&#39;s 缓存区">
+    <link rel="feed" href="/index.xml" type="application/rss+xml" title="Xzap&#39;s 缓存区"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "WebSite",
+        "url": "http:\/\/xzap.gitee.io\/","inLanguage": "zh-CN","author": {
+                "@type": "Person",
+                "name": "xzap"
+            },"name": "Xzap's 缓存区"
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
 
-    <link href="http://xzap.github.io/favicon.ico" rel="icon">
-
-<link rel="canonical" href="http://xzap.github.io">
-        <meta name="author" content="xzap" />
-
-    <!-- Open Graph tags -->
-        <meta property="og:site_name" content="xzap's 缓存区" />
-        <meta property="og:type" content="website"/>
-        <meta property="og:title" content="xzap's 缓存区"/>
-        <meta property="og:url" content="http://xzap.github.io"/>
-        <meta property="og:description" content="xzap's 缓存区"/>
-
-
-    <!-- Bootstrap -->
-        <link rel="stylesheet" href="http://xzap.github.io/theme/css/bootstrap.min.css" type="text/css"/>
-    <link href="http://xzap.github.io/theme/css/font-awesome.min.css" rel="stylesheet">
-
-    <link href="http://xzap.github.io/theme/css/pygments/github.css" rel="stylesheet">
-    <link rel="stylesheet" href="http://xzap.github.io/theme/css/style.css" type="text/css"/>
-
-        <link href="http://xzap.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
-              title="xzap's 缓存区 ATOM Feed"/>
-
-</head>
-<body>
-
-<div class="navbar navbar-default navbar-fixed-top" role="navigation">
-	<div class="container">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a href="http://xzap.github.io/" class="navbar-brand">
-xzap's 缓存区            </a>
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Xzap&#39;s 缓存区">Xzap&#39;s 缓存区</a>
         </div>
-        <div class="collapse navbar-collapse navbar-ex1-collapse">
-            <ul class="nav navbar-nav">
-                        <li >
-                            <a href="http://xzap.github.io/category/markdown.html">Markdown</a>
-                        </li>
-                        <li >
-                            <a href="http://xzap.github.io/category/msys2.html">Msys2</a>
-                        </li>
-                        <li >
-                            <a href="http://xzap.github.io/category/other.html">Other</a>
-                        </li>
-                        <li >
-                            <a href="http://xzap.github.io/category/pelican.html">Pelican</a>
-                        </li>
-            </ul>
-            <ul class="nav navbar-nav navbar-right">
-              <li><a href="http://xzap.github.io/archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
-            </ul>
-        </div>
-        <!-- /.navbar-collapse -->
-    </div>
-</div> <!-- /.navbar -->
-<!-- Banner -->
-<!-- End Banner -->
-<div class="container">
-    <div class="row">
-        <div class="col-sm-9">
-
-            <article>
-                <h2><a href="http://xzap.github.io/archives/bandwagonhost.html">利用用搬瓦工(bandwagonhost)的廉价vps翻墙</a></h2>
-                <div class="summary"><p>随着伟大的墙越来越高，Goagent基本上算是完蛋了。基本上要靠运气才能用了。所以前面一直在用改hosts的办法
-翻墙，但是可用ip也越来越少，而且使用时间基本上没有过一个月的。虽然早就听说过搬瓦工，但是上它的首页去
-看看，高昂的价格还是蛮吓人的。今天无意间看到竟然有独立的购买页面一年只需要3.99美金就可以。<a href="https://bandwagonhost.com/cart.php?a=confproduct&amp;i=0">这里</a>。
-用PayPal支付，用掉我24.81人民币。当然了，有钱可以上更好的。<a href="https://bandwagonhost.com/cart.php?a=confproduct&amp;i=2">这里</a>。更具体的看<a href="http://www.banwagong.com/35.html">这里</a>吧！</p>
-
-                    <a class="btn btn-default btn-xs" href="http://xzap.github.io/archives/bandwagonhost.html">more ...</a>
-                </div>
-            </article>
-            <hr/>
-            <article>
-                <h2><a href="http://xzap.github.io/archives/conemu_msys.html">在Win系统下右键启动ConEmu和Msys2</a></h2>
-                <div class="summary"><p>在win系统下使用好点的命令行，虚拟终端用 ConEmu 很好用。至于 Linux 的命令行移植选来选取选了个 Msys2。比Cygwin
-轻量得多，而又不像 Gitbash 那样过于简单。特别是还有非常好用的移植自 Archlinux 的 Pacman 的包管理系统。特别是更换了
-国内源后速度快了很多。</p>
-
-                    <a class="btn btn-default btn-xs" href="http://xzap.github.io/archives/conemu_msys.html">more ...</a>
-                </div>
-            </article>
-            <hr/>
-            <article>
-                <h2><a href="http://xzap.github.io/archives/pelican_duoshuo.html">Pelican 中使用多说评论系统</a></h2>
-                <div class="summary"><p>试着用国内的多说的评论系统替换掉原来的自带的 disqus 的评论系统，disqus 虽然也很好，但是国内的网络环境使然。很多国外的服务都无法使用，利用国外社交账号登陆的disqus自然就也不是那么好用了。</p>
-                    <a class="btn btn-default btn-xs" href="http://xzap.github.io/archives/pelican_duoshuo.html">more ...</a>
-                </div>
-            </article>
-            <hr/>
-            <article>
-                <h2><a href="http://xzap.github.io/archives/markdown_basics.html">Markdown: Basics （快速入门）</a></h2>
-                <div class="summary"><p>Markdown 的一份快速入门文档。此页提供了 Markdown 的简单概念， [语法说明][s] 页提供了完整详细的文档，说明了每项功能。但是 Markdown 其实很简单就可以上手，此页文档提供了一些范例，并且每个范例都会提供输出的 HTML 结果。</p>
-                    <a class="btn btn-default btn-xs" href="http://xzap.github.io/archives/markdown_basics.html">more ...</a>
-                </div>
-            </article>
-            <hr/>
-            <article>
-                <h2><a href="http://xzap.github.io/archives/markdown_syntax.html">Markdown 语法说明 (简体中文版)</a></h2>
-                <div class="summary"><p>这个是 Markdown 的一份语法文档，因为老是会忘所以，直接在这里放一份吧。省得老是忘记啊什么的。</p>
-                    <a class="btn btn-default btn-xs" href="http://xzap.github.io/archives/markdown_syntax.html">more ...</a>
-                </div>
-            </article>
-            <hr/>
-            <article>
-                <h2><a href="http://xzap.github.io/archives/pelican_conf.html">pelican配置文件</a></h2>
-                <div class="summary"><p>随着博客浪潮的过去,现在写博客也变得不怎么流行了,我的博客也是几度更替.总是被停止服务.github却逆向开通了github page.不过虽然早就想试试这个服务,但是好像很难的样子,因为只支持静态啊.现在有了pelican用起来还是很爽的.</p>
-
-                    <a class="btn btn-default btn-xs" href="http://xzap.github.io/archives/pelican_conf.html">more ...</a>
-                </div>
-            </article>
-            <hr/>
-
-        </div>
-        <div class="col-sm-3" id="sidebar">
-            <aside>
-
-<section class="well well-sm">
-    <ul class="list-group list-group-flush">
-            <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Social</span></h4>
-              <ul class="list-group" id="social">
-                <li class="list-group-item"><a href="https://github.com/xzap"><i class="fa fa-github-square fa-lg"></i> Github</a></li>
-                <li class="list-group-item"><a href="http://weibo.com/xzap"><i class="fa fa-weibo fa-lg"></i> Sina Weibo</a></li>
-                <li class="list-group-item"><a href="http://jixinyan2008.blog.163.com"><i class="fa fa-heart fa-lg"></i> My Baby</a></li>
-                <li class="list-group-item"><a href="/feeds/all.atom.xml"><i class="fa fa-rss-square fa-lg"></i> Atom Feed</a></li>
-              </ul>
-            </li>
-
-
-
-            <li class="list-group-item"><a href="http://xzap.github.io/tags.html"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
-                <ul class="list-group " id="tags">
-                    <li class="list-group-item tag-1">
-                        <a href="http://xzap.github.io/tag/markdown.html">
-                            Markdown
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> 文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><a class="menu-item" href="/docs/"> 文档 </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
                         </a>
-                    </li>
-                    <li class="list-group-item tag-1">
-                        <a href="http://xzap.github.io/tag/pelican.html">
-                            Pelican
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
                         </a>
-                    </li>
-                    <li class="list-group-item tag-4">
-                        <a href="http://xzap.github.io/tag/bandwagonhost.html">
-                            Bandwagonhost
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-4">
-                        <a href="http://xzap.github.io/tag/shadowsocks.html">
-                            Shadowsocks
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-4">
-                        <a href="http://xzap.github.io/tag/msys2.html">
-                            Msys2
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-4">
-                        <a href="http://xzap.github.io/tag/duo-shuo.html">
-                            多说
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-4">
-                        <a href="http://xzap.github.io/tag/vpn.html">
-                            Vpn
-                        </a>
-                    </li>
-                    <li class="list-group-item tag-4">
-                        <a href="http://xzap.github.io/tag/conemu.html">
-                            ConEmu
-                        </a>
-                    </li>
-                </ul>
-            </li>
-    <li class="list-group-item"><h4><i class="fa fa-external-link-square fa-lg"></i><span class="icon-label">Links</span></h4>
-      <ul class="list-group" id="links">
-        <li class="list-group-item">
-            <a href="http://getpelican.com/" target="_blank">
-                Pelican
-            </a>
-        </li>
-        <li class="list-group-item">
-            <a href="http://python.org/" target="_blank">
-                Python.org
-            </a>
-        </li>
-        <li class="list-group-item">
-            <a href="http://jinja.pocoo.org/" target="_blank">
-                Jinja2
-            </a>
-        </li>
-      </ul>
-    </li>
-    </ul>
-</section>
-            </aside>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a>
+            </div>
         </div>
     </div>
-</div>
-<footer>
-   <div class="container">
-      <hr>
-      <div class="row">
-         <div class="col-xs-10">&copy; 2015 xzap
-            &middot; Powered by <a href="https://github.com/DandyDev/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
-            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
-            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
-         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
-      </div>
-   </div>
-</footer>
-<script src="http://xzap.github.io/theme/js/jquery.min.js"></script>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Xzap&#39;s 缓存区">Xzap&#39;s 缓存区</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a class="menu-item" href="/docs/" title="">文档</a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><div class="search-dropdown desktop">
+        <div id="search-dropdown-desktop"></div>
+    </div>
+    <div class="search-dropdown mobile">
+        <div id="search-dropdown-mobile"></div>
+    </div><main class="main">
+                <div class="container"><div class="page home" data-home="posts"><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
+        <a href="/posts/crack_sublime/">破解Sublime Text这个软件</a>
+    </h1><div class="post-meta"><span class="post-author"><a href="https://xzap.gitee.io" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>xzap</a>
+</span>&nbsp;<span class="post-publish">发布于 <time datetime="2024-04-14">2024-04-14</time></span>&nbsp;<span class="post-category">收录于 <a href="/categories/software/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Software</a></span></div><div class="content"><p>破解Sublime Text的方法，记录下以备不时之需。</p></div><div class="post-footer">
+        <a href="/posts/crack_sublime/">阅读全文</a><div class="post-tags">
+                <i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/sublime/">Sublime</a>,&nbsp;<a href="/tags/software/">Software</a></div></div>
+</article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
+        <a href="/posts/2class/">青骄第二课堂禁毒知识辅助脚本</a>
+    </h1><div class="post-meta"><span class="post-author"><a href="https://xzap.gitee.io" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>xzap</a>
+</span>&nbsp;<span class="post-publish">发布于 <time datetime="2023-11-15">2023-11-15</time></span>&nbsp;<span class="post-category">收录于 <a href="/categories/python/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Python</a></span></div><div class="content"><p>又是让学生学禁毒。城里学校都是发给家长让家长做。我们学校就安排给电脑老师。没辙，就带学生在信息课上做呗。但总有漏网之鱼，只好写个脚本来完善一下。人不多那就随便写写算了，能跑就行。</p></div><div class="post-footer">
+        <a href="/posts/2class/">阅读全文</a><div class="post-tags">
+                <i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/python/">Python</a>,&nbsp;<a href="/tags/playwright/">Playwright</a></div></div>
+</article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
+        <a href="/posts/img2pdf/">Python脚本将多张图片转成pdf文件</a>
+    </h1><div class="post-meta"><span class="post-author"><a href="https://xzap.gitee.io" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>xzap</a>
+</span>&nbsp;<span class="post-publish">发布于 <time datetime="2023-10-28">2023-10-28</time></span>&nbsp;<span class="post-category">收录于 <a href="/categories/python/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Python</a></span></div><div class="content"><p>写个脚本把电脑上的下载的漫画合成一个Pdf文件方便在手机上看。</p></div><div class="post-footer">
+        <a href="/posts/img2pdf/">阅读全文</a><div class="post-tags">
+                <i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/python/">Python</a>,&nbsp;<a href="/tags/reportlab/">ReportLab</a></div></div>
+</article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
+        <a href="/posts/qsnpfw/">刷青少年普法网的Python脚本</a>
+    </h1><div class="post-meta"><span class="post-author"><a href="https://xzap.gitee.io" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>xzap</a>
+</span>&nbsp;<span class="post-publish">发布于 <time datetime="2023-10-21">2023-10-21</time></span>&nbsp;<span class="post-category">收录于 <a href="/categories/python/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Python</a></span></div><div class="content"><p>青少年普法网的要求真是麻烦。乡下学校要求家长去做其实还是很有难度的。利用信息课让学生刷教个半节课还有网址都打不开的，完成率很低。那就用Python技术解决吧。</p></div><div class="post-footer">
+        <a href="/posts/qsnpfw/">阅读全文</a><div class="post-tags">
+                <i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/python/">Python</a>,&nbsp;<a href="/tags/ddddocr/">ddddocr</a>,&nbsp;<a href="/tags/playwright/">Playwright</a></div></div>
+</article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
+        <a href="/posts/zuoyeshenbao/">用Python每天进行作业申报</a>
+    </h1><div class="post-meta"><span class="post-author"><a href="https://xzap.gitee.io" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>xzap</a>
+</span>&nbsp;<span class="post-publish">发布于 <time datetime="2021-12-08">2021-12-08</time></span>&nbsp;<span class="post-category">收录于 <a href="/categories/python/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Python</a></span></div><div class="content"><p>双减之后每天要作业申报。那就写个脚本每天申报吧。挂在腾讯云函数就简单了。</p></div><div class="post-footer">
+        <a href="/posts/zuoyeshenbao/">阅读全文</a><div class="post-tags">
+                <i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/python/">Python</a></div></div>
+</article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
+        <a href="/posts/yanzhengma/">破解之江汇验证码实现自动赚分</a>
+    </h1><div class="post-meta"><span class="post-author"><a href="https://xzap.gitee.io" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>xzap</a>
+</span>&nbsp;<span class="post-publish">发布于 <time datetime="2021-12-04">2021-12-04</time></span>&nbsp;<span class="post-category">收录于 <a href="/categories/python/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Python</a></span></div><div class="content"><p>之江汇的验证码是很简单的2位数加法。一开始用的是猜答案的办法登录，就是把可能的答案做成一个列表。然后循环登录。直到登录成功。这个效率很低。后来发现它的子网站可以不用验证码登录在用。登录子网站再用token同步登录主网站这个方法用了很长的时间。现在也不能用了。最后是用百度的ocr库AIP很好用。但是现在要收费了。然后就在网上找各种ocr方法。像easyocr和Google的Tesseract-OCR好像都要安装底层软件。好像很麻烦。而且大炮打蚊子。浪费资源，只是0-9的验证码识别。没那个必要了。于是就有了这个用Pil图片处理库直接破解验证码的代码。</p></div><div class="post-footer">
+        <a href="/posts/yanzhengma/">阅读全文</a><div class="post-tags">
+                <i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/python/">Python</a>,&nbsp;<a href="/tags/pil/">PIL</a></div></div>
+</article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
+        <a href="/posts/powershell_cmd_proxy/">Powershell或cmd设置代理</a>
+    </h1><div class="post-meta"><span class="post-author"><a href="https://xzap.gitee.io" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>xzap</a>
+</span>&nbsp;<span class="post-publish">发布于 <time datetime="2021-03-12">2021-03-12</time></span>&nbsp;<span class="post-category">收录于 <a href="/categories/powershell/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Powershell</a></span></div><div class="content">Powershell或cmd设置代理 设置代理 netsh winhttp set proxy 127.0.0.1:10808 取消代理 netsh winhttp reset proxy 查看代理 netsh winhttp show proxy 临时设置代理 $Env:http_proxy=&#34;http://127.0.0.1:10809&#34;; $Env:https_proxy=&#34;http://127.0.0.1:10809&#34;; 还是这句比较好用 $PSDefaultParameterValues = @{ &#34;*:Proxy&#34;=&#34;http://127.0.0.1:10809&#34; } Scoop代</div><div class="post-footer">
+        <a href="/posts/powershell_cmd_proxy/">阅读全文</a><div class="post-tags">
+                <i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/powershell/">Powershell</a>,&nbsp;<a href="/tags/proxy/">proxy</a></div></div>
+</article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
+        <a href="/posts/switch-wsl2/">开关 wsl2</a>
+    </h1><div class="post-meta"><span class="post-author"><a href="https://xzap.gitee.io" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>xzap</a>
+</span>&nbsp;<span class="post-publish">发布于 <time datetime="2021-03-07">2021-03-07</time></span>&nbsp;<span class="post-category">收录于 <a href="/categories/wsl2/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>wsl2</a></span></div><div class="content"><p>使用了wsl2下载安装了ubuntu，并不是很好用，速度太慢。而且gui使用存在问题。最重要的是安卓虚拟机不能启动。卸载又怕下次要用，于是临时开关下吧。</p></div><div class="post-footer">
+        <a href="/posts/switch-wsl2/">阅读全文</a><div class="post-tags">
+                <i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/wsl2/">wsl2</a></div></div>
+</article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
+        <a href="/posts/weixindaka/">微信里嘉兴健康自动打卡并部署到腾讯云函数</a>
+    </h1><div class="post-meta"><span class="post-author"><a href="https://xzap.gitee.io" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>xzap</a>
+</span>&nbsp;<span class="post-publish">发布于 <time datetime="2021-02-14">2021-02-14</time></span>&nbsp;<span class="post-category">收录于 <a href="/categories/python/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Python</a></span></div><div class="content"><p>好不容易放假了，还是要每天一大早健康打卡。对于爱睡懒觉的人来说完全不能忍，于是就考虑着自动健康打卡。用Fiddler Web Debugger 抓包微信的桌面版本。一个登录一个打卡。两个post搞定，还是比较简单的。</p></div><div class="post-footer">
+        <a href="/posts/weixindaka/">阅读全文</a><div class="post-tags">
+                <i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/python/">Python</a>,&nbsp;<a href="/tags/%E6%89%93%E5%8D%A1/">打卡</a></div></div>
+</article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
+        <a href="/posts/conemu_msys/">在Win系统下右键启动ConEmu和Msys2</a>
+    </h1><div class="post-meta"><span class="post-author"><a href="https://xzap.gitee.io" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>xzap</a>
+</span>&nbsp;<span class="post-publish">发布于 <time datetime="2015-06-07">2015-06-07</time></span>&nbsp;<span class="post-category">收录于 <a href="/categories/msys2/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Msys2</a></span></div><div class="content">在win系统下使用好点的命令行，虚拟终端用 ConEmu 很好用。至于 Linux 的命令行移植选来选取选了个 Msys2。比Cygwin 轻量得多，而又不像 Gitbash 那样过于简</div><div class="post-footer">
+        <a href="/posts/conemu_msys/">阅读全文</a><div class="post-tags">
+                <i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/conemu/">ConEmu</a>,&nbsp;<a href="/tags/msys2/">Msys2</a></div></div>
+</article></div></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.120.4">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2024</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://xzap.gitee.io" target="_blank">xzap</a></span></div>
+        </div>
+    </footer></div>
 
-<!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="http://xzap.github.io/theme/js/bootstrap.min.js"></script>
-
-<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
-<script src="http://xzap.github.io/theme/js/respond.min.js"></script>
-
-<!--  -->
-
-
-</body>
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.38.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lunr@2.3.9/lunr.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.stemmer.support.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.zh.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.1/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":50},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"lunr"}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
 </html>

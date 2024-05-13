@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>刷青少年普法网的Python脚本 - Xzap&#39;s 缓存区</title><meta name="Description" content=""><meta property="og:title" content="刷青少年普法网的Python脚本" />
+<meta property="og:description" content="青少年普法网的要求真是麻烦。乡下学校要求家长去做其实还是很有难度的。利用信息课让学生刷教个半节课还有网址都打不开的，完成率很低。那就用Python技术解决吧。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://xzap.gitee.io/posts/qsnpfw/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-10-21T10:02:53+08:00" />
+<meta property="article:modified_time" content="2023-10-21T10:02:53+08:00" /><meta property="og:site_name" content="Xzap&#39;s 缓存区" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="刷青少年普法网的Python脚本"/>
+<meta name="twitter:description" content="青少年普法网的要求真是麻烦。乡下学校要求家长去做其实还是很有难度的。利用信息课让学生刷教个半节课还有网址都打不开的，完成率很低。那就用Python技术解决吧。"/>
+<meta name="application-name" content="Xzap&#39;s 缓存区">
+<meta name="apple-mobile-web-app-title" content="Xzap&#39;s 缓存区"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://xzap.gitee.io/posts/qsnpfw/" /><link rel="prev" href="http://xzap.gitee.io/posts/zuoyeshenbao/" /><link rel="next" href="http://xzap.gitee.io/posts/img2pdf/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "刷青少年普法网的Python脚本",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http:\/\/xzap.gitee.io\/posts\/qsnpfw\/"
+        },"genre": "posts","keywords": "Python, ddddocr, Playwright","wordcount":  2771 ,
+        "url": "http:\/\/xzap.gitee.io\/posts\/qsnpfw\/","datePublished": "2023-10-21T10:02:53+08:00","dateModified": "2023-10-21T10:02:53+08:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "xzap"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Xzap&#39;s 缓存区">Xzap&#39;s 缓存区</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> 文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><a class="menu-item" href="/docs/"> 文档 </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Xzap&#39;s 缓存区">Xzap&#39;s 缓存区</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a class="menu-item" href="/docs/" title="">文档</a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><div class="search-dropdown desktop">
+        <div id="search-dropdown-desktop"></div>
+    </div>
+    <div class="search-dropdown mobile">
+        <div id="search-dropdown-mobile"></div>
+    </div><main class="main">
+                <div class="container"><article class="page single"><h1 class="single-title animate__animated animate__flipInX">刷青少年普法网的Python脚本</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="https://xzap.gitee.io" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>xzap</a>
+</span>&nbsp;<span class="post-category">收录于 <a href="/categories/python/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Python</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2023-10-21">2023-10-21</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 2771 字&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 6 分钟&nbsp;</div>
+        </div><div class="content" id="content"><p>青少年普法网的要求真是麻烦。乡下学校要求家长去做其实还是很有难度的。利用信息课让学生刷教个半节课还有网址都打不开的，完成率很低。那就用Python技术解决吧。</p>
+<p>先是打算用Requests库直接登录。这个破网站又是rsa加密，又是后台blob生成二维码。真是有毒。只好用selenium模拟登录，然后获取Cookie。再用requests加载这个Cookie。后面的练习考试就直接用requests来进行。毕竟速度要快很多。用selenium打开界面还要等待加载。后端速度就嗖嗖的了。验证码就靠dddocr这个开源的识别库了。毕竟百度云ocr要收费。识别成功率也就Soso了。</p>
+<p>废话不多，直接上使用方法：</p>
+<ol>
+<li>找一个文本文件放入用户名姓名和密码，注意要另存为utf-8编码格式。否则默认的ANSI编码那些中文名字读不出来。第150行修改路径。</li>
+</ol>
+<pre tabindex="0"><code>用户名1,姓名1,密码1
+用户名2,姓名2,密码2
+用户名3,姓名3,密码3
+……
+</code></pre><ol start="2">
+<li>第28行根据屏幕缩放填入数字，没缩放就填1。屏幕比较大缩放到150就填1.5。</li>
+<li>根据开头import里那些库，自己pip安装。这都不会这个脚本不适合你换个会的来。</li>
+<li>下载安装好 <a href="https://www.mozilla.org/zh-CN/firefox/new/" target="_blank" rel="noopener noreffer">Firefox</a>
+ 和 <a href="https://github.com/mozilla/geckodriver/releases" target="_blank" rel="noopener noreffer">geckodriver.exe</a>
+ ，在25行设置好路径。</li>
+<li>如果要速度稍微快一点就开启headless模式。22和23行的注释去掉。headless模式屏幕缩放倍率设置为1。</li>
+<li>开刷……</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">  1
+</span><span class="lnt">  2
+</span><span class="lnt">  3
+</span><span class="lnt">  4
+</span><span class="lnt">  5
+</span><span class="lnt">  6
+</span><span class="lnt">  7
+</span><span class="lnt">  8
+</span><span class="lnt">  9
+</span><span class="lnt"> 10
+</span><span class="lnt"> 11
+</span><span class="lnt"> 12
+</span><span class="lnt"> 13
+</span><span class="lnt"> 14
+</span><span class="lnt"> 15
+</span><span class="lnt"> 16
+</span><span class="lnt"> 17
+</span><span class="lnt"> 18
+</span><span class="lnt"> 19
+</span><span class="lnt"> 20
+</span><span class="lnt"> 21
+</span><span class="lnt"> 22
+</span><span class="lnt"> 23
+</span><span class="lnt"> 24
+</span><span class="lnt"> 25
+</span><span class="lnt"> 26
+</span><span class="lnt"> 27
+</span><span class="lnt"> 28
+</span><span class="lnt"> 29
+</span><span class="lnt"> 30
+</span><span class="lnt"> 31
+</span><span class="lnt"> 32
+</span><span class="lnt"> 33
+</span><span class="lnt"> 34
+</span><span class="lnt"> 35
+</span><span class="lnt"> 36
+</span><span class="lnt"> 37
+</span><span class="lnt"> 38
+</span><span class="lnt"> 39
+</span><span class="lnt"> 40
+</span><span class="lnt"> 41
+</span><span class="lnt"> 42
+</span><span class="lnt"> 43
+</span><span class="lnt"> 44
+</span><span class="lnt"> 45
+</span><span class="lnt"> 46
+</span><span class="lnt"> 47
+</span><span class="lnt"> 48
+</span><span class="lnt"> 49
+</span><span class="lnt"> 50
+</span><span class="lnt"> 51
+</span><span class="lnt"> 52
+</span><span class="lnt"> 53
+</span><span class="lnt"> 54
+</span><span class="lnt"> 55
+</span><span class="lnt"> 56
+</span><span class="lnt"> 57
+</span><span class="lnt"> 58
+</span><span class="lnt"> 59
+</span><span class="lnt"> 60
+</span><span class="lnt"> 61
+</span><span class="lnt"> 62
+</span><span class="lnt"> 63
+</span><span class="lnt"> 64
+</span><span class="lnt"> 65
+</span><span class="lnt"> 66
+</span><span class="lnt"> 67
+</span><span class="lnt"> 68
+</span><span class="lnt"> 69
+</span><span class="lnt"> 70
+</span><span class="lnt"> 71
+</span><span class="lnt"> 72
+</span><span class="lnt"> 73
+</span><span class="lnt"> 74
+</span><span class="lnt"> 75
+</span><span class="lnt"> 76
+</span><span class="lnt"> 77
+</span><span class="lnt"> 78
+</span><span class="lnt"> 79
+</span><span class="lnt"> 80
+</span><span class="lnt"> 81
+</span><span class="lnt"> 82
+</span><span class="lnt"> 83
+</span><span class="lnt"> 84
+</span><span class="lnt"> 85
+</span><span class="lnt"> 86
+</span><span class="lnt"> 87
+</span><span class="lnt"> 88
+</span><span class="lnt"> 89
+</span><span class="lnt"> 90
+</span><span class="lnt"> 91
+</span><span class="lnt"> 92
+</span><span class="lnt"> 93
+</span><span class="lnt"> 94
+</span><span class="lnt"> 95
+</span><span class="lnt"> 96
+</span><span class="lnt"> 97
+</span><span class="lnt"> 98
+</span><span class="lnt"> 99
+</span><span class="lnt">100
+</span><span class="lnt">101
+</span><span class="lnt">102
+</span><span class="lnt">103
+</span><span class="lnt">104
+</span><span class="lnt">105
+</span><span class="lnt">106
+</span><span class="lnt">107
+</span><span class="lnt">108
+</span><span class="lnt">109
+</span><span class="lnt">110
+</span><span class="lnt">111
+</span><span class="lnt">112
+</span><span class="lnt">113
+</span><span class="lnt">114
+</span><span class="lnt">115
+</span><span class="lnt">116
+</span><span class="lnt">117
+</span><span class="lnt">118
+</span><span class="lnt">119
+</span><span class="lnt">120
+</span><span class="lnt">121
+</span><span class="lnt">122
+</span><span class="lnt">123
+</span><span class="lnt">124
+</span><span class="lnt">125
+</span><span class="lnt">126
+</span><span class="lnt">127
+</span><span class="lnt">128
+</span><span class="lnt">129
+</span><span class="lnt">130
+</span><span class="lnt">131
+</span><span class="lnt">132
+</span><span class="lnt">133
+</span><span class="lnt">134
+</span><span class="lnt">135
+</span><span class="lnt">136
+</span><span class="lnt">137
+</span><span class="lnt">138
+</span><span class="lnt">139
+</span><span class="lnt">140
+</span><span class="lnt">141
+</span><span class="lnt">142
+</span><span class="lnt">143
+</span><span class="lnt">144
+</span><span class="lnt">145
+</span><span class="lnt">146
+</span><span class="lnt">147
+</span><span class="lnt">148
+</span><span class="lnt">149
+</span><span class="lnt">150
+</span><span class="lnt">151
+</span><span class="lnt">152
+</span><span class="lnt">153
+</span><span class="lnt">154
+</span><span class="lnt">155
+</span><span class="lnt">156
+</span><span class="lnt">157
+</span><span class="lnt">158
+</span><span class="lnt">159
+</span><span class="lnt">160
+</span><span class="lnt">161
+</span><span class="lnt">162
+</span><span class="lnt">163
+</span><span class="lnt">164
+</span><span class="lnt">165
+</span><span class="lnt">166
+</span><span class="lnt">167
+</span><span class="lnt">168
+</span><span class="lnt">169
+</span><span class="lnt">170
+</span><span class="lnt">171
+</span><span class="lnt">172
+</span><span class="lnt">173
+</span><span class="lnt">174
+</span><span class="lnt">175
+</span><span class="lnt">176
+</span><span class="lnt">177
+</span><span class="lnt">178
+</span><span class="lnt">179
+</span><span class="lnt">180
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-Python" data-lang="Python"><span class="line"><span class="cl"><span class="ch">#!/usr/bin/env python</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># -*- coding: utf-8 -*-</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># @Date    : 2023-10-18 23:29:28</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># @Author  : Xzap (xzap@163.com)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># @Link    : http://xzap.gitee.io</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># @Version : 1.3</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">os</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">requests</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">re</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">seleniumwire</span> <span class="kn">import</span> <span class="n">webdriver</span> 
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">time</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">selenium.webdriver.common.by</span> <span class="kn">import</span> <span class="n">By</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">PIL</span> <span class="kn">import</span> <span class="n">Image</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">ddddocr</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">random</span>
+</span></span><span class="line"><span class="cl"><span class="n">ocr</span> <span class="o">=</span> <span class="n">ddddocr</span><span class="o">.</span><span class="n">DdddOcr</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># ocr.load_model()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">options</span> <span class="o">=</span> <span class="n">webdriver</span><span class="o">.</span><span class="n">FirefoxOptions</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># options.add_argument(&#39;-headless&#39;)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># options.add_argument(&#39;--window-size=1600x1200&#39;)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># driver = webdriver.Firefox()</span>
+</span></span><span class="line"><span class="cl"><span class="n">driver</span> <span class="o">=</span> <span class="n">webdriver</span><span class="o">.</span><span class="n">Firefox</span><span class="p">(</span><span class="n">firefox_binary</span><span class="o">=</span><span class="s2">&#34;F:/Mozilla Firefox/firefox.exe&#34;</span><span class="p">,</span> <span class="n">executable_path</span><span class="o">=</span><span class="s2">&#34;F:/Mozilla Firefox/geckodriver.exe&#34;</span><span class="p">,</span> <span class="n">options</span><span class="o">=</span><span class="n">options</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">shuashua</span><span class="p">(</span><span class="n">uid</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">passwd</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">beilv</span> <span class="o">=</span> <span class="mf">1.25</span>
+</span></span><span class="line"><span class="cl">    <span class="n">taskid</span> <span class="o">=</span> <span class="mi">24</span>
+</span></span><span class="line"><span class="cl">    <span class="n">driver</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&#34;https://static.qspfw.moe.gov.cn/user/#/user/login&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">driver</span><span class="o">.</span><span class="n">implicitly_wait</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">p_uid</span> <span class="o">=</span> <span class="n">driver</span><span class="o">.</span><span class="n">find_element</span><span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s1">&#39;/html/body/div/div/div[2]/div/div[2]/form/div[2]/div/div/span/span/input&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">p_name</span> <span class="o">=</span> <span class="n">driver</span><span class="o">.</span><span class="n">find_element</span><span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s1">&#39;/html/body/div/div/div[2]/div/div[2]/form/div[3]/div/div/span/span/input&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">p_passwd</span> <span class="o">=</span> <span class="n">driver</span><span class="o">.</span><span class="n">find_element</span><span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s1">&#39;/html/body/div/div/div[2]/div/div[2]/form/div[4]/div/div/span/span/input&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">p_captcha</span> <span class="o">=</span> <span class="n">driver</span><span class="o">.</span><span class="n">find_element</span><span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s1">&#39;/html/body/div/div/div[2]/div/div[2]/form/div[5]/div/div/span/span/input&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">p_img</span> <span class="o">=</span> <span class="n">driver</span><span class="o">.</span><span class="n">find_element</span><span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s1">&#39;/html/body/div/div/div[2]/div/div[2]/form/div[5]/div/div/span/img&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">p_bt</span> <span class="o">=</span> <span class="n">driver</span><span class="o">.</span><span class="n">find_element</span><span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s1">&#39;/html/body/div/div/div[2]/div/div[2]/form/div[8]/div/div/span/button&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">p_check</span> <span class="o">=</span> <span class="n">driver</span><span class="o">.</span><span class="n">find_element</span><span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">XPATH</span><span class="p">,</span> <span class="s1">&#39;//*[@id=&#34;formLogin&#34;]/div[7]/div/div/span/div/label/span[1]/input&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">p_check</span><span class="o">.</span><span class="n">click</span><span class="p">()</span> 
+</span></span><span class="line"><span class="cl">    <span class="n">p_captcha</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="n">p_uid</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="n">p_name</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="n">p_passwd</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="n">p_uid</span><span class="o">.</span><span class="n">send_keys</span><span class="p">(</span><span class="n">uid</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">p_name</span><span class="o">.</span><span class="n">send_keys</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">p_passwd</span><span class="o">.</span><span class="n">send_keys</span><span class="p">(</span><span class="n">passwd</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># print (p_img.location)</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># print (p_img.size)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">left</span>   <span class="o">=</span> <span class="n">p_img</span><span class="o">.</span><span class="n">location</span><span class="p">[</span>  <span class="s1">&#39;x&#39;</span> <span class="p">]</span> <span class="o">+</span> <span class="mi">25</span>  <span class="c1">#x点的坐标</span>
+</span></span><span class="line"><span class="cl">    <span class="n">top</span>   <span class="o">=</span> <span class="n">p_img</span><span class="o">.</span><span class="n">location</span><span class="p">[</span>  <span class="s1">&#39;y&#39;</span> <span class="p">]</span>  <span class="c1">#y点的坐标</span>
+</span></span><span class="line"><span class="cl">    <span class="n">right</span>   <span class="o">=</span> <span class="n">p_img</span><span class="o">.</span><span class="n">size</span><span class="p">[</span>  <span class="s1">&#39;width&#39;</span> <span class="p">]</span>  <span class="o">+</span> <span class="n">left</span> <span class="o">-</span><span class="mi">25</span>  <span class="c1">#上面右边点的坐标</span>
+</span></span><span class="line"><span class="cl">    <span class="n">down</span>   <span class="o">=</span> <span class="n">p_img</span><span class="o">.</span><span class="n">size</span><span class="p">[</span>  <span class="s1">&#39;height&#39;</span> <span class="p">]</span>  <span class="o">+</span> <span class="n">top</span>  <span class="c1">#下面右边点的坐标</span>
+</span></span><span class="line"><span class="cl">    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># driver.refresh()</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># time.sleep(2)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">driver</span><span class="o">.</span><span class="n">get_screenshot_as_file</span><span class="p">(</span><span class="s2">&#34;code.png&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">image</span>   <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span> <span class="p">(</span><span class="s1">&#39;code.png&#39;</span><span class="p">)</span>     <span class="c1"># 截取你整个的登录页面</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># beilv = 1</span>
+</span></span><span class="line"><span class="cl">    <span class="n">code_image</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="n">crop</span><span class="p">((</span><span class="n">left</span> <span class="o">*</span> <span class="n">beilv</span><span class="p">,</span> <span class="n">top</span> <span class="o">*</span> <span class="n">beilv</span><span class="p">,</span> <span class="n">right</span>  <span class="o">*</span>   <span class="n">beilv</span> <span class="p">,</span> <span class="n">down</span>  <span class="o">*</span>   <span class="n">beilv</span> <span class="p">))</span>  
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">code_image</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s1">&#39;code_new.png&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">code_image</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="n">image</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&#34;code_new.png&#34;</span><span class="p">,</span><span class="s2">&#34;rb&#34;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">image</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="n">res</span> <span class="o">=</span> <span class="n">ocr</span><span class="o">.</span><span class="n">classification</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># txts = &#39;0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz&#39;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">txts</span> <span class="o">=</span> <span class="s1">&#39;0123456789abcdefghijklmnopqrstuvwxyz&#39;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">res2</span> <span class="o">=</span> <span class="s2">&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">res</span> <span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">txts</span> <span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="n">res2</span> <span class="o">+=</span> <span class="n">i</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;验证码: </span><span class="si">{</span><span class="n">res2</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># print (res2)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;cap/</span><span class="si">{</span><span class="n">res2</span><span class="si">}</span><span class="s2">.png&#34;</span><span class="p">,</span> <span class="s2">&#34;wb&#34;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">p_captcha</span><span class="o">.</span><span class="n">send_keys</span><span class="p">(</span><span class="n">res2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">p_bt</span><span class="o">.</span><span class="n">click</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">ck</span> <span class="o">=</span> <span class="n">driver</span><span class="o">.</span><span class="n">get_cookies</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="n">s</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">Session</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="n">h1</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&#34;User-Agent&#34;</span><span class="p">:</span> <span class="s2">&#34;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.198 Safari/537.36&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;source&#34;</span><span class="p">:</span> <span class="s2">&#34;1&#34;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="n">s</span><span class="o">.</span><span class="n">headers</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">h1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">cookie</span> <span class="ow">in</span> <span class="n">ck</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">         <span class="n">s</span><span class="o">.</span><span class="n">cookies</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">cookie</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">],</span><span class="n">cookie</span><span class="p">[</span><span class="s1">&#39;value&#39;</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">    <span class="n">s</span><span class="o">.</span><span class="n">headers</span><span class="p">[</span><span class="s2">&#34;Access-Token&#34;</span><span class="p">]</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">cookies</span><span class="p">[</span><span class="s1">&#39;SESSION&#39;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">    <span class="n">c</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="s2">&#34;https://service-r07xmosl-1251413566.sh.apigw.tencentcs.com/userAuthApi/user/info&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">tiku_d</span> <span class="o">=</span> <span class="p">{}</span>
+</span></span><span class="line"><span class="cl">    <span class="n">s</span><span class="o">.</span><span class="n">headers</span><span class="p">[</span><span class="s2">&#34;sourceId&#34;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&#34;2&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">c</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;https://service-6xrqld9h-1251413566.sh.apigw.tencentcs.com/practice/getColumnList?taskId=</span><span class="si">{</span><span class="n">taskid</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># print (c.json())</span>
+</span></span><span class="line"><span class="cl">    <span class="n">t1</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">json</span><span class="p">()[</span><span class="s1">&#39;data&#39;</span><span class="p">][</span><span class="s1">&#39;columnList&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;columnId&#39;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">    <span class="n">t2</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">json</span><span class="p">()[</span><span class="s1">&#39;data&#39;</span><span class="p">][</span><span class="s1">&#39;columnList&#39;</span><span class="p">][</span><span class="mi">1</span><span class="p">][</span><span class="s1">&#39;columnId&#39;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">    <span class="n">t3</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">json</span><span class="p">()[</span><span class="s1">&#39;data&#39;</span><span class="p">][</span><span class="s1">&#39;columnList&#39;</span><span class="p">][</span><span class="mi">2</span><span class="p">][</span><span class="s1">&#39;columnId&#39;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">    <span class="n">c</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="sa">f</span><span class="s2">&#34;https://service-6xrqld9h-1251413566.sh.apigw.tencentcs.com/practice/studyByColumnId?columnId=</span><span class="si">{</span><span class="n">t1</span><span class="si">}</span><span class="s2">&amp;taskId=</span><span class="si">{</span><span class="n">taskid</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">c</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="sa">f</span><span class="s2">&#34;https://service-6xrqld9h-1251413566.sh.apigw.tencentcs.com/practice/practice?columnId=</span><span class="si">{</span><span class="n">t1</span><span class="si">}</span><span class="s2">&amp;taskId=</span><span class="si">{</span><span class="n">taskid</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">tiku</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">json</span><span class="p">()[</span><span class="s1">&#39;data&#39;</span><span class="p">][</span><span class="s1">&#39;questionBankList&#39;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">tiku</span> <span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">tiku_d</span><span class="p">[</span><span class="n">i</span><span class="p">[</span><span class="s1">&#39;content&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&#34;</span><span class="se">\n</span><span class="s2">&#34;</span><span class="p">,</span><span class="s2">&#34;&#34;</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&#34; &#34;</span><span class="p">,</span><span class="s2">&#34;&#34;</span><span class="p">)]</span> <span class="o">=</span> <span class="n">i</span><span class="p">[</span><span class="s1">&#39;answer&#39;</span><span class="p">]</span>  
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">c</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="sa">f</span><span class="s2">&#34;https://service-6xrqld9h-1251413566.sh.apigw.tencentcs.com/practice/studyByColumnId?columnId=</span><span class="si">{</span><span class="n">t2</span><span class="si">}</span><span class="s2">&amp;taskId=</span><span class="si">{</span><span class="n">taskid</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">c</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="sa">f</span><span class="s2">&#34;https://service-6xrqld9h-1251413566.sh.apigw.tencentcs.com/practice/practice?columnId=</span><span class="si">{</span><span class="n">t2</span><span class="si">}</span><span class="s2">&amp;taskId=</span><span class="si">{</span><span class="n">taskid</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">tiku</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">json</span><span class="p">()[</span><span class="s1">&#39;data&#39;</span><span class="p">][</span><span class="s1">&#39;questionBankList&#39;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">tiku</span> <span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">tiku_d</span><span class="p">[</span><span class="n">i</span><span class="p">[</span><span class="s1">&#39;content&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&#34;</span><span class="se">\n</span><span class="s2">&#34;</span><span class="p">,</span><span class="s2">&#34;&#34;</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&#34; &#34;</span><span class="p">,</span><span class="s2">&#34;&#34;</span><span class="p">)]</span> <span class="o">=</span> <span class="n">i</span><span class="p">[</span><span class="s1">&#39;answer&#39;</span><span class="p">]</span>  
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">c</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="sa">f</span><span class="s2">&#34;https://service-6xrqld9h-1251413566.sh.apigw.tencentcs.com/practice/studyByColumnId?columnId=</span><span class="si">{</span><span class="n">t3</span><span class="si">}</span><span class="s2">&amp;taskId=</span><span class="si">{</span><span class="n">taskid</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>  
+</span></span><span class="line"><span class="cl">    <span class="n">c</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="sa">f</span><span class="s2">&#34;https://service-6xrqld9h-1251413566.sh.apigw.tencentcs.com/practice/practice?columnId=</span><span class="si">{</span><span class="n">t3</span><span class="si">}</span><span class="s2">&amp;taskId=</span><span class="si">{</span><span class="n">taskid</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span> 
+</span></span><span class="line"><span class="cl">    <span class="n">tiku</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">json</span><span class="p">()[</span><span class="s1">&#39;data&#39;</span><span class="p">][</span><span class="s1">&#39;questionBankList&#39;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">tiku</span> <span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">tiku_d</span><span class="p">[</span><span class="n">i</span><span class="p">[</span><span class="s1">&#39;content&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&#34;</span><span class="se">\n</span><span class="s2">&#34;</span><span class="p">,</span><span class="s2">&#34;&#34;</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&#34; &#34;</span><span class="p">,</span><span class="s2">&#34;&#34;</span><span class="p">)]</span> <span class="o">=</span> <span class="n">i</span><span class="p">[</span><span class="s1">&#39;answer&#39;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1"># print (tiku)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">c</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="sa">f</span><span class="s2">&#34;https://service-pw82n1db-1251413566.sh.apigw.tencentcs.com/paper/getPaper?taskId=</span><span class="si">{</span><span class="n">taskid</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="n">tp1</span> <span class="o">=</span> <span class="n">c</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">][</span><span class="s2">&#34;paper&#34;</span><span class="p">][</span><span class="s2">&#34;paperInfo&#34;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">    <span class="n">answer</span> <span class="o">=</span> <span class="s2">&#34;&#34;</span> 
+</span></span><span class="line"><span class="cl">    <span class="c1"># print (&#34;=&#34;*40)</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># print (tp1)</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># print (&#34;=&#34;*40)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">tp1</span> <span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="k">try</span> <span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="n">ccc</span> <span class="o">=</span> <span class="n">tiku_d</span><span class="p">[</span><span class="n">i</span><span class="p">[</span><span class="s2">&#34;content&#34;</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&#34;</span><span class="se">\n</span><span class="s2">&#34;</span><span class="p">,</span><span class="s2">&#34;&#34;</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&#34; &#34;</span><span class="p">,</span><span class="s2">&#34;&#34;</span><span class="p">)]</span>
+</span></span><span class="line"><span class="cl">            <span class="n">answer</span> <span class="o">+=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">i</span><span class="p">[</span><span class="s2">&#34;id&#34;</span><span class="p">]</span><span class="si">}</span><span class="s1">_</span><span class="si">{</span><span class="n">ccc</span><span class="si">}</span><span class="s1">@!@&#39;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">except</span> <span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="nb">print</span> <span class="p">(</span><span class="n">tiku_d</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="nb">print</span> <span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="n">answer</span> <span class="o">+=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">i</span><span class="p">[</span><span class="s2">&#34;id&#34;</span><span class="p">]</span><span class="si">}</span><span class="s1">_D@!@&#39;</span>
+</span></span><span class="line"><span class="cl">        
+</span></span><span class="line"><span class="cl">    <span class="n">resultid</span> <span class="o">=</span> <span class="n">c</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">][</span><span class="s2">&#34;resultId&#34;</span><span class="p">]</span>    
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">r_url</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&#34;https://service-pw82n1db-1251413566.sh.apigw.tencentcs.com/paper/saveResult?taskId=</span><span class="si">{</span><span class="n">taskid</span><span class="si">}</span><span class="s2">&amp;paperId=</span><span class="si">{</span><span class="n">c</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">][</span><span class="s1">&#39;paper&#39;</span><span class="p">][</span><span class="s1">&#39;id&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&amp;resultId=</span><span class="si">{</span><span class="n">resultid</span><span class="si">}</span><span class="s2">&amp;answers=</span><span class="si">{</span><span class="n">answer</span><span class="si">}</span><span class="s2">&amp;takeTime=</span><span class="si">{</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">60</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span><span class="si">}</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">c</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">r_url</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">s_point</span> <span class="o">=</span>  <span class="n">c</span><span class="o">.</span><span class="n">json</span><span class="p">()[</span><span class="s1">&#39;data&#39;</span><span class="p">][</span><span class="s1">&#39;result&#39;</span><span class="p">][</span><span class="s1">&#39;testscore&#39;</span><span class="p">]</span>   
+</span></span><span class="line"><span class="cl">    <span class="n">c</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="sa">f</span><span class="s2">&#34;https://service-pw82n1db-1251413566.sh.apigw.tencentcs.com/paper/getResultInfo?taskId=</span><span class="si">{</span><span class="n">taskid</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>   
+</span></span><span class="line"><span class="cl">    <span class="n">info1</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">json</span><span class="p">()[</span><span class="s1">&#39;data&#39;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># print (&#34;-&#34;*50)</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span> <span class="p">(</span><span class="sa">f</span><span class="s2">&#34;学校：</span><span class="si">{</span><span class="n">info1</span><span class="p">[</span><span class="s1">&#39;schoolName&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2"> 年级：</span><span class="si">{</span><span class="n">info1</span><span class="p">[</span><span class="s1">&#39;gradeName&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2"> 姓名：</span><span class="si">{</span><span class="n">info1</span><span class="p">[</span><span class="s1">&#39;userName&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span> <span class="p">(</span><span class="sa">f</span><span class="s2">&#34;</span><span class="si">{</span><span class="n">info1</span><span class="p">[</span><span class="s1">&#39;medal&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2"> 得分：</span><span class="si">{</span><span class="n">s_point</span><span class="si">}</span><span class="s2"> 最高分：</span><span class="si">{</span><span class="n">info1</span><span class="p">[</span><span class="s1">&#39;maxScore&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span> <span class="p">(</span><span class="sa">f</span><span class="s2">&#34;剩余考试次数：</span><span class="si">{</span><span class="n">info1</span><span class="p">[</span><span class="s1">&#39;leftExamCount&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span> 
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">c</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="s2">&#34;https://service-r07xmosl-1251413566.sh.apigw.tencentcs.com/userAuthApi/user/logout&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span> <span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">json</span><span class="p">()[</span><span class="s2">&#34;data&#34;</span><span class="p">])</span> 
+</span></span><span class="line"><span class="cl">    <span class="n">driver</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&#34;https://static.qspfw.moe.gov.cn/user/#/user/login&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">students</span> <span class="o">=</span> <span class="p">[]</span>
+</span></span><span class="line"><span class="cl"><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&#34;用户名密码文件&#34;</span><span class="p">,</span> <span class="s2">&#34;r&#34;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&#34;utf-8&#34;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">f</span> <span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">student</span> <span class="o">=</span> <span class="n">i</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&#34;,&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">students</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">student</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">allnum</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">students</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">num</span><span class="p">,</span> <span class="n">s</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">students</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">stime</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span> <span class="p">(</span><span class="s2">&#34;=&#34;</span><span class="o">*</span><span class="mi">50</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span> <span class="p">(</span><span class="sa">f</span><span class="s2">&#34;</span><span class="si">{</span><span class="n">num</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s2"> / </span><span class="si">{</span><span class="n">allnum</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">s</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">att</span> <span class="o">=</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="cl">    <span class="n">success</span> <span class="o">=</span> <span class="kc">False</span>
+</span></span><span class="line"><span class="cl">    <span class="k">while</span> <span class="n">att</span> <span class="o">&lt;</span> <span class="mi">3</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">success</span> <span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="k">try</span> <span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="n">shuashua</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">s</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">s</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">            <span class="n">success</span> <span class="o">=</span> <span class="kc">True</span>
+</span></span><span class="line"><span class="cl">        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="nb">print</span> <span class="p">(</span><span class="n">e</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="n">att</span> <span class="o">+=</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl">            <span class="n">driver</span><span class="o">.</span><span class="n">refresh</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">            <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="n">att</span> <span class="o">==</span> <span class="mi">3</span> <span class="p">:</span>
+</span></span><span class="line"><span class="cl">                <span class="k">with</span> <span class="nb">open</span> <span class="p">(</span><span class="s2">&#34;fail.txt&#34;</span><span class="p">,</span> <span class="s2">&#34;a&#34;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&#34;utf-8&#34;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span> <span class="p">:</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&#34;,&#34;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&#34;</span><span class="se">\n</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                <span class="nb">print</span> <span class="p">(</span><span class="sa">f</span><span class="s2">&#34;</span><span class="si">{</span><span class="n">num</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">s</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2"> fail!&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                <span class="k">break</span>
+</span></span><span class="line"><span class="cl">            <span class="k">else</span> <span class="p">:</span>
+</span></span><span class="line"><span class="cl">                <span class="nb">print</span> <span class="p">(</span><span class="s2">&#34;Retry...&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">endtime</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="n">ttime</span> <span class="o">=</span> <span class="n">endtime</span> <span class="o">-</span> <span class="n">stime</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span> <span class="p">(</span><span class="sa">f</span><span class="s2">&#34;耗时</span><span class="si">{</span><span class="n">ttime</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">秒。&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">driver</span><span class="o">.</span><span class="n">quit</span><span class="p">()</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Selenuim 还是太老了，改用Playwright重新改写了下。好像速度提高不多。但是好像稳定一丢丢</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">  1
+</span><span class="lnt">  2
+</span><span class="lnt">  3
+</span><span class="lnt">  4
+</span><span class="lnt">  5
+</span><span class="lnt">  6
+</span><span class="lnt">  7
+</span><span class="lnt">  8
+</span><span class="lnt">  9
+</span><span class="lnt"> 10
+</span><span class="lnt"> 11
+</span><span class="lnt"> 12
+</span><span class="lnt"> 13
+</span><span class="lnt"> 14
+</span><span class="lnt"> 15
+</span><span class="lnt"> 16
+</span><span class="lnt"> 17
+</span><span class="lnt"> 18
+</span><span class="lnt"> 19
+</span><span class="lnt"> 20
+</span><span class="lnt"> 21
+</span><span class="lnt"> 22
+</span><span class="lnt"> 23
+</span><span class="lnt"> 24
+</span><span class="lnt"> 25
+</span><span class="lnt"> 26
+</span><span class="lnt"> 27
+</span><span class="lnt"> 28
+</span><span class="lnt"> 29
+</span><span class="lnt"> 30
+</span><span class="lnt"> 31
+</span><span class="lnt"> 32
+</span><span class="lnt"> 33
+</span><span class="lnt"> 34
+</span><span class="lnt"> 35
+</span><span class="lnt"> 36
+</span><span class="lnt"> 37
+</span><span class="lnt"> 38
+</span><span class="lnt"> 39
+</span><span class="lnt"> 40
+</span><span class="lnt"> 41
+</span><span class="lnt"> 42
+</span><span class="lnt"> 43
+</span><span class="lnt"> 44
+</span><span class="lnt"> 45
+</span><span class="lnt"> 46
+</span><span class="lnt"> 47
+</span><span class="lnt"> 48
+</span><span class="lnt"> 49
+</span><span class="lnt"> 50
+</span><span class="lnt"> 51
+</span><span class="lnt"> 52
+</span><span class="lnt"> 53
+</span><span class="lnt"> 54
+</span><span class="lnt"> 55
+</span><span class="lnt"> 56
+</span><span class="lnt"> 57
+</span><span class="lnt"> 58
+</span><span class="lnt"> 59
+</span><span class="lnt"> 60
+</span><span class="lnt"> 61
+</span><span class="lnt"> 62
+</span><span class="lnt"> 63
+</span><span class="lnt"> 64
+</span><span class="lnt"> 65
+</span><span class="lnt"> 66
+</span><span class="lnt"> 67
+</span><span class="lnt"> 68
+</span><span class="lnt"> 69
+</span><span class="lnt"> 70
+</span><span class="lnt"> 71
+</span><span class="lnt"> 72
+</span><span class="lnt"> 73
+</span><span class="lnt"> 74
+</span><span class="lnt"> 75
+</span><span class="lnt"> 76
+</span><span class="lnt"> 77
+</span><span class="lnt"> 78
+</span><span class="lnt"> 79
+</span><span class="lnt"> 80
+</span><span class="lnt"> 81
+</span><span class="lnt"> 82
+</span><span class="lnt"> 83
+</span><span class="lnt"> 84
+</span><span class="lnt"> 85
+</span><span class="lnt"> 86
+</span><span class="lnt"> 87
+</span><span class="lnt"> 88
+</span><span class="lnt"> 89
+</span><span class="lnt"> 90
+</span><span class="lnt"> 91
+</span><span class="lnt"> 92
+</span><span class="lnt"> 93
+</span><span class="lnt"> 94
+</span><span class="lnt"> 95
+</span><span class="lnt"> 96
+</span><span class="lnt"> 97
+</span><span class="lnt"> 98
+</span><span class="lnt"> 99
+</span><span class="lnt">100
+</span><span class="lnt">101
+</span><span class="lnt">102
+</span><span class="lnt">103
+</span><span class="lnt">104
+</span><span class="lnt">105
+</span><span class="lnt">106
+</span><span class="lnt">107
+</span><span class="lnt">108
+</span><span class="lnt">109
+</span><span class="lnt">110
+</span><span class="lnt">111
+</span><span class="lnt">112
+</span><span class="lnt">113
+</span><span class="lnt">114
+</span><span class="lnt">115
+</span><span class="lnt">116
+</span><span class="lnt">117
+</span><span class="lnt">118
+</span><span class="lnt">119
+</span><span class="lnt">120
+</span><span class="lnt">121
+</span><span class="lnt">122
+</span><span class="lnt">123
+</span><span class="lnt">124
+</span><span class="lnt">125
+</span><span class="lnt">126
+</span><span class="lnt">127
+</span><span class="lnt">128
+</span><span class="lnt">129
+</span><span class="lnt">130
+</span><span class="lnt">131
+</span><span class="lnt">132
+</span><span class="lnt">133
+</span><span class="lnt">134
+</span><span class="lnt">135
+</span><span class="lnt">136
+</span><span class="lnt">137
+</span><span class="lnt">138
+</span><span class="lnt">139
+</span><span class="lnt">140
+</span><span class="lnt">141
+</span><span class="lnt">142
+</span><span class="lnt">143
+</span><span class="lnt">144
+</span><span class="lnt">145
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="ch">#!/usr/bin/env python</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># -*- coding: utf-8 -*-</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># @Date    : 2023-10-21 21:03:11</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># @Author  : Xzap (xzap@163.com)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># @Link    : http://xzap.gitee.io</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># @Version : 2.0</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">playwright.sync_api</span> <span class="kn">import</span> <span class="n">Playwright</span><span class="p">,</span> <span class="n">sync_playwright</span><span class="p">,</span> <span class="n">expect</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">time</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">requests</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">ddddocr</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">random</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">ocr</span> <span class="o">=</span> <span class="n">ddddocr</span><span class="o">.</span><span class="n">DdddOcr</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">shuashua</span><span class="p">(</span><span class="n">uid</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">passwd</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">taskid</span> <span class="o">=</span> <span class="mi">24</span>
+</span></span><span class="line"><span class="cl">    <span class="n">page</span> <span class="o">=</span> <span class="n">context</span><span class="o">.</span><span class="n">new_page</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="n">page</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="s2">&#34;https://static.qspfw.moe.gov.cn/user/#/user/login&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">page</span><span class="o">.</span><span class="n">get_by_placeholder</span><span class="p">(</span><span class="s2">&#34;请输入学校下发账号&#34;</span><span class="p">)</span><span class="o">.</span><span class="n">fill</span><span class="p">(</span><span class="n">uid</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">page</span><span class="o">.</span><span class="n">get_by_placeholder</span><span class="p">(</span><span class="s2">&#34;请输入姓名&#34;</span><span class="p">)</span><span class="o">.</span><span class="n">fill</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">page</span><span class="o">.</span><span class="n">get_by_placeholder</span><span class="p">(</span><span class="s2">&#34;默认密码为账号后六位&#34;</span><span class="p">)</span><span class="o">.</span><span class="n">fill</span><span class="p">(</span><span class="n">passwd</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">page</span><span class="o">.</span><span class="n">get_by_label</span><span class="p">(</span><span class="s2">&#34;我已阅读并同意&#34;</span><span class="p">)</span><span class="o">.</span><span class="n">check</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="n">page</span><span class="o">.</span><span class="n">get_by_role</span><span class="p">(</span><span class="s2">&#34;img&#34;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&#34;换一张&#34;</span><span class="p">)</span><span class="o">.</span><span class="n">screenshot</span><span class="p">(</span><span class="n">animations</span><span class="o">=</span><span class="s2">&#34;disabled&#34;</span> <span class="p">,</span> <span class="n">path</span><span class="o">=</span><span class="s2">&#34;pw_cap.png&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&#34;pw_cap.png&#34;</span><span class="p">,</span><span class="s2">&#34;rb&#34;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">image</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="n">res</span> <span class="o">=</span> <span class="n">ocr</span><span class="o">.</span><span class="n">classification</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">txts</span> <span class="o">=</span> <span class="s1">&#39;0123456789abcdefghijklmnopqrstuvwxyz&#39;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">res2</span> <span class="o">=</span> <span class="s2">&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">res</span> <span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">txts</span> <span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="n">res2</span> <span class="o">+=</span> <span class="n">i</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">res2</span><span class="p">)</span> <span class="o">==</span> <span class="mi">6</span> <span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">res2</span> <span class="o">=</span> <span class="n">res2</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;验证码: </span><span class="si">{</span><span class="n">res2</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">page</span><span class="o">.</span><span class="n">get_by_placeholder</span><span class="p">(</span><span class="s2">&#34;请输入验证码&#34;</span><span class="p">)</span><span class="o">.</span><span class="n">fill</span><span class="p">(</span><span class="n">res2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">page</span><span class="o">.</span><span class="n">get_by_role</span><span class="p">(</span><span class="s2">&#34;button&#34;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&#34;登 录&#34;</span><span class="p">)</span><span class="o">.</span><span class="n">click</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">ck</span> <span class="o">=</span> <span class="n">page</span><span class="o">.</span><span class="n">context</span><span class="o">.</span><span class="n">cookies</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="n">s</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">session</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&#34;User-Agent&#34;</span><span class="p">:</span> <span class="s2">&#34;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.198 Safari/537.36&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="s2">&#34;source&#34;</span><span class="p">:</span> <span class="s2">&#34;1&#34;</span><span class="p">,}</span>
+</span></span><span class="line"><span class="cl">    <span class="n">s</span><span class="o">.</span><span class="n">headers</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">headers</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">cookie</span> <span class="ow">in</span> <span class="n">ck</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">s</span><span class="o">.</span><span class="n">cookies</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">cookie</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">],</span><span class="n">cookie</span><span class="p">[</span><span class="s1">&#39;value&#39;</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">s</span><span class="o">.</span><span class="n">headers</span><span class="p">[</span><span class="s2">&#34;Access-Token&#34;</span><span class="p">]</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">cookies</span><span class="p">[</span><span class="s1">&#39;SESSION&#39;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">    <span class="n">c</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="s2">&#34;https://service-r07xmosl-1251413566.sh.apigw.tencentcs.com/userAuthApi/user/info&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">tiku_d</span> <span class="o">=</span> <span class="p">{}</span>
+</span></span><span class="line"><span class="cl">    <span class="n">s</span><span class="o">.</span><span class="n">headers</span><span class="p">[</span><span class="s2">&#34;sourceId&#34;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&#34;2&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">c</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;https://service-6xrqld9h-1251413566.sh.apigw.tencentcs.com/practice/getColumnList?taskId=</span><span class="si">{</span><span class="n">taskid</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># print (c.json())</span>
+</span></span><span class="line"><span class="cl">    <span class="n">t1</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">json</span><span class="p">()[</span><span class="s1">&#39;data&#39;</span><span class="p">][</span><span class="s1">&#39;columnList&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;columnId&#39;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">    <span class="n">t2</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">json</span><span class="p">()[</span><span class="s1">&#39;data&#39;</span><span class="p">][</span><span class="s1">&#39;columnList&#39;</span><span class="p">][</span><span class="mi">1</span><span class="p">][</span><span class="s1">&#39;columnId&#39;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">    <span class="n">t3</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">json</span><span class="p">()[</span><span class="s1">&#39;data&#39;</span><span class="p">][</span><span class="s1">&#39;columnList&#39;</span><span class="p">][</span><span class="mi">2</span><span class="p">][</span><span class="s1">&#39;columnId&#39;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">    <span class="n">c</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="sa">f</span><span class="s2">&#34;https://service-6xrqld9h-1251413566.sh.apigw.tencentcs.com/practice/studyByColumnId?columnId=</span><span class="si">{</span><span class="n">t1</span><span class="si">}</span><span class="s2">&amp;taskId=</span><span class="si">{</span><span class="n">taskid</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">c</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="sa">f</span><span class="s2">&#34;https://service-6xrqld9h-1251413566.sh.apigw.tencentcs.com/practice/practice?columnId=</span><span class="si">{</span><span class="n">t1</span><span class="si">}</span><span class="s2">&amp;taskId=</span><span class="si">{</span><span class="n">taskid</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">tiku</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">json</span><span class="p">()[</span><span class="s1">&#39;data&#39;</span><span class="p">][</span><span class="s1">&#39;questionBankList&#39;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">tiku</span> <span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">tiku_d</span><span class="p">[</span><span class="n">i</span><span class="p">[</span><span class="s1">&#39;content&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&#34;</span><span class="se">\n</span><span class="s2">&#34;</span><span class="p">,</span><span class="s2">&#34;&#34;</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&#34; &#34;</span><span class="p">,</span><span class="s2">&#34;&#34;</span><span class="p">)]</span> <span class="o">=</span> <span class="n">i</span><span class="p">[</span><span class="s1">&#39;answer&#39;</span><span class="p">]</span>  
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">c</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="sa">f</span><span class="s2">&#34;https://service-6xrqld9h-1251413566.sh.apigw.tencentcs.com/practice/studyByColumnId?columnId=</span><span class="si">{</span><span class="n">t2</span><span class="si">}</span><span class="s2">&amp;taskId=</span><span class="si">{</span><span class="n">taskid</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">c</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="sa">f</span><span class="s2">&#34;https://service-6xrqld9h-1251413566.sh.apigw.tencentcs.com/practice/practice?columnId=</span><span class="si">{</span><span class="n">t2</span><span class="si">}</span><span class="s2">&amp;taskId=</span><span class="si">{</span><span class="n">taskid</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">tiku</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">json</span><span class="p">()[</span><span class="s1">&#39;data&#39;</span><span class="p">][</span><span class="s1">&#39;questionBankList&#39;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">tiku</span> <span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">tiku_d</span><span class="p">[</span><span class="n">i</span><span class="p">[</span><span class="s1">&#39;content&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&#34;</span><span class="se">\n</span><span class="s2">&#34;</span><span class="p">,</span><span class="s2">&#34;&#34;</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&#34; &#34;</span><span class="p">,</span><span class="s2">&#34;&#34;</span><span class="p">)]</span> <span class="o">=</span> <span class="n">i</span><span class="p">[</span><span class="s1">&#39;answer&#39;</span><span class="p">]</span>  
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">c</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="sa">f</span><span class="s2">&#34;https://service-6xrqld9h-1251413566.sh.apigw.tencentcs.com/practice/studyByColumnId?columnId=</span><span class="si">{</span><span class="n">t3</span><span class="si">}</span><span class="s2">&amp;taskId=</span><span class="si">{</span><span class="n">taskid</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>  
+</span></span><span class="line"><span class="cl">    <span class="n">c</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="sa">f</span><span class="s2">&#34;https://service-6xrqld9h-1251413566.sh.apigw.tencentcs.com/practice/practice?columnId=</span><span class="si">{</span><span class="n">t3</span><span class="si">}</span><span class="s2">&amp;taskId=</span><span class="si">{</span><span class="n">taskid</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span> 
+</span></span><span class="line"><span class="cl">    <span class="n">tiku</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">json</span><span class="p">()[</span><span class="s1">&#39;data&#39;</span><span class="p">][</span><span class="s1">&#39;questionBankList&#39;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">tiku</span> <span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">tiku_d</span><span class="p">[</span><span class="n">i</span><span class="p">[</span><span class="s1">&#39;content&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&#34;</span><span class="se">\n</span><span class="s2">&#34;</span><span class="p">,</span><span class="s2">&#34;&#34;</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&#34; &#34;</span><span class="p">,</span><span class="s2">&#34;&#34;</span><span class="p">)]</span> <span class="o">=</span> <span class="n">i</span><span class="p">[</span><span class="s1">&#39;answer&#39;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1"># print (tiku)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">c</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="sa">f</span><span class="s2">&#34;https://service-pw82n1db-1251413566.sh.apigw.tencentcs.com/paper/getPaper?taskId=</span><span class="si">{</span><span class="n">taskid</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="n">tp1</span> <span class="o">=</span> <span class="n">c</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">][</span><span class="s2">&#34;paper&#34;</span><span class="p">][</span><span class="s2">&#34;paperInfo&#34;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">    <span class="n">answer</span> <span class="o">=</span> <span class="s2">&#34;&#34;</span> 
+</span></span><span class="line"><span class="cl">    <span class="c1"># print (&#34;=&#34;*40)</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># print (tp1)</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># print (&#34;=&#34;*40)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">tp1</span> <span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="k">try</span> <span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="n">ccc</span> <span class="o">=</span> <span class="n">tiku_d</span><span class="p">[</span><span class="n">i</span><span class="p">[</span><span class="s2">&#34;content&#34;</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&#34;</span><span class="se">\n</span><span class="s2">&#34;</span><span class="p">,</span><span class="s2">&#34;&#34;</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&#34; &#34;</span><span class="p">,</span><span class="s2">&#34;&#34;</span><span class="p">)]</span>
+</span></span><span class="line"><span class="cl">            <span class="n">answer</span> <span class="o">+=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">i</span><span class="p">[</span><span class="s2">&#34;id&#34;</span><span class="p">]</span><span class="si">}</span><span class="s1">_</span><span class="si">{</span><span class="n">ccc</span><span class="si">}</span><span class="s1">@!@&#39;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">except</span> <span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="nb">print</span> <span class="p">(</span><span class="n">tiku_d</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="nb">print</span> <span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="n">answer</span> <span class="o">+=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">i</span><span class="p">[</span><span class="s2">&#34;id&#34;</span><span class="p">]</span><span class="si">}</span><span class="s1">_D@!@&#39;</span>
+</span></span><span class="line"><span class="cl">        
+</span></span><span class="line"><span class="cl">    <span class="n">resultid</span> <span class="o">=</span> <span class="n">c</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">][</span><span class="s2">&#34;resultId&#34;</span><span class="p">]</span>    
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">r_url</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&#34;https://service-pw82n1db-1251413566.sh.apigw.tencentcs.com/paper/saveResult?taskId=</span><span class="si">{</span><span class="n">taskid</span><span class="si">}</span><span class="s2">&amp;paperId=</span><span class="si">{</span><span class="n">c</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">][</span><span class="s1">&#39;paper&#39;</span><span class="p">][</span><span class="s1">&#39;id&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&amp;resultId=</span><span class="si">{</span><span class="n">resultid</span><span class="si">}</span><span class="s2">&amp;answers=</span><span class="si">{</span><span class="n">answer</span><span class="si">}</span><span class="s2">&amp;takeTime=</span><span class="si">{</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">60</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span><span class="si">}</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">c</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">r_url</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">s_point</span> <span class="o">=</span>  <span class="n">c</span><span class="o">.</span><span class="n">json</span><span class="p">()[</span><span class="s1">&#39;data&#39;</span><span class="p">][</span><span class="s1">&#39;result&#39;</span><span class="p">][</span><span class="s1">&#39;testscore&#39;</span><span class="p">]</span>   
+</span></span><span class="line"><span class="cl">    <span class="n">c</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="sa">f</span><span class="s2">&#34;https://service-pw82n1db-1251413566.sh.apigw.tencentcs.com/paper/getResultInfo?taskId=</span><span class="si">{</span><span class="n">taskid</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>   
+</span></span><span class="line"><span class="cl">    <span class="n">info1</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">json</span><span class="p">()[</span><span class="s1">&#39;data&#39;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># print (&#34;-&#34;*50)</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span> <span class="p">(</span><span class="sa">f</span><span class="s2">&#34;学校：</span><span class="si">{</span><span class="n">info1</span><span class="p">[</span><span class="s1">&#39;schoolName&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2"> 年级：</span><span class="si">{</span><span class="n">info1</span><span class="p">[</span><span class="s1">&#39;gradeName&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2"> 姓名：</span><span class="si">{</span><span class="n">info1</span><span class="p">[</span><span class="s1">&#39;userName&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span> <span class="p">(</span><span class="sa">f</span><span class="s2">&#34;</span><span class="si">{</span><span class="n">info1</span><span class="p">[</span><span class="s1">&#39;medal&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2"> 得分：</span><span class="si">{</span><span class="n">s_point</span><span class="si">}</span><span class="s2"> 最高分：</span><span class="si">{</span><span class="n">info1</span><span class="p">[</span><span class="s1">&#39;maxScore&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span> <span class="p">(</span><span class="sa">f</span><span class="s2">&#34;剩余考试次数：</span><span class="si">{</span><span class="n">info1</span><span class="p">[</span><span class="s1">&#39;leftExamCount&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span> 
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">c</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="s2">&#34;https://service-r07xmosl-1251413566.sh.apigw.tencentcs.com/userAuthApi/user/logout&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span> <span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">json</span><span class="p">()[</span><span class="s2">&#34;data&#34;</span><span class="p">])</span> 
+</span></span><span class="line"><span class="cl">    <span class="n">page</span><span class="o">.</span><span class="n">goto</span><span class="p">(</span><span class="s2">&#34;https://static.qspfw.moe.gov.cn/user/#/user/login&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">with</span> <span class="n">sync_playwright</span><span class="p">()</span> <span class="k">as</span> <span class="n">playwright</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># &#39;chromium&#39;  Or &#39;firefox&#39; or &#39;webkit&#39;.</span>
+</span></span><span class="line"><span class="cl">    <span class="n">browser</span> <span class="o">=</span> <span class="n">playwright</span><span class="o">.</span><span class="n">chromium</span><span class="o">.</span><span class="n">launch</span><span class="p">(</span><span class="n">headless</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">context</span> <span class="o">=</span> <span class="n">browser</span><span class="o">.</span><span class="n">new_context</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="n">students</span> <span class="o">=</span> <span class="p">[]</span>
+</span></span><span class="line"><span class="cl">    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&#34;321.csv&#34;</span><span class="p">,</span> <span class="s2">&#34;r&#34;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&#34;utf-8&#34;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">f</span> <span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="n">student</span> <span class="o">=</span> <span class="n">i</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&#34;,&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="n">students</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">student</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">allnum</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">students</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">num</span><span class="p">,</span> <span class="n">ss</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">students</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="n">stime</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span> <span class="p">(</span><span class="s2">&#34;=&#34;</span><span class="o">*</span><span class="mi">50</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span> <span class="p">(</span><span class="sa">f</span><span class="s2">&#34;</span><span class="si">{</span><span class="n">num</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s2"> / </span><span class="si">{</span><span class="n">allnum</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">ss</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">att</span> <span class="o">=</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="cl">        <span class="n">success</span> <span class="o">=</span> <span class="kc">False</span>
+</span></span><span class="line"><span class="cl">        <span class="k">while</span> <span class="n">att</span> <span class="o">&lt;</span> <span class="mi">3</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">success</span> <span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="k">try</span> <span class="p">:</span>
+</span></span><span class="line"><span class="cl">                <span class="n">shuashua</span><span class="p">(</span><span class="n">ss</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">ss</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">ss</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">                <span class="n">success</span> <span class="o">=</span> <span class="kc">True</span>
+</span></span><span class="line"><span class="cl">            <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                <span class="nb">print</span> <span class="p">(</span><span class="n">e</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                <span class="n">att</span> <span class="o">+=</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl">                <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                <span class="k">if</span> <span class="n">att</span> <span class="o">==</span> <span class="mi">3</span> <span class="p">:</span>
+</span></span><span class="line"><span class="cl">                    <span class="k">with</span> <span class="nb">open</span> <span class="p">(</span><span class="s2">&#34;fail.txt&#34;</span><span class="p">,</span> <span class="s2">&#34;a&#34;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&#34;utf-8&#34;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span> <span class="p">:</span>
+</span></span><span class="line"><span class="cl">                        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&#34;,&#34;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&#34;</span><span class="se">\n</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                    <span class="nb">print</span> <span class="p">(</span><span class="sa">f</span><span class="s2">&#34;</span><span class="si">{</span><span class="n">num</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">s</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2"> fail!&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                    <span class="k">break</span>
+</span></span><span class="line"><span class="cl">                <span class="k">else</span> <span class="p">:</span>
+</span></span><span class="line"><span class="cl">                    <span class="nb">print</span> <span class="p">(</span><span class="s2">&#34;Retry...&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">endtime</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">        <span class="n">ttime</span> <span class="o">=</span> <span class="n">endtime</span> <span class="o">-</span> <span class="n">stime</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span> <span class="p">(</span><span class="sa">f</span><span class="s2">&#34;耗时</span><span class="si">{</span><span class="n">ttime</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">秒。&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">context</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="n">browser</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2023-10-21</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/python/">Python</a>,&nbsp;<a href="/tags/ddddocr/">ddddocr</a>,&nbsp;<a href="/tags/playwright/">Playwright</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/posts/zuoyeshenbao/" class="prev" rel="prev" title="用Python每天进行作业申报"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>用Python每天进行作业申报</a>
+            <a href="/posts/img2pdf/" class="next" rel="next" title="Python脚本将多张图片转成pdf文件">Python脚本将多张图片转成pdf文件<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+</article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.120.4">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2024</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://xzap.gitee.io" target="_blank">xzap</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.38.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lunr@2.3.9/lunr.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.stemmer.support.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.zh.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.1/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":50},"comment":{},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"lunr"}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

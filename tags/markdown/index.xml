@@ -1,0 +1,35 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Markdown - 标签 - Xzap&#39;s 缓存区</title>
+        <link>http://xzap.gitee.io/tags/markdown/</link>
+        <description>Markdown - 标签 - Xzap&#39;s 缓存区</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>xzap@163.com (xzap)</managingEditor>
+            <webMaster>xzap@163.com (xzap)</webMaster><lastBuildDate>Thu, 05 Mar 2020 16:30:05 &#43;0800</lastBuildDate><atom:link href="http://xzap.gitee.io/tags/markdown/" rel="self" type="application/rss+xml" /><item>
+    <title>主题文档 - 内容</title>
+    <link>http://xzap.gitee.io/docs/theme-documentation/theme-documentation-content/</link>
+    <pubDate>Thu, 05 Mar 2020 16:30:05 &#43;0800</pubDate>
+    <author>Dillon</author>
+    <guid>http://xzap.gitee.io/docs/theme-documentation/theme-documentation-content/</guid>
+    <description><![CDATA[<p>了解如何在 <strong>LoveIt</strong> 主题中快速, 直观地创建和组织内容.</p>]]></description>
+</item>
+<item>
+    <title>Markdown 语法说明 (简体中文版)</title>
+    <link>http://xzap.gitee.io/docs/markdown/markdown_syntax/</link>
+    <pubDate>Fri, 29 May 2015 09:54:00 &#43;0000</pubDate>
+    <author>xzap</author>
+    <guid>http://xzap.gitee.io/docs/markdown/markdown_syntax/</guid>
+    <description><![CDATA[<p>这个是 Markdown 的一份语法文档，因为老是会忘所以，直接在这里放一份吧。省得老是忘记啊什么的。</p>]]></description>
+</item>
+<item>
+    <title>Markdown Basics（快速入门）</title>
+    <link>http://xzap.gitee.io/docs/markdown/markdown_basics/</link>
+    <pubDate>Fri, 29 May 2015 00:00:00 &#43;0000</pubDate>
+    <author>xzap</author>
+    <guid>http://xzap.gitee.io/docs/markdown/markdown_basics/</guid>
+    <description><![CDATA[<blockquote>
+<p>Markdown 的一份快速入门文档。此页提供了 Markdown 的简单概念， <a href="http://gitcafe.com/riku/Markdown-Syntax-CN/blob/master/syntax.md" title="Markdown Syntax" target="_blank" rel="noopener noreffer">语法说明</a>
+ 页提供了完整详细的文档，说明了每项功能。但是 Markdown 其实很简单就可以上手，此页文档提供了一些范例，并且每个范例都会提供输出的 HTML 结果。</p>
+</blockquote>]]></description>
+</item>
+</channel>
+</rss>

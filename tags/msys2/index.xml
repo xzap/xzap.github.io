@@ -1,0 +1,16 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Msys2 - 标签 - Xzap&#39;s 缓存区</title>
+        <link>http://xzap.gitee.io/tags/msys2/</link>
+        <description>Msys2 - 标签 - Xzap&#39;s 缓存区</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>xzap@163.com (xzap)</managingEditor>
+            <webMaster>xzap@163.com (xzap)</webMaster><lastBuildDate>Sun, 07 Jun 2015 15:54:00 &#43;0800</lastBuildDate><atom:link href="http://xzap.gitee.io/tags/msys2/" rel="self" type="application/rss+xml" /><item>
+    <title>在Win系统下右键启动ConEmu和Msys2</title>
+    <link>http://xzap.gitee.io/posts/conemu_msys/</link>
+    <pubDate>Sun, 07 Jun 2015 15:54:00 &#43;0800</pubDate>
+    <author>xzap</author>
+    <guid>http://xzap.gitee.io/posts/conemu_msys/</guid>
+    <description><![CDATA[在win系统下使用好点的命令行，虚拟终端用 ConEmu 很好用。至于 Linux 的命令行移植选来选取选了个 Msys2。比Cygwin 轻量得多，而又不像 Gitbash 那样过于简]]></description>
+</item>
+</channel>
+</rss>

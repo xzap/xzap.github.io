@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>微信里嘉兴健康自动打卡并部署到腾讯云函数 - Xzap&#39;s 缓存区</title><meta name="Description" content=""><meta property="og:title" content="微信里嘉兴健康自动打卡并部署到腾讯云函数" />
+<meta property="og:description" content="好不容易放假了，还是要每天一大早健康打卡。对于爱睡懒觉的人来说完全不能忍，于是就考虑着自动健康打卡。用Fiddler Web Debugger 抓包微信的桌面版本。一个登录一个打卡。两个post搞定，还是比较简单的。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://xzap.gitee.io/posts/weixindaka/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-02-14T13:14:00+08:00" />
+<meta property="article:modified_time" content="2021-02-14T13:14:00+08:00" /><meta property="og:site_name" content="Xzap&#39;s 缓存区" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="微信里嘉兴健康自动打卡并部署到腾讯云函数"/>
+<meta name="twitter:description" content="好不容易放假了，还是要每天一大早健康打卡。对于爱睡懒觉的人来说完全不能忍，于是就考虑着自动健康打卡。用Fiddler Web Debugger 抓包微信的桌面版本。一个登录一个打卡。两个post搞定，还是比较简单的。"/>
+<meta name="application-name" content="Xzap&#39;s 缓存区">
+<meta name="apple-mobile-web-app-title" content="Xzap&#39;s 缓存区"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://xzap.gitee.io/posts/weixindaka/" /><link rel="prev" href="http://xzap.gitee.io/posts/conemu_msys/" /><link rel="next" href="http://xzap.gitee.io/posts/switch-wsl2/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "微信里嘉兴健康自动打卡并部署到腾讯云函数",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http:\/\/xzap.gitee.io\/posts\/weixindaka\/"
+        },"genre": "posts","keywords": "Python, 打卡","wordcount":  954 ,
+        "url": "http:\/\/xzap.gitee.io\/posts\/weixindaka\/","datePublished": "2021-02-14T13:14:00+08:00","dateModified": "2021-02-14T13:14:00+08:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "xzap"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Xzap&#39;s 缓存区">Xzap&#39;s 缓存区</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> 文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><a class="menu-item" href="/docs/"> 文档 </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Xzap&#39;s 缓存区">Xzap&#39;s 缓存区</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a class="menu-item" href="/docs/" title="">文档</a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><div class="search-dropdown desktop">
+        <div id="search-dropdown-desktop"></div>
+    </div>
+    <div class="search-dropdown mobile">
+        <div id="search-dropdown-mobile"></div>
+    </div><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">微信里嘉兴健康自动打卡并部署到腾讯云函数</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="https://xzap.gitee.io" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>xzap</a>
+</span>&nbsp;<span class="post-category">收录于 <a href="/categories/python/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Python</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2021-02-14">2021-02-14</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 954 字&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 2 分钟&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#完整代码">完整代码：</a></li>
+    <li><a href="#修改代码">修改代码：</a></li>
+    <li><a href="#部署到腾讯云函数">部署到腾讯云函数：</a>
+      <ul>
+        <li><a href="#1-打开腾讯云函数">1. 打开腾讯云函数：</a></li>
+        <li><a href="#2-进入管理控制台">2. 进入管理控制台：</a></li>
+        <li><a href="#3-新建函数">3. 新建函数：</a></li>
+        <li><a href="#4-设置触发器">4. 设置触发器：</a></li>
+        <li><a href="#cron表达式">Cron表达式：</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><p>好不容易放假了，还是要每天一大早健康打卡。对于爱睡懒觉的人来说完全不能忍，于是就考虑着自动健康打卡。用Fiddler Web Debugger 抓包微信的桌面版本。一个登录一个打卡。两个post搞定，还是比较简单的。</p>
+<h1 id="微信健康打卡部署">微信健康打卡部署</h1>
+<h2 id="完整代码">完整代码：</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="ch">#!/usr/bin/env python3</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># -*- coding: utf8 -*-</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">requests</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">userlist</span> <span class="o">=</span> <span class="p">[</span>
+</span></span><span class="line"><span class="cl">    <span class="p">(</span><span class="s2">&#34;手机号或身份证&#34;</span><span class="p">,</span> <span class="s2">&#34;hy123456&#34;</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">    <span class="p">(</span><span class="s2">&#34;手机号或身份证&#34;</span><span class="p">,</span> <span class="s2">&#34;hy123456&#34;</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">    <span class="p">(</span><span class="s2">&#34;手机号或身份证&#34;</span><span class="p">,</span> <span class="s2">&#34;hy123456&#34;</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl"><span class="p">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">daka</span><span class="p">(</span><span class="n">user</span><span class="p">,</span> <span class="n">passwd</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">req</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">Session</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;Host&#34;</span><span class="p">:</span> <span class="s2">&#34;jk.zjjxedu.gov.cn&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;Connection&#34;</span><span class="p">:</span> <span class="s2">&#34;keep-alive&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;Content-Length&#34;</span><span class="p">:</span> <span class="s2">&#34;39&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;User-Agent&#34;</span><span class="p">:</span> <span class="s2">&#34;Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.143 Safari/537.36 MicroMessenger/7.0.9.501 NetType/WIFI MiniProgramEnv/Windows WindowsWechat&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;content-type&#34;</span><span class="p">:</span> <span class="s2">&#34;application/x-www-form-urlencoded;charset:utf-8&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;Referer&#34;</span><span class="p">:</span> <span class="s2">&#34;https:// servicewechat.com/wxbee484c9ef018d43/23/page-frame.html&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;Accept-Encoding&#34;</span><span class="p">:</span> <span class="s2">&#34;gzip, deflate, br&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="n">req</span><span class="o">.</span><span class="n">headers</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">headers</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">url</span> <span class="o">=</span> <span class="s2">&#34;https://jk.zjjxedu.gov.cn/sso/mobi/WxLogin2&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;loginname&#34;</span><span class="p">:</span> <span class="n">user</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;password&#34;</span><span class="p">:</span> <span class="n">passwd</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="n">c</span> <span class="o">=</span> <span class="n">req</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">)</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">ticket</span> <span class="o">=</span> <span class="n">c</span><span class="p">[</span><span class="s2">&#34;data&#34;</span><span class="p">][</span><span class="s2">&#34;ticket&#34;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">    <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;Host&#34;</span><span class="p">:</span> <span class="s2">&#34;jk.zjjxedu.gov.cn&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;Connection&#34;</span><span class="p">:</span> <span class="s2">&#34;keep-alive&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;Content-Length&#34;</span><span class="p">:</span> <span class="s2">&#34;80&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;User-Agent&#34;</span><span class="p">:</span> <span class="s2">&#34;Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.143 Safari/537.36 MicroMessenger/7.0.9.501 NetType/WIFI MiniProgramEnv/Windows WindowsWechat&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;content-type&#34;</span><span class="p">:</span> <span class="s2">&#34;application/x-www-form-urlencoded;charset=utf-8&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;ticket&#34;</span><span class="p">:</span> <span class="n">ticket</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;Referer&#34;</span><span class="p">:</span> <span class="s2">&#34;https://servicewechat.com/wxbee484c9ef018d43/23/page-frame.html&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="n">req</span><span class="o">.</span><span class="n">headers</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">headers</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;temperature&#34;</span><span class="p">:</span> <span class="mi">36</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;is_whether&#34;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;amorpm&#34;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;symptom&#34;</span><span class="p">:</span> <span class="s2">&#34;&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;remark&#34;</span><span class="p">:</span> <span class="s2">&#34;&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;is_famwhether&#34;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;famremark&#34;</span><span class="p">:</span> <span class="s2">&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="n">url2</span> <span class="o">=</span> <span class="s2">&#34;https://jk.zjjxedu.gov.cn/health/mobiapi/savePunchclock&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">c</span> <span class="o">=</span> <span class="n">req</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">url2</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">)</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">main_handler</span><span class="p">(</span><span class="n">event</span><span class="p">,</span> <span class="n">context</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">userlist</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">daka</span><span class="p">(</span><span class="n">i</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">i</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">main_handler</span><span class="p">(</span><span class="s2">&#34;&#34;</span><span class="p">,</span> <span class="s2">&#34;&#34;</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="修改代码">修改代码：</h2>
+<p>修改第6行那里的 <code>(&quot;手机号或身份证&quot;, &quot;hy123456&quot;),</code>  只需要输入手机号或身份证号码就看可以了。如果只有一个人删除7、8行，如果有更多的人就多加几行。</p>
+<blockquote>
+<p>这个代码是用<em>Python</em>写的,所以要注意<em>Python</em>的语法格式，括号前面4个空格不能少，而且是英文的空格和中文的空格不同。结尾是一个英文逗号。</p>
+</blockquote>
+<h2 id="部署到腾讯云函数">部署到腾讯云函数：</h2>
+<h3 id="1-打开腾讯云函数">1. 打开腾讯云函数：</h3>
+<p>打开 <a href="https://cloud.tencent.com/product/scf" target="_blank" rel="noopener noreffer">腾讯云网址</a>
+  网址是： <a href="https://cloud.tencent.com/product/scf" target="_blank" rel="noopener noreffer">https://cloud.tencent.com/product/scf</a>
+</p>
+<p>右上角点击登录，用手机微信扫码登录。</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://gitee.com/xzap/pics/raw/master/img/1.png"
+        data-srcset="https://gitee.com/xzap/pics/raw/master/img/1.png, https://gitee.com/xzap/pics/raw/master/img/1.png 1.5x, https://gitee.com/xzap/pics/raw/master/img/1.png 2x"
+        data-sizes="auto"
+        alt="https://gitee.com/xzap/pics/raw/master/img/1.png"
+        title="1" /></p>
+<h3 id="2-进入管理控制台">2. 进入管理控制台：</h3>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://gitee.com/xzap/pics/raw/master/img/2.png"
+        data-srcset="https://gitee.com/xzap/pics/raw/master/img/2.png, https://gitee.com/xzap/pics/raw/master/img/2.png 1.5x, https://gitee.com/xzap/pics/raw/master/img/2.png 2x"
+        data-sizes="auto"
+        alt="https://gitee.com/xzap/pics/raw/master/img/2.png"
+        title="2" /></p>
+<h3 id="3-新建函数">3. 新建函数：</h3>
+<ul>
+<li>点击服务</li>
+<li>点击新建</li>
+</ul>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://gitee.com/xzap/pics/raw/master/img/3.png"
+        data-srcset="https://gitee.com/xzap/pics/raw/master/img/3.png, https://gitee.com/xzap/pics/raw/master/img/3.png 1.5x, https://gitee.com/xzap/pics/raw/master/img/3.png 2x"
+        data-sizes="auto"
+        alt="https://gitee.com/xzap/pics/raw/master/img/3.png"
+        title="3" /></p>
+<ol>
+<li>点击自定义创建</li>
+<li>函数名称随便输入</li>
+<li>地域指的是不同地域的服务器。随便选。</li>
+<li>这个是运行的程序，因为代码是Python3的。所以必须选 <strong>Python3.6</strong>。</li>
+<li>把原先的实例代码全部删除。复制我的代码粘贴。</li>
+<li>点击完成。</li>
+</ol>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://gitee.com/xzap/pics/raw/master/img/4.png"
+        data-srcset="https://gitee.com/xzap/pics/raw/master/img/4.png, https://gitee.com/xzap/pics/raw/master/img/4.png 1.5x, https://gitee.com/xzap/pics/raw/master/img/4.png 2x"
+        data-sizes="auto"
+        alt="https://gitee.com/xzap/pics/raw/master/img/4.png"
+        title="4" /></p>
+<h3 id="4-设置触发器">4. 设置触发器：</h3>
+<ol>
+<li>点击触发管理</li>
+<li>跳出的界面都不用改</li>
+<li>点击触发周期，选自定义触发周期</li>
+<li>Cron表达式输入 <code>0 0 7 * * * *</code></li>
+<li>点击提交，完工！</li>
+</ol>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://gitee.com/xzap/pics/raw/master/img/5.png"
+        data-srcset="https://gitee.com/xzap/pics/raw/master/img/5.png, https://gitee.com/xzap/pics/raw/master/img/5.png 1.5x, https://gitee.com/xzap/pics/raw/master/img/5.png 2x"
+        data-sizes="auto"
+        alt="https://gitee.com/xzap/pics/raw/master/img/5.png"
+        title="5" /></p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://gitee.com/xzap/pics/raw/master/img/6.png"
+        data-srcset="https://gitee.com/xzap/pics/raw/master/img/6.png, https://gitee.com/xzap/pics/raw/master/img/6.png 1.5x, https://gitee.com/xzap/pics/raw/master/img/6.png 2x"
+        data-sizes="auto"
+        alt="https://gitee.com/xzap/pics/raw/master/img/6.png"
+        title="6" /></p>
+<h3 id="cron表达式">Cron表达式：</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">第一位</th>
+<th style="text-align:left">第二位</th>
+<th style="text-align:left">第三位</th>
+<th style="text-align:left">第四位</th>
+<th style="text-align:left">第五位</th>
+<th style="text-align:left">第六位</th>
+<th style="text-align:left">第七位</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">秒</td>
+<td style="text-align:left">分钟</td>
+<td style="text-align:left">小时</td>
+<td style="text-align:left">日</td>
+<td style="text-align:left">月</td>
+<td style="text-align:left">星期</td>
+<td style="text-align:left">年</td>
+</tr>
+</tbody>
+</table>
+<p>下面展示了一些 Cron 表达式和相关含义的示例：</p>
+<ul>
+<li><code>*/5 * * * * * *</code> 表示每5秒触发一次</li>
+<li><code>0 0 2 1 * * *</code> 表示在每月的1日的凌晨2点触发</li>
+<li><code>0 15 10 * * MON-FRI *</code> 表示在周一到周五每天上午10：15触发</li>
+<li><code>0 0 10,14,16 * * * *</code> 表示在每天上午10点，下午2点，4点触发</li>
+<li><code>0 */30 9-17 * * * *</code> 表示在每天上午9点到下午5点内每半小时触发</li>
+<li><code>0 0 12 * * WED *</code> 表示在每个星期三中午12点触发</li>
+</ul></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2021-02-14</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/python/">Python</a>,&nbsp;<a href="/tags/%E6%89%93%E5%8D%A1/">打卡</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/posts/conemu_msys/" class="prev" rel="prev" title="在Win系统下右键启动ConEmu和Msys2"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>在Win系统下右键启动ConEmu和Msys2</a>
+            <a href="/posts/switch-wsl2/" class="next" rel="next" title="开关 wsl2">开关 wsl2<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+</article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.120.4">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2024</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://xzap.gitee.io" target="_blank">xzap</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.38.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lunr@2.3.9/lunr.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.stemmer.support.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.zh.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.1/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":50},"comment":{},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"lunr"}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>
