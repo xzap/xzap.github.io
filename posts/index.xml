@@ -4,7 +4,15 @@
         <link>http://xzap.github.io/posts/</link>
         <description>所有文章 | Xzap&#39;s 缓存区</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>xzap@163.com (xzap)</managingEditor>
-            <webMaster>xzap@163.com (xzap)</webMaster><lastBuildDate>Sun, 14 Apr 2024 16:27:53 &#43;0800</lastBuildDate><atom:link href="http://xzap.github.io/posts/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>xzap@163.com (xzap)</webMaster><lastBuildDate>Tue, 01 Oct 2024 01:02:53 &#43;0800</lastBuildDate><atom:link href="http://xzap.github.io/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>2024年的青少年普法网</title>
+    <link>http://xzap.github.io/posts/qsnpfw2024/</link>
+    <pubDate>Tue, 01 Oct 2024 01:02:53 &#43;0800</pubDate>
+    <author>xzap</author>
+    <guid>http://xzap.github.io/posts/qsnpfw2024/</guid>
+    <description><![CDATA[<p>青少年普法网每年的题还都不一样，真麻烦。每年都要重新写的么？</p>]]></description>
+</item>
+<item>
     <title>破解Sublime Text这个软件</title>
     <link>http://xzap.github.io/posts/crack_sublime/</link>
     <pubDate>Sun, 14 Apr 2024 16:27:53 &#43;0800</pubDate>
@@ -75,14 +83,6 @@
     <author>xzap</author>
     <guid>http://xzap.github.io/posts/weixindaka/</guid>
     <description><![CDATA[<p>好不容易放假了，还是要每天一大早健康打卡。对于爱睡懒觉的人来说完全不能忍，于是就考虑着自动健康打卡。用Fiddler Web Debugger 抓包微信的桌面版本。一个登录一个打卡。两个post搞定，还是比较简单的。</p>]]></description>
-</item>
-<item>
-    <title>在Win系统下右键启动ConEmu和Msys2</title>
-    <link>http://xzap.github.io/posts/conemu_msys/</link>
-    <pubDate>Sun, 07 Jun 2015 15:54:00 &#43;0800</pubDate>
-    <author>xzap</author>
-    <guid>http://xzap.github.io/posts/conemu_msys/</guid>
-    <description><![CDATA[在win系统下使用好点的命令行，虚拟终端用 ConEmu 很好用。至于 Linux 的命令行移植选来选取选了个 Msys2。比Cygwin 轻量得多，而又不像 Gitbash 那样过于简]]></description>
 </item>
 </channel>
 </rss>
